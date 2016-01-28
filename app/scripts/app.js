@@ -21,7 +21,7 @@ angular.module('myPholioApp', ['ui.router', 'ngResource'])
                     }
                 }
 
-            })
+            });
             $urlRouterProvider.otherwise('/');
       })
 ;
