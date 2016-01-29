@@ -620,8 +620,8 @@ ul.time li.time_desc{
 	text-align:center;
 }
 /*--skills--*/
-.skills{
-	padding:8em 0;
+.skills {
+    padding: 8em 0;
 }
 .circle {
 	color:#aaa;
@@ -639,6 +639,12 @@ div#canvas {
 .skill-grid h3 a:hover{
 	color:#e83a93;
 	text-decoration:none;
+}
+
+.skills .portfolio-label{
+    color: #fff;
+    font-style: italic;
+    font-size: 17px;
 }
 /*========================
  Transitions
@@ -1123,24 +1129,23 @@ p.copy a:hover{
 	top: 192px;
 }
 .header_social ul li a i.db1 {
-  /*width: 207px;
-  height: 83px;*/
-  display: block;
-  /* background: url(../images/img-sprite.png)no-repeat -342px -404px; */
-  position: absolute;
-  left: 1310px;
-  top: 192px;
-  color: #fff;
-  font-size: 39px;
-}
-.header_social ul li a i.g1 {
 	width: 36px;
 	height: 40px;
 	display: block;
-	background: url(../images/img-sprite.png)no-repeat -389px -405px;
+	background: url(../images/img-sprite.png)no-repeat -342px -404px;
 	position: absolute;
-	left: 1190px;
-	top: 265px;
+	left: 1307px;
+	top: 192px;
+}
+.header_social ul li a i.g1 {
+    width: 36px;
+    height: 40px;
+    display: block;
+    /* background: url(../images/img-sprite.png)no-repeat -389px -405px; */
+    position: absolute;
+    left: 1186px;
+    top: 265px;
+    color: #fff;
 }
 .header_social ul li a i.skype{
 	width: 36px;
@@ -1195,13 +1200,13 @@ p.copy a:hover{
 	left: 823px;
 }
 .header_social ul li a i.fb1 {
-	left: 872px;
+	left: 866px;
 }
 .header_social ul li a i.tw1 {
-	  left: 952px;
+	left: 946px;
 }
 .header_social ul li a i.db1 {
-	left: 948px;
+	left: 1024px;
 }
 .header_social ul li a i.g1 {
 	left: 905px;
@@ -1237,13 +1242,13 @@ p.copy a:hover{
 	left: 750px;
 }
 .header_social ul li a i.fb1 {
-	left: 829px;
+	left: 794px;
 }
 .header_social ul li a i.tw1 {
-	left: 910px
+	left: 873px;
 }
 .header_social ul li a i.db1 {
-	left: 903px
+	left: 951px;
 }
 .header_social ul li a i.g1 {
 	left: 834px;
@@ -1298,7 +1303,7 @@ p.copy a:hover{
 	top: 158px;
 }
 .header_social ul li a i.db1 {
-	left: 709px;
+	left: 794px;
 	top: 157px;
 }
 .header_social ul li a i.g1 {
