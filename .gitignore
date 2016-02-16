@@ -4,7 +4,7 @@
 build/
 dist/
 test/
-envfolio
+/envfolio
 portfolio/static
 migrations
 .DS_Store
