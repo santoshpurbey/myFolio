@@ -2,8 +2,6 @@ from django.shortcuts import render, get_object_or_404, render_to_response
 from django.utils import timezone
 from .models import Project
 
-
-"""
 def home(request):
     return  render( request, 'portfolio/home.html', {} )
 
@@ -20,4 +18,3 @@ def portfolio_detail(request, pk):
 
 def contact(request):
     return render( request, 'portfolio/contact.html', {})
-"""
