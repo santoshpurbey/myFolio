@@ -1,9 +1,7 @@
 from django.shortcuts import render, get_object_or_404, render_to_response
+from django.template.context import RequestContext
 from django.utils import timezone
 from .models import Project
-
-def home(request):
-    return  render( request, 'portfolio/home.html', {} )
 
 def about(request):
     return render( request, 'portfolio/about.html', {} )
@@ -13,7 +11,7 @@ def portfolio_list(request):
     return render(request, 'portfolio/portfolio_list.html', {'projects': projects})
 
 def portfolio_detail(request, pk):
-    project = get_object_or_404(Project, pk=pk)
+    project = Project.objects.get(pk=pk)
     return render(request, 'portfolio/portfolio_detail.html', {'project': project})
 
 def contact(request):

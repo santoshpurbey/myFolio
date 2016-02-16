@@ -8,3 +8,5 @@ envfolio
 portfolio/static
 migrations
 .DS_Store
+static/media
+static/img
