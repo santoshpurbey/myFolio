@@ -1,7 +1,10 @@
 
-node_modules/
-bower_components/
-.DS_Store
-myapp.log
-test
-dist
+*.pyc
+*.pyo
+build/
+dist/
+test/
+echinarchenv
+portfolio/static
+static
+migrations
