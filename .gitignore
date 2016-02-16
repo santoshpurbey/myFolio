@@ -4,7 +4,8 @@
 build/
 dist/
 test/
-echinarchenv
+envfolio
 portfolio/static
 static
 migrations
+.DS_Store
