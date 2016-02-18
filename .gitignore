@@ -6,3 +6,4 @@ dist/
 test/
 myenv
 .DS_Store
+static
