@@ -4,9 +4,5 @@
 build/
 dist/
 test/
-envfolio
-portfolio/static
-migrations
+myenv
 .DS_Store
-static/media
-static/img

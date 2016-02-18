@@ -6,16 +6,16 @@ from django.utils import timezone
 class Project(models.Model):
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=50, unique=True)
-    #url = models.URLField(blank=True, null=True)
-    #pull_quote = models.TextField(blank=True, null=True)
-    short_description = models.TextField()
-    description = models.TextField()
+    url = models.URLField(blank=True, null=True)
+    short_description = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    job = models.CharField(max_length=200, blank=True, null=True)
     start_date = models.DateField(blank=True, null=True)
     end_date = models.DateField(blank=True, null=True)
-    categories = models.ForeignKey('Category')
-    tags = models.ManyToManyField('Tag')
+    client = models.CharField(max_length=200, blank=True, null=True)
+    categories = models.ForeignKey('Category', blank=True, null=True)
     skills = models.ManyToManyField('Skill')
-    image = models.ImageField(upload_to='portfolio')
+    image = models.ImageField(upload_to='portfolio', blank=True, null=True)
 
     class Meta:
         ordering = ['-start_date', '-end_date', ]
@@ -31,16 +31,6 @@ class Project(models.Model):
         return self.name
 
 class Skill(models.Model):
-    name = models.CharField(max_length=50)
-    slug = models.SlugField(max_length=50, unique=True)
-
-    class Meta:
-        ordering = ['name']
-
-    def __unicode__(self):
-        return self.name
-
-class Tag(models.Model):
     name = models.CharField(max_length=50)
     slug = models.SlugField(max_length=50, unique=True)
 

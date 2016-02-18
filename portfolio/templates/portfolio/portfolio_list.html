@@ -58,7 +58,6 @@
                           <!--Item-->
                           <div class="item web">
                           <a href="{% url 'portfolio_detail' pk=project.pk %}">
-                            {{project}}
                             <div class="desc">
                             <h3 class="proj-desc">{{project.name}}
                             <span class="zigzag work clearfix " data-svg-drawing="yes">
@@ -68,7 +67,7 @@
                                 </svg>
                               </span>
 
-                             <span>web design</span></h3>
+                             <span>Development</span></h3>
                             </div>
                             <img class="img-responsive img-thumbnail" alt="project screen" src="../media/{{project.image}}">
                           </a>

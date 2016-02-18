@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, render_to_response
 from django.template.context import RequestContext
 from django.utils import timezone
-from .models import Project
+from .models import Project, Skill, Category
 
 def about(request):
     return render( request, 'portfolio/about.html', {} )
@@ -12,7 +12,18 @@ def portfolio_list(request):
 
 def portfolio_detail(request, pk):
     project = Project.objects.get(pk=pk)
-    return render(request, 'portfolio/portfolio_detail.html', {'project': project})
+    skills = Skill.objects.filter(project__pk=pk)
+    categories = Category.objects.filter(project__pk=pk)
+
+    return render(
+        request,
+        'portfolio/portfolio_detail.html',
+        {
+            'project': project,
+            'skills': skills,
+            'categories': categories,
+        }
+    )
 
 def contact(request):
     return render( request, 'portfolio/contact.html', {})
