@@ -1,6 +1,6 @@
 venv
+portfolio/static
 .DS_Store
-static
 /*.tgz
 db.sqlite3
 venv
