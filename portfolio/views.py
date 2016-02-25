@@ -4,11 +4,11 @@ from django.utils import timezone
 from .models import Project, Skill, Category
 
 def about(request):
-    return render( request, 'portfolio/about.html', {} )
+    return render( request, 'about.html', {} )
 
 def portfolio_list(request):
     projects = Project.objects.filter(start_date__lte=timezone.now()).order_by('start_date')
-    return render(request, 'portfolio/portfolio_list.html', {'projects': projects})
+    return render(request, 'portfolio_list.html', {'projects': projects})
 
 def portfolio_detail(request, pk):
     project = Project.objects.get(pk=pk)
@@ -26,4 +26,4 @@ def portfolio_detail(request, pk):
     )
 
 def contact(request):
-    return render( request, 'portfolio/contact.html', {})
+    return render( request, 'contact.html', {})
