@@ -23,13 +23,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '4c(80k%xkw3er6o)^nlx^g^gzo#(jbq9p-x)g2d6qw%+3=1%qk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = False
+DEBUG = False
 
-#ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*']
 
-DEBUG = True
+#DEBUG = True
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -131,5 +131,14 @@ EMAIL_USE_TLS = False
 EMAIL_PORT = 1025
 LOGIN_REDIRECT_URL = "home"
 
+"""
 print 'Settings.py STATIC_ROOT: %s' % (STATIC_ROOT)
 print 'Settings.py STATIC_URL: %s' % (STATIC_URL)
+"""
+
+### settings.py file
+### settings that are not environment dependent
+try:
+    from settings_production import *
+except ImportError:
+    pass
