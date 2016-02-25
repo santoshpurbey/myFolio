@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 
 class Project(models.Model):
@@ -16,6 +17,7 @@ class Project(models.Model):
     categories = models.ForeignKey('Category', blank=True, null=True)
     skills = models.ManyToManyField('Skill')
     image = models.ImageField(upload_to='portfolio', blank=True, null=True)
+    user = models.OneToOneField(User, blank=True, null=True)
 
     class Meta:
         ordering = ['-start_date', '-end_date', ]

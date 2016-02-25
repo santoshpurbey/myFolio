@@ -1,4 +1,3 @@
-venv
 .DS_Store
 /*.tgz
 db.sqlite3
@@ -26,7 +25,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-venv/
+myenv/
 build/
 develop-eggs/
 dist/
