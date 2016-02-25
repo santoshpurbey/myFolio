@@ -89,7 +89,7 @@ DATABASES = {
         'ENGINE' : 'django.db.backends.mysql',
         'NAME' : 'folio_db',
         'USER' : 'demoManager',
-        'PASSWORD' : 'rockStar',
+        'PASSWORD' : 'rockstar',
         'HOST' : '',
         'PORT' : '',
     }
@@ -116,3 +116,10 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+### settings.py file
+### settings that are not environment dependent
+try:
+    from settings_production import *
+except ImportError:
+    pass
