@@ -170,9 +170,7 @@ print 'Settings.py STATIC_URL: %s' % (STATIC_URL)
 
 ### settings.py file
 ### settings that are not environment dependent
-"""
 try:
     from settings_production import *
 except ImportError:
     pass
-"""
