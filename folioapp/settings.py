@@ -43,17 +43,17 @@ CSRF_COOKIE_HTTPONLY = True
 
 # SECURITY WARNING: keep the secret key used in production secret!
 from django.core.exceptions import ImproperlyConfigured
-def get_env_variable(var_name):
+def get_env_variable(var_name, filename):
     """ Get the environment variable or return exception """
     try:
-        with open('/etc/folio_secret_key.txt') as f:
+        with open(filename) as f:
             var_name = f.read().strip()
         return var_name
     except KeyError:
         error_msg = "Set the %s environment variable" % var_name
         raise ImproperlyConfigured(error_msg)
 
-SECRET_KEY = get_env_variable("SECRET_KEY")
+SECRET_KEY = get_env_variable("SECRET_KEY", '/etc/folio_secret_key.txt')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -173,7 +173,17 @@ print 'Settings.py STATIC_URL: %s' % (STATIC_URL)
 ### settings_production.py file
 ### settings that are not environment dependent
 
-try:
-    from settings_production import *
-except ImportError:
+
+server  = get_env_variable("server", "/etc/server.txt")
+if server is "local":
+    try:
+        from settings_local import *
+    except ImportError:
+        pass
+elif server is "public":
+    try:
+        from settings_local import *
+    except ImportError:
+        pass
+else:
     pass
