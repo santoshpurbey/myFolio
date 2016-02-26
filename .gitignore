@@ -41,7 +41,7 @@ var/
 *.egg
 node_modules
 bower_components
-portfolio/static
+static
 
 # PyInstaller
 #  Usually these files are written by a python script from a template

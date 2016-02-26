@@ -43,11 +43,3 @@ if settings.DEBUG is False:   #if DEBUG is True it will be served automatically
                 'document_root': settings.MEDIA_ROOT,
             }),
     )
-else:
-    urlpatterns += [
-        url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
-            {'document_root': settings.STATIC_ROOT}),
-        url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
-            'document_root': settings.MEDIA_ROOT,
-        }),
-]
