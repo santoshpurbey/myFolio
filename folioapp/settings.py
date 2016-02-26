@@ -175,12 +175,13 @@ print 'Settings.py STATIC_URL: %s' % (STATIC_URL)
 
 
 server  = get_env_variable("server", "/etc/server.txt")
-if server is "local":
+if server == "local":
+    print server
     try:
         from settings_local import *
     except ImportError:
         pass
-elif server is "public":
+elif server == "public":
     try:
         from settings_local import *
     except ImportError:
