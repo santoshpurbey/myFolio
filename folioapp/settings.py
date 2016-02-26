@@ -46,7 +46,9 @@ from django.core.exceptions import ImproperlyConfigured
 def get_env_variable(var_name):
     """ Get the environment variable or return exception """
     try:
-        return os.environ[var_name]
+        with open('/etc/folio_secret_key.txt') as f:
+            var_name = f.read().strip()
+        return var_name
     except KeyError:
         error_msg = "Set the %s environment variable" % var_name
         raise ImproperlyConfigured(error_msg)
@@ -168,9 +170,11 @@ print 'Settings.py STATIC_ROOT: %s' % (STATIC_ROOT)
 print 'Settings.py STATIC_URL: %s' % (STATIC_URL)
 """
 
-### settings.py file
+### settings_production.py file
 ### settings that are not environment dependent
+"""
 try:
     from settings_production import *
 except ImportError:
     pass
+"""
