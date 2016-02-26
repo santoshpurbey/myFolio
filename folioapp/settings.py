@@ -124,8 +124,8 @@ DATABASES = {
     'default': {
         'ENGINE' : 'django.db.backends.mysql',
         'NAME' : 'folio_db',
-        'USER' : 'root',
-        'PASSWORD' : 'root',
+        'USER' : 'test',
+        'PASSWORD' : 'set',
         'HOST' : '',
         'PORT' : '',
     }
@@ -183,7 +183,7 @@ if server == "local":
         pass
 elif server == "public":
     try:
-        from settings_local import *
+        from settings_production import *
     except ImportError:
         pass
 else:
