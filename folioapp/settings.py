@@ -19,6 +19,28 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
+# set the SECURE_HSTS_SECONDS
+SECURE_HSTS_SECONDS = 3600
+# recomended
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+# set X_FRAME_OPTIONS
+X_FRAME_OPTIONS = 'DENY'
+
+#  SECURE_CONTENT_TYPE_NOSNIFF set to True, so your pages will not be served with an 'x-content-type-options: nosniff' header
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+# SECURE_BROWSER_XSS_FILTER set to True, so your pages will not be served with an 'x-xss-protection: 1; mode=block' header
+SECURE_BROWSER_XSS_FILTER = True
+
+# SESSION_COOKIE_SECURE is not set to True. Using a secure-only session cookie makes it more difficult for network traffic sniffers to hijack user sessions.
+SESSION_COOKIE_SECURE = True
+
+# set CSRF_COOKIE_SECURE to True
+CSRF_COOKIE_SECURE = True
+# set CSRF_COOKIE_HTTPONLY to True
+CSRF_COOKIE_HTTPONLY = True
+
 # SECURITY WARNING: keep the secret key used in production secret!
 from django.core.exceptions import ImproperlyConfigured
 def get_env_variable(var_name):
@@ -148,8 +170,9 @@ print 'Settings.py STATIC_URL: %s' % (STATIC_URL)
 
 ### settings.py file
 ### settings that are not environment dependent
-
+"""
 try:
     from settings_production import *
 except ImportError:
     pass
+"""
