@@ -88,31 +88,15 @@
                           </ul>
                       </div>
                     </div>
-
+                  {% for project_image in project_images %}
                   <div class="block-single margBottom clearfix">
                     <div class="col-md-10 col-md-offset-1">
-                    <img src="{% static 'img/portfolio/large-1.jpg' %}" alt="">
+
+                    <img src="/media/{{ project_image }}" alt="">
                     </div>
                   </div>
+                  {% endfor %}
                   <div class="block-single margBottom clearfix">
-                      <div class="col-md-10 col-md-offset-1">
-                        <img src="{% static 'img/portfolio/large-2.jpg' %}" alt="">
-                      </div>
-                    </div>
-                    <div class="block-single margBottom clearfix">
-                      <div class="col-md-10 col-md-offset-1">
-                        <img src="{% static 'img/portfolio/large-3.jpg' %}" alt="">
-                      </div>
-                    </div>
-
-
-                    <div class="block-single margBottom clearfix">
-                      <div class="col-md-10 col-md-offset-1">
-                      <img src="{% static 'img/portfolio/large-4.jpg' %}" alt="">
-                      </div>
-                    </div>
-
-
 
                     <div class="block-single margBottom clearfix">
                       <div class="col-md-10 col-md-offset-1">

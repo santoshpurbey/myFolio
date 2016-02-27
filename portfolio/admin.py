@@ -1,5 +1,5 @@
 from django.contrib import admin
-from models import Project, Category, Skill
+from models import Project, Category, Skill, ProjectImage
 
 
 # set up automated slug creation
@@ -13,3 +13,4 @@ class ProjectAdmin(admin.ModelAdmin):
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(Category)
 admin.site.register(Skill)
+admin.site.register(ProjectImage)

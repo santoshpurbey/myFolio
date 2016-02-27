@@ -3,7 +3,7 @@ from django.http import Http404
 from django.shortcuts import render, redirect
 from django.template.context import RequestContext
 from django.utils import timezone
-from .models import Project, Skill, Category
+from .models import Project, Skill, Category, ProjectImage
 
 def about(request):
     return render( request, 'about.html', {} )
@@ -16,6 +16,7 @@ def portfolio_detail(request, pk):
     project = Project.objects.get(pk=pk)
     skills = Skill.objects.filter(project__pk=pk)
     categories = Category.objects.filter(project__pk=pk)
+    project_images = ProjectImage.objects.filter(project__pk=pk)
 
     return render(
         request,
@@ -24,6 +25,7 @@ def portfolio_detail(request, pk):
             'project': project,
             'skills': skills,
             'categories': categories,
+            'project_images': project_images
         }
     )
 

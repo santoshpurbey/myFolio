@@ -16,7 +16,7 @@ class Project(models.Model):
     client = models.CharField(max_length=200, blank=True, null=True)
     categories = models.ForeignKey('Category', blank=True, null=True)
     skills = models.ManyToManyField('Skill')
-    image = models.ImageField(upload_to='portfolio', blank=True, null=True)
+    image = models.ImageField(upload_to='portfolio-featured', blank=True, null=True)
     user = models.OneToOneField(User, blank=True, null=True)
 
     class Meta:
@@ -52,3 +52,14 @@ class Category(models.Model):
 
     def __unicode__(self):
         return self.name
+
+class ProjectImage(models.Model):
+    project = models.ForeignKey('Project')
+    image = models.ImageField(upload_to='porfolio-images')
+    desc = models.TextField()
+
+    def __unicode__(self):
+        return self.image.name
+
+    def get_absolute_url(self):
+        return self.image.url
