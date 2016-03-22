@@ -47,47 +47,47 @@
     						</figcaption>
 
     					</figure>
-    					<!--End profile image-->
-    					<!--Main navigation-->
-    							<nav id="main-nav" class="main-nav tabbed">
-    						<ul>
-                  {% url 'about' as url %}
-    							<li ><a {% if request.path == url %}class="active"{% endif %} href="{{ url }}"><i class="icon-user"></i>About</a></li>
-                  {% url 'portfolio_list' as url %}
-    							<li><a  {% if request.path == url %}class="active"{% endif %} href="{{ url }}"><i class="icon-camera"></i>Portfolio</a></li>
-    							<li><a  href="#blog"><i class="icon-chat"></i>Blog</a></li>
-                  {% url 'contact' as url %}
-    							<li><a {% if request.path == url %}class="active"{% endif %} href="{{ url }}"><i class="icon-phone"></i>Contact</a></li>
-    						</ul>
-    					</nav>
-    						<!--End main navigation-->
-    				</div>
-    				<!--End main header-->
-    				<div class="bottom-header bgWhite ofsTSmall ofsBSmall tCenter">
-    					<ul class="social">
-              <li><a href="https://github.com/kkampardi"><i class="icon-github"></i></a></li>
-              <li><a href="https://www.linkedin.com/in/katerina-kampardi-6a319582?trk=nav_responsive_tab_profile"><i class="icon-linkedin"></i></a></li>
-    					<li><a href="https://twitter.com/kkampardi"><i class="icon-twitter"></i></a></li>
-              <li><a href="https://www.facebook.com/katerina.kabardi"><i class="icon-facebook"></i></a></li>
-    				</ul>
+      					<!--End profile image-->
+      					<!--Main navigation-->
+      							<nav id="main-nav" class="main-nav tabbed">
+      						<ul>
+                    {% url 'about' as url %}
+      							<li ><a {% if request.path == url %}class="active"{% endif %} href="{{ url }}"><i class="icon-user"></i>About</a></li>
+                    {% url 'portfolio_list' as url %}
+      							<li><a  {% if request.path == url %}class="active"{% endif %} href="{{ url }}"><i class="icon-camera"></i>Portfolio</a></li>
+      							<li><a  href="#blog"><i class="icon-chat"></i>Blog</a></li>
+                    {% url 'contact' as url %}
+      							<li><a {% if request.path == url %}class="active"{% endif %} href="{{ url }}"><i class="icon-phone"></i>Contact</a></li>
+      						</ul>
+      					</nav>
+      						<!--End main navigation-->
+      				</div>
+      				<!--End main header-->
+      				<div class="bottom-header bgWhite ofsTSmall ofsBSmall tCenter">
+      					<ul class="social">
+                <li><a href="https://github.com/kkampardi"><i class="icon-github"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/katerina-kampardi-6a319582?trk=nav_responsive_tab_profile"><i class="icon-linkedin"></i></a></li>
+      					<li><a href="https://twitter.com/kkampardi"><i class="icon-twitter"></i></a></li>
+                <li><a href="https://www.facebook.com/katerina.kabardi"><i class="icon-facebook"></i></a></li>
+      				</ul>
 
-    				<p>&copy; 2016 Taliban.</p>
-    				</div>
-    		  </header>
-    		  <!--End  header-->
-    	  </div>
-    	  <!--End left content-->
+      				<p>&copy; 2016 Taliban.</p>
+      				</div>
+      		  </header>
+          		  <!--End  header-->
+          </div>
+          <!--End left content-->
 
-        <!--Right content-->
-    	  <div class="col-md-9 right-content" style="">
-{% block content %}
+            <!--Right content-->
+        <div class="col-md-9 right-content" style="">
+          {% block content %}
 
-{% endblock %}
+          {% endblock %}
         </div>
 
-</div>
-<!--End  row-->
-</div>
+    </div>
+    <!--End  row-->
+  </div>
 <!--End  container-->
 </div>
 <!--End wrapper-->

@@ -56,15 +56,6 @@ def get_env_variable(var_name, filename):
 
 SECRET_KEY = get_env_variable("SECRET_KEY", '/etc/folio_secret_key.txt')
 
-"""
-# SECURITY WARNING: don't run with debug turned on in production!
-
-ALLOWED_HOSTS = ['localhost']
-
-#DEBUG = True
-"""
-#ALLOWED_HOSTS = []
-
 # Application definition
 
 INSTALLED_APPS = (
@@ -119,7 +110,7 @@ WSGI_APPLICATION = 'folioapp.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
+"""
 DATABASES = {
     'default': {
         'ENGINE' : 'django.db.backends.mysql',
@@ -131,7 +122,7 @@ DATABASES = {
     }
 }
 
-
+"""
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
