@@ -37,7 +37,7 @@
 												</div>
 												<div class="post-title">
 			                      <h1>{{post.title}}</h1>
-												    <span class="meta-date">{{post.publish}}</span>
+												    <span class="meta-date">{{post.publish|date:"M d, Y"}}</span>
 			                  </div>
 								        <ul class="post-meta">
 			                    <li>
@@ -45,7 +45,16 @@
 			                            <span>Post by <a href="#">{{post.author}}</a></span>
 			                    </li>
 			                    <li>
-			                      <i class="icon-layout"></i><span> Tagged in <a href="#">{{post.category}}</a></span>
+			                      <i class="icon-layout"></i><span> Tagged in <a href="#">
+                              {%for tag in tags %}
+                                {{tag.name}}
+                              {% endfor %}</a></span>
+			                    </li>
+                          <li>
+			                      <i class="icon-layout"></i><span> Category <a href="#">
+                              {%for category in categories %}
+                                {{category.name}}
+                              {% endfor %}</a></span>
 			                    </li>
 												  <li>
 				                    <i class="icon-comment"></i><span>Comments <a href="#">(2)</a></span>

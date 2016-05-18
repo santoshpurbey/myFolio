@@ -3,7 +3,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
-
+from django.forms import ModelForm
 
 class Project(models.Model):
     name = models.CharField(max_length=200)
@@ -58,6 +58,19 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+class Tag(models.Model):
+    name = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=50, unique=True)
+
+    class Meta:
+        ordering = ["name"]
+
+    def __unicode__(self):
+        return self.name
+
+    def __str__(self):
+        return self.name
+
 class ProjectImage(models.Model):
     project = models.ForeignKey('Project')
     image = models.ImageField(upload_to='porfolio-images')
@@ -80,7 +93,9 @@ class Post(models.Model):
     author = models.ForeignKey(User,related_name='blog_posts')
     short_description = models.CharField(max_length=300)
     body = RichTextField()
-    publish = models.DateTimeField(default=timezone.now)
+    category = models.ManyToManyField('Category')
+    tag = models.ManyToManyField('Tag')
+    publish = models.DateTimeField(default=timezone.now, )
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10,choices=STATUS_CHOICES,default='draft')

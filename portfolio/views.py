@@ -3,7 +3,7 @@ from django.http import Http404
 from django.shortcuts import render, redirect
 from django.template.context import RequestContext
 from django.utils import timezone
-from .models import Project, Skill, Category, ProjectImage, Post
+from .models import Project, Skill, Category, ProjectImage, Post, Tag
 
 def about(request):
     return render( request, 'about.html', {} )
@@ -39,10 +39,16 @@ def blog_list(request):
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
 
+    #grub categories
+    categories = Category.objects.all()
+    #grub Tags
+    tags = Tag.objects.all()
+
     return render(
         request, 'blog/post_detail.html',
         {
             'post': post,
-
+            'categories' : categories,
+            'tags' : tags,
         }
     )
