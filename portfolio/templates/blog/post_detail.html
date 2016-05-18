@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content %}
+			<!--Right content-->
+<div class="col-md-9 right-content">
+<!--Portfolio Tab-->
+	<section id="blog" class="bgWhite ofsInBottom">
+	<!--Portfolio -->
+		<div class="blog">
+		<!--Main title-->
+		  <div class="main-title">
+				<h1>Hi! I wrote something for you</h1>
+					<div class="divider">
+						<div class="zigzag large clearfix "  data-svg-drawing="yes" >
+    					<svg xml:space="preserve" viewBox="0 0 69.172 14.975" width="37" height="28" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    					<path d="M1.357,12.26 10.807,2.81 20.328,12.332
+    						29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 "  style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"/>
+    					</svg>
+					    </div>
+					  </div>
+					</div>
+				<!--End main title-->
+				<!--Content-->
+				<div class="content single">
+  			<!--Block content-->
+					<div class="block-content ">
+						<!--Works-->
+							<div class="blog">
+					    <!--Row-->
+						   <div class="row">
+									<!--Blog posts-->
+									<div class="block-posts clearfix">
+										<!--Block post-->
+										<div class="block-post single clearfix">
+											<div class="col-md-12">
+												<div class="post-media margBSmall">
+													<img src="/media/{{post.image}}" alt=""/>
+												</div>
+												<div class="post-title">
+			                      <h1>{{post.title}}</h1>
+												    <span class="meta-date">{{post.publish}}</span>
+			                  </div>
+								        <ul class="post-meta">
+			                    <li>
+			                      <i class="icon-user"></i>
+			                            <span>Post by <a href="#">{{post.author}}</a></span>
+			                    </li>
+			                    <li>
+			                      <i class="icon-layout"></i><span> Tagged in <a href="#">{{post.category}}</a></span>
+			                    </li>
+												  <li>
+				                    <i class="icon-comment"></i><span>Comments <a href="#">(2)</a></span>
+				                  </li>
+                        </ul>
+											<hr>
+	                    <p> {{post.body|safe}}</p>
+										</div>
+									</div>
+										<!--End block post-->
+								</div>
+										<!--End blog posts-->
+							</div>
+										<!--End row-->
+	          </div>
+										<!--End blog-->
+						</div>
+										<!--End block content-->
+			</div>
+										<!--End content-->
+    </div>
+												<!--End block content-->
+</div>
+												<!--End content-->
+
+{% endblock %}

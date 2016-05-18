@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!--Portfolio Tab-->
+<section id="blog" class="bgWhite ofsInBottom">
+	<!--Portfolio -->
+		<div class="blog">
+		<!--Main title-->
+  		<div class="main-title">
+    		<h1>Hi! I wrote something for you</h1>
+    		<div class="divider">
+    		    <div class="zigzag large clearfix " data-svg-drawing="yes">
+    					<svg xml:space="preserve" viewBox="0 0 69.172 14.975" width="37" height="28" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    					<path d="M1.357,12.26 10.807,2.81 20.328,12.332
+    						29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 " style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"></path>
+    					</svg>
+    				 </div>
+    				</div>
+    		</div>
+  			<!--End main title-->
+  			<!--Content-->
+			<div class="content">
+			<!--Block content-->
+  			<div class="block-content ">
+  			<!--Works-->
+    			<div class="blog">
+    			<!--Row-->
+						<div class="row">
+							<!--Blog posts-->
+								<div class="block-posts ">
+                  {% for post in posts %}
+									<!--Block post-->
+										<div class="block-post clearfix">
+											<div class="col-md-12">
+												<div class="post-media margBSmall">
+													<img src="../media/{{post.image}}" alt="">
+												</div>
+												<div class="post-title">
+			                    <a href="{% url 'post_detail' pk=post.pk %}">
+			                      <h1>{{post.title}}</h1>
+			                    </a>
+						              <span class="meta-date">{{post.publish}}</span>
+			                  </div>
+											  <ul class="post-meta">
+			                    <li><i class="icon-user"></i>
+			                        <span>Post by<a href="#"> {{post.author}}</a></span>
+			                    </li>
+			                    <li>
+  			                    <i class="icon-layout"></i>
+  			                    <span>Tagged in<a href="#"> Web Design</a></span>
+			                    </li>
+												  <li>
+                            <i class="icon-comment"></i>
+				                    <span>Comments<a href="#"> (2)</a></span>
+				                  </li>
+			                   </ul>
+											<hr>
+											<p>{{post.short_description|safe}}</p>
+												<a href="{% url 'post_detail' pk=post.pk %}" class="but brd">Read More</a>
+											</div>
+											<div class="clearfix"></div>
+											<!--Divider-->
+											<div class="divider-m tCenter margTSmall margBottom clearfix">
+												<div class="col-md-12">
+													<div class="zigzag medium clearfix " data-svg-drawing="yes">
+                        		<svg xml:space="preserve" viewBox="0 0 69.172 14.975" width="45" height="5" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        		<path d="M1.357,12.26 10.807,2.81 20.328,12.332
+                        			29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 " style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"></path>
+                        		</svg>
+                        	</div>
+												</div>
+											</div>
+											<!--End divider-->
+							      </div>
+										<!--End block post-->
+                    {% endfor %}
+                  </div>
+									<!--End blog posts-->
+	              </div>
+												<!--End row-->
+								<div class="block pagination tCenter margTSmall margBSmall">
+										<ul>
+														<li class="prev"><a href="#"><i class="icon-left-open-mini"></i></a></li>
+														<li><a href="#">1</a></li>
+														<li><a class="selected" href="#">2</a></li>
+														<li><a href="#">3</a></li>
+														<li><a href="#">4</a></li>
+														<li class="next"><a href="#"><i class="icon-right-open-mini"></i></a></li>
+											</ul>
+								</div>
+              </div>
+											<!--End blog-->
+						</div>
+											<!--End block content-->
+
+
+
+											</div>
+											<!--End content-->
+
+
+
+
+
+
+											<!--Button-->
+											<div class="button ofsInTop tCenter">
+
+													<div class="divider">
+															<div class="zigzag large clearfix " data-svg-drawing="yes">
+				<svg xml:space="preserve" viewBox="0 0 69.172 14.975" width="37" height="28" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
+				<path d="M1.357,12.26 10.807,2.81 20.328,12.332
+					29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 " style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"></path>
+				</svg>
+				</div>
+				</div>
+
+
+				                               	<!--Row-->
+												<div class="row ">
+
+
+													<div class="col-md-12">
+														<a class="but opc-1 ico" href="#">Download my cv</a>
+														<a class="but opc-2 ico" href="#">Print my resume</a>
+
+													</div>
+
+
+
+													</div>
+													<!--End row-->
+
+
+					                            </div>
+												<!--End button-->
+
+
+
+
+												</div>
+												<!--End blog-->
+
+											</section>
+												<!--End blog tab-->
+
+
+{% endblock %}

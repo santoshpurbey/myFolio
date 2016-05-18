@@ -1,7 +1,7 @@
 .DS_Store
 /*.tgz
 db.sqlite3
-venv
+folioenv
 *.pyc
 staticfiles
 .DS_STORE
