@@ -39,16 +39,20 @@
 			                    <a href="{% url 'post_detail' pk=post.pk %}">
 			                      <h1>{{post.title}}</h1>
 			                    </a>
-						              <span class="meta-date">{{post.publish}}</span>
+						              <span class="meta-date">{{post.publish|date:"M d, Y"}}</span>
 			                  </div>
 											  <ul class="post-meta">
 			                    <li><i class="icon-user"></i>
 			                        <span>Post by<a href="#"> {{post.author}}</a></span>
 			                    </li>
-			                    <li>
+			                    <!--li> TODO: make an custom template script to load tags
   			                    <i class="icon-layout"></i>
-  			                    <span>Tagged in<a href="#"> Web Design</a></span>
-			                    </li>
+  			                    <span>Tagged in<a href="#">
+															{% for tag in tags %}
+																{{tag.name}}
+															{% endfor %}
+														</a></span>
+			                    </li-->
 												  <li>
                             <i class="icon-comment"></i>
 				                    <span>Comments<a href="#"> (2)</a></span>
