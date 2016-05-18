@@ -10,7 +10,7 @@ class Project(models.Model):
     slug = models.SlugField(max_length=50, unique=True)
     url = models.URLField(blank=True, null=True)
     short_description = models.TextField(blank=True, null=True)
-    description = models.TextField(blank=True, null=True)
+    description = RichTextField()
     job = models.CharField(max_length=200, blank=True, null=True)
     start_date = models.DateField(blank=True, null=True)
     end_date = models.DateField(blank=True, null=True)
