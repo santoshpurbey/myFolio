@@ -58,19 +58,6 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-class Tag(models.Model):
-    name = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=50, unique=True)
-
-    class Meta:
-        ordering = ["name"]
-
-    def __unicode__(self):
-        return self.name
-
-    def __str__(self):
-        return self.name
-
 class ProjectImage(models.Model):
     project = models.ForeignKey('Project')
     image = models.ImageField(upload_to='porfolio-images')
@@ -94,7 +81,6 @@ class Post(models.Model):
     short_description = models.CharField(max_length=300)
     body = RichTextField()
     category = models.ManyToManyField('Category')
-    tag = models.ManyToManyField('Tag')
     publish = models.DateTimeField(default=timezone.now, )
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -109,3 +95,20 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Comment(models.Model):
+    post = models.ForeignKey(Post, related_name='comments')
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    body = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now_add=True)
+    active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ('created',)
+
+
+    def __str__(self):
+        return 'Comment by {} on {}' . format(self.name, self.post)

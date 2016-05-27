@@ -56,8 +56,11 @@
                               {% endfor %}</a></span>
 			                    </li>
 												  <li>
-				                    <i class="icon-comment"></i><span>Comments <a href="#">(2)</a></span>
+														{% with comments.count as total_comments %}
+				                    <i class="icon-comment"></i><span>
+															{{ total_comments }} Comment {{total_comments|pluralize}} <a href="#"></a></span>
 				                  </li>
+													{% endwith %}
                         </ul>
 											<hr>
 	                    <p> {{post.body|safe}}</p>
@@ -98,6 +101,7 @@
 											 <div class="col-md-12">
 												 <!--Comments and replys-->
 												 <ul class="comments clearfix">
+													{% for comment in comments %}
 													 <li>
 															 <div class="comment">
 
@@ -110,18 +114,18 @@
 															 </div>
 															 <div class="comment-content">
 																 <div class="comments-info">
-																	 <div class="author"><a href="#">Benaissa Ghrib</a></div>
-																	 <div class="date"><a href="#">July 19, 2013 at 12 am</a></div>
+																	 <div class="author"><a href="#">{{comment.name}}</a></div>
+																	 <div class="date"><a href="#">{{comment.created}}</a></div>
 																 </div>
-																	 <p class="expert">Pellentesque habitant morbi tristique senectus
-																	 et netus et malesuada fames ac turpis egestas. Curabitur tempor
-																		vehicula porta. Phasellus magna arcu, commodo non porta vulputate,
-																		mattis eget lacus. Nulla eget leo ipsum.
+																	 <p class="expert">{{comment.body|linebreaks}}
 																		</p>
 																</div>
 															</div>
 														</li>
-
+													{% empty %}
+														<p>There are no comments yet</p>
+													{% endfor %}
+													<!-- replys
 													 <li class="replys children">
 														<div class="comment children">
 															 <div class="author-img">
@@ -144,7 +148,8 @@
 															 </div>
 													 	 </div>
 													 </li>
-								 			 </ul>
+												 -->
+											 </ul>
 								 		 	<!--End comments and replys-->
 									 </div>
 									</div>
@@ -155,6 +160,9 @@
 								 <!--End block content-->
 							 </div>
 							 <!--End content-->
+							 {% if new_comment %}
+							 <h1>Your Comment has beeing added</h1>
+							 {% else %}
 								 <!--Main title-->
 									 <div class="main-title">
 										 <h1>Leave a comment</h1>
@@ -173,44 +181,51 @@
 									 <!--Block content-->
 									 <div class="block-content margBMedium">
 									 <!--Reply-->
-									 <div class="block-reply">
-											 <!--Row-->
-											 <div class="row">
-										 <div class="col-md-12">
+									 	<div class="block-reply">
+											 <!--Row -- >
+											<!--div class="row">
+												 <div class="col-md-12">
+													  <form class="reply-form" action="." method="post">
+														  <div class="input-columns clearfix">
+															  <div class="column1">
+															    <div class="column-inner">
+																  	<input type="text" placeholder="Name" value="" id="name" name="name">
+																  </div>
+															  </div>
+															  <div class="column2">
+															    <div class="column-inner">
+															  		<input type="text" placeholder="Email" value="" id="email" name="email">
+																  </div>
+															  </div>
+														  </div>
+														  <input type="text" placeholder="WebSite" value="" id="website" name="website">
+															  <textarea name="message" placeholder="Message" id="message" cols="45" rows="10"></textarea>
+															{% csrf_token %}
+														  <input type="submit" value="Post a comment" class="but opc-2 submit">
+													  </form>
+												</div>
 
-											 <form class="reply-form" action="#">
-
-												 <!--Input columns-->
-												 <div class="input-columns clearfix">
-
-												 <div class="column1">
-													 <div class="column-inner">
-												 <input type="text" placeholder="Name" value="" id="name" name="name">
-												 </div>
-												 </div>
-
-												 <!--Column-->
-												 <div class="column2">
-													 <div class="column-inner">
-												 <input type="text" placeholder="Email" value="" id="email" name="email">
-												 </div>
-												 </div>
-												 <!--End column-->
-												 </div>
-												 <!--End input columns-->
-												 <input type="text" placeholder="WebSite" value="" id="website" name="website">
-											 <textarea name="message" placeholder="Message" id="message" cols="45" rows="10"></textarea>
-											 <input type="submit" value="Post a comment" class="but opc-2 submit">
-											 </form>
-											 </div>
 										 </div>
 										 <!--End row-->
+
+										 {% if new_comment %}
+										 <h2>Your Comment has beeing added</h1>
+										 {% else %}
+										   <h2>Add new comment </h2>
+										   <form action="." method="post">
+										     {{ comment_form.as_p }}
+										     {% csrf_token %}
+										     <p><input type="submit" value="Add comment" ></p>
+										   </form>
+										   {% endif %}
+
 									 </div>
 									 <!--End reply-->
 									 </div>
 									 <!--End block content-->
 									 </div>
 									 <!--End content--f>
+									 {% endif %}
 								 <!--Button-->
 									 <div class="button ofsInTop tCenter">
 										 <div class="divider">

@@ -1,6 +1,5 @@
 from django.contrib import admin
-from models import Project, Category, Skill, ProjectImage, Post, Tag
-
+from models import Project, Category, Skill, ProjectImage, Post, Comment
 
 # set up automated slug creation
 class ProjectAdmin(admin.ModelAdmin):
@@ -17,9 +16,10 @@ class CategoryAdmin(admin.ModelAdmin):
     model = Category
     prepopulated_fields = { 'slug':('name',)}
 
-class TagAdmin(admin.ModelAdmin):
-    model = Tag
-    prepopulated_fields = { 'slug':('name',)}
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'post', 'created', 'active')
+    list_filter = ('active', 'created', 'updated')
+    search_fields = ('name', 'email', 'body')
 
 # Register your models here.
 
@@ -28,4 +28,4 @@ admin.site.register(Category, CategoryAdmin)
 admin.site.register(Skill)
 admin.site.register(ProjectImage)
 admin.site.register(Post, PostAdmin)
-admin.site.register(Tag, TagAdmin)
+admin.site.register(Comment, CommentAdmin)

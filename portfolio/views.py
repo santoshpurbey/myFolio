@@ -3,7 +3,8 @@ from django.http import Http404
 from django.shortcuts import render, redirect
 from django.template.context import RequestContext
 from django.utils import timezone
-from .models import Project, Skill, Category, ProjectImage, Post, Tag
+from .forms import CommentForm
+from .models import Project, Skill, Category, ProjectImage, Post, Comment
 
 def about(request):
     return render( request, 'about.html', {} )
@@ -41,14 +42,31 @@ def post_detail(request, pk):
 
     #grub categories
     categories = Category.objects.all()
-    #grub Tags
-    tags = Tag.objects.all()
+
+    ##### Comments
+
+    # List of active comments for this post
+    comments = post.comments.filter(active=True)
+
+    if request.method == 'POST':
+        # A comment was posted
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            # Create comment object but dont save it to db yet
+            new_comment = comment_form.save(commit=False)
+            # Assign the current post to this comment
+            new_comment.post = post
+            # save the comment to the database
+            new_comment.save()
+    else:
+        comment_form = CommentForm()
 
     return render(
         request, 'blog/post_detail.html',
         {
             'post': post,
             'categories' : categories,
-            'tags' : tags,
+            'comments' : comments,
+            'comment_form' : comment_form,
         }
     )
