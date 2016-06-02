@@ -2,6 +2,7 @@
 /*.tgz
 db.sqlite3
 folioenv
+migrations
 *.pyc
 staticfiles
 .DS_STORE
