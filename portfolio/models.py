@@ -17,7 +17,6 @@ class Project(models.Model):
     categories = models.ForeignKey('Category', blank=True, null=True)
     skills = models.ManyToManyField('Skill')
     image = models.ImageField(upload_to='portfolio', blank=True, null=True)
-    user = models.OneToOneField(User, blank=True, null=True)
 
     class Meta:
         ordering = [ '-end_date', ]
