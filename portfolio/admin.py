@@ -4,7 +4,7 @@ from models import Project, Category, Skill, ProjectImage, Post, Comment
 # set up automated slug creation
 class ProjectAdmin(admin.ModelAdmin):
     model = Project
-    list_display = ('name', 'description',)
+    list_display = ('name', 'short_description', 'client')
     prepopulated_fields = {'slug': ('name',)}
 
 class PostAdmin(admin.ModelAdmin):

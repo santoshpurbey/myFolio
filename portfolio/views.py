@@ -10,7 +10,7 @@ def about(request):
     return render( request, 'about.html', {} )
 
 def portfolio_list(request):
-    projects = Project.objects.filter(start_date__lte=timezone.now()).order_by('start_date')
+    projects = Project.objects.filter(end_date__lte=timezone.now()).order_by('end_date')
     return render(request, 'portfolio/portfolio_list.html', {'projects': projects})
 
 def portfolio_detail(request, pk):

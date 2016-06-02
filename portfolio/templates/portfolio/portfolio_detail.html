@@ -88,11 +88,17 @@
                           </ul>
                       </div>
                     </div>
+                    <div class="block-single margBottom clearfix">
+                      <div class="col-md-10 col-md-offset-1">
+
+                      <img src="../media/{{project_image}}" alt="{{project.name}}">
+                      </div>
+                    </div>
                   {% for project_image in project_images %}
                   <div class="block-single margBottom clearfix">
                     <div class="col-md-10 col-md-offset-1">
 
-                    <img src="/media/{{ project_image }}" alt="">
+                    <img src="../media/{{project_image}}" alt="{{project.name}}">
                     </div>
                   </div>
                   {% endfor %}

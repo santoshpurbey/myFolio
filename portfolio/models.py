@@ -12,16 +12,15 @@ class Project(models.Model):
     short_description = models.TextField(blank=True, null=True)
     description = RichTextField()
     job = models.CharField(max_length=200, blank=True, null=True)
-    start_date = models.DateField(blank=True, null=True)
     end_date = models.DateField(blank=True, null=True)
     client = models.CharField(max_length=200, blank=True, null=True)
     categories = models.ForeignKey('Category', blank=True, null=True)
     skills = models.ManyToManyField('Skill')
-    image = models.ImageField(upload_to='portfolio-featured', blank=True, null=True)
+    image = models.ImageField(upload_to='portfolio', blank=True, null=True)
     user = models.OneToOneField(User, blank=True, null=True)
 
     class Meta:
-        ordering = ['-start_date', '-end_date', ]
+        ordering = [ '-end_date', ]
 
     def __unicode__(self):
         return self.name
@@ -30,8 +29,6 @@ class Project(models.Model):
         self.published_date = timezone.now()
         self.save()
 
-    def __str__(self):
-        return self.name
 
 class Skill(models.Model):
     name = models.CharField(max_length=50)
@@ -55,8 +52,6 @@ class Category(models.Model):
     def __unicode__(self):
         return self.name
 
-    def __str__(self):
-        return self.name
 
 class ProjectImage(models.Model):
     project = models.ForeignKey('Project')
@@ -90,8 +85,6 @@ class Post(models.Model):
     class Meta:
         ordering = ('-publish',)
 
-    def __unicode__(self):
-        return self.title
 
     def __str__(self):
         return self.title
