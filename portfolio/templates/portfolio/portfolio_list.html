@@ -35,7 +35,9 @@
                             <li><a data-filter="" href="#">Other</a></li-->
                             <li><a data-filter="all" href="#" class="active">all</a></li>
                             {% for category in categories %}
+                            {% if category.projects.all %}
                             <li><a  data-filter="{{category.name}}" href="#">{{category.name}}</a></li>
+                            {% endif %}
                             {% endfor %}
                         </ul>
                         </div>

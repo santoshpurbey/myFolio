@@ -133,10 +133,11 @@
                 <!--Row-->
                   <div class="row ">
 
-
+                    {% if project.url %}
                     <div class="col-md-12">
-                      <a class="but opc-3 ico" href="http://kkampardi.graphicode.gr:8000/home">view project online</a>
+                      <a class="but opc-3 ico" href="{{project.url}}">view project online</a>
                     </div>
+                    {% endif %}
                   </div>
                     <!--End row-->
                 </div>

@@ -14,7 +14,7 @@ class Project(models.Model):
     job = models.CharField(max_length=200, blank=True, null=True)
     end_date = models.DateField(blank=True, null=True)
     client = models.CharField(max_length=200, blank=True, null=True)
-    categories = models.ForeignKey('Category', blank=True, null=True)
+    categories = models.ForeignKey('Category', blank=True, null=True, related_name="projects")
     skills = models.ManyToManyField('Skill')
     image = models.ImageField(upload_to='portfolio', blank=True, null=True)
 
@@ -74,7 +74,7 @@ class Post(models.Model):
     author = models.ForeignKey(User,related_name='blog_posts')
     short_description = models.CharField(max_length=300)
     body = RichTextField()
-    category = models.ManyToManyField('Category')
+    category = models.ManyToManyField('Category', related_name="post")
     publish = models.DateTimeField(default=timezone.now, )
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
