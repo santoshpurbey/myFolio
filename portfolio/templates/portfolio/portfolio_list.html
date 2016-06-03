@@ -28,10 +28,21 @@
                       <div class="row">
                         <div class="block-filter tCenter">
                           <ul id="category" class="filter">
-                            <li><a data-filter="all" href="#" class="active">all</a></li>
+                            <!--li><a data-filter="all" href="#" class="active">all</a></li>
                             <li><a data-filter="web" href="#">AngularJs</a></li>
                             <li><a data-filter="graphic" href="#">Django</a></li>
-                            <li><a data-filter="motion" href="#">Other</a></li>
+                            <li><a data-filter="motion" href="#">In Progess</a></li>
+                            <li><a data-filter="" href="#">Other</a></li-->
+                            <li><a data-filter="all" href="#" class="active">all</a></li>
+                            {% for category in categories %}
+                            <li><a
+                              {% if category.name == 'Django' %} data-filter="{{category.name}}"
+                              {% elif category.name == 'AngularJs' %} data-filter="{{category.name}}"
+                              {% elif category.name == 'In Progress'%} data-filter="{{category.name}}"
+                              {% else %} data-filter == "{{category.name}}"
+                              {% endif %}
+                              href="#">{{category.name}}</a></li>
+                            {% endfor %}
                         </ul>
                         </div>
                       </div>
@@ -56,7 +67,7 @@
                         {% for project in projects %}
                         <li class="col-md-4 ">
                           <!--Item-->
-                          <div class="item web">
+                          <div class="item {{project.categories}}">
                           <a href="{% url 'portfolio_detail' pk=project.pk %}">
                             <div class="desc">
                             <h3 class="proj-desc">{{project.name}}

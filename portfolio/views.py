@@ -11,7 +11,14 @@ def about(request):
 
 def portfolio_list(request):
     projects = Project.objects.filter(end_date__lte=timezone.now()).order_by('end_date')
-    return render(request, 'portfolio/portfolio_list.html', {'projects': projects})
+    categories = Category.objects.all()
+
+    return render(request, 'portfolio/portfolio_list.html',
+                {
+                    'projects': projects,
+                    'categories': categories
+
+                })
 
 def portfolio_detail(request, pk):
     project = Project.objects.get(pk=pk)
