@@ -126,17 +126,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
-if DEBUG:
-   STATIC_ROOT = os.path.join(BASE_DIR, '/static')
-   STATIC_URL = '/static/'
-   MEDIA_ROOT = os.path.join(BASE_DIR, '/media')
-   MEDIA_URL = '/media/'
-else:
-   STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-   STATIC_URL = '/static/'
-   MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-   MEDIA_URL = '/media/'
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 ACCOUNT_ACTIVATION_DAYS = 7
 
