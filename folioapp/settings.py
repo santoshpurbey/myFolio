@@ -109,21 +109,7 @@ BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
 WSGI_APPLICATION = 'folioapp.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-"""
-DATABASES = {
-    'default': {
-        'ENGINE' : 'django.db.backends.mysql',
-        'NAME' : 'folio_db',
-        'USER' : 'test',
-        'PASSWORD' : 'set',
-        'HOST' : '',
-        'PORT' : '',
-    }
-}
 
-"""
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
