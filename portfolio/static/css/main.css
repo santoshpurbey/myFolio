@@ -11,17 +11,12 @@
 ==================================================
 1-Preloader
 2-Header
-3-Tabs sections : 
+3-Tabs sections :
   3/1-About tab
   3/2-Portfolio tab
   3/3-Blog tab
   3/4-Contact tab
 4-Media queries
-
-
-
-
-
 
 /*Preloader*/
 #loader {
@@ -95,7 +90,7 @@
   left: 0;
   bottom: 0;
   right: 0;
-	
+
 }
 @-webkit-keyframes rotation {
   0% {
@@ -193,7 +188,7 @@
 	font-size:12px;
 	text-transform:uppercase;
 	padding:15px 25px;
-	
+
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);
@@ -205,10 +200,10 @@
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   width:100%;
-	
-	
-	
-	
+
+
+
+
 }
 
 
@@ -239,7 +234,7 @@
   transition-timing-function: ease-out;
 
 
-	
+
 }
 
 
@@ -296,7 +291,7 @@
 	position:absolute;
 	left:25px;
 	font-size:22px;
-	
+
 }
 
 
@@ -439,7 +434,7 @@
 	-ms-border-radius:50px;
 	-o-border-radius: 50px;
 	background: #ffffff; /* Old browsers */
-	
+
 }
 
 
@@ -504,7 +499,7 @@
 	margin-bottom:0;
 	font-size:13px;
 	color:#666666;
-	
+
 }
 
 
@@ -559,7 +554,7 @@
     top: 0;
     width: 3px;
 	height:100%;
-	
+
 }
 
 
@@ -615,7 +610,7 @@
 
 .exp .hgroup h4{
 	text-transform:none;
-	
+
 }
 
 
@@ -628,7 +623,7 @@
 	text-transform:none;
 	font-size:12px;
 	color:#666666;
-	
+
 }
 
 
@@ -652,7 +647,7 @@
 
 .block.service .det h3{
 	font-size:13px;
-	
+
 }
 
 
@@ -678,7 +673,7 @@
     margin: 0 32px;
     padding: 40px;
 	position:relative;
-	
+
 }
 
 
@@ -805,12 +800,12 @@
     width: 100%;
     z-index: 2;
     opacity:0;
-    
+
 }
 
 
 .item a .desc:hover{
-	opacity:1;	
+	opacity:1;
 }
 
 
@@ -847,13 +842,13 @@
 	display:inline-block;
 	position:relative;
 	width:100%;
-	
+
 }
 
 
 .block-nav-work ul {
 	text-align:center;
-	
+
 }
 
 
@@ -906,7 +901,7 @@
 	font-size:24px;
 	text-transform:none;
 	color:#666666;
-	
+
 }
 
 span.meta-date{
@@ -989,8 +984,8 @@ span.meta-date{
     position: relative;
     top: -1px;
 	height:52px;
-	height:auto !important; 
-	
+	height:auto !important;
+
 }
 
 .search-form input[type="text"] {
@@ -1002,7 +997,7 @@ span.meta-date{
     text-align: right;
     width: 100%;
 	text-transform:uppercase;
-	
+
 }
 .search-form input[type="submit"] {
   	height: 0;
@@ -1011,7 +1006,7 @@ span.meta-date{
     padding: 0;
     width: 0;
 	display:none;
-	
+
 }
 
 .search-form  i {
@@ -1279,8 +1274,8 @@ span.meta-date{
 	-o-border-radius: 25px;
 	border:15px solid #ffffff;
 /* Prevent background color leak outs */
-	 -webkit-background-clip: padding-box; 
-	 -moz-background-clip:padding; 
+	 -webkit-background-clip: padding-box;
+	 -moz-background-clip:padding;
 	 background-clip:padding-box;
 }
 
@@ -1288,8 +1283,8 @@ span.meta-date{
 .contact-form .submit:hover, .reply-form .submit:hover {
     background:#33373d;
 /* Prevent background color leak outs */
-	 -webkit-background-clip: padding-box; 
-	 -moz-background-clip:padding; 
+	 -webkit-background-clip: padding-box;
+	 -moz-background-clip:padding;
 	 background-clip:padding-box;
 }
 
@@ -1352,8 +1347,8 @@ span.meta-date{
     width: 90px;
 	border:15px solid #ffffff;
 /* Prevent background color leak outs */
-	 -webkit-background-clip: padding-box; 
-	 -moz-background-clip:padding; 
+	 -webkit-background-clip: padding-box;
+	 -moz-background-clip:padding;
 	 background-clip:padding-box;
 }
 
@@ -1396,8 +1391,8 @@ span.meta-date{
     width: 80px;
 	border: 15px solid #ffffff;
 /* Prevent background color leak outs */
-	 -webkit-background-clip: padding-box; 
-	 -moz-background-clip:padding; 
+	 -webkit-background-clip: padding-box;
+	 -moz-background-clip:padding;
 	 background-clip:padding-box;
 }
 
@@ -1434,7 +1429,7 @@ span.meta-date{
 	.contact-info li:last-child{padding-bottom:0;}
 	.contact-info li .ico{top:-80px;}
 	.img-profile .name-profile {display:none;}
-	
+
 }
 
 
@@ -1489,7 +1484,7 @@ span.meta-date{
 	.contact-info li:last-child{padding-bottom:0;}
 	.contact-info li .ico{top:-80px;}
 	.block-quote blockquote{padding-right:0;}
-	
+
 }
 
 
@@ -1538,10 +1533,10 @@ span.meta-date{
 	.contact-form .submit, .reply-form .submit{position:static;border:none;width:100%;}
 	.button .but{margin-bottom:10px;}
 	.block-quote blockquote{padding-right:0;}
-	
+
 }
 
 /* -------------------- End media queries -------------------- */
-
-
-
+.img-thumbnail {
+  height: 150px;
+}
