@@ -32,7 +32,7 @@ urlpatterns = [
         url(r'^$', TemplateView.as_view(template_name='about.html'), name='about'),
         url(r'^contact/$', TemplateView.as_view(template_name='contact.html'),
             name='contact'),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 ##code bellow added to fix server error when debug mode disabled
 ## this solution includes that portfolio/urls.py is not used anymore
