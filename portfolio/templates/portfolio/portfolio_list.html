@@ -35,13 +35,7 @@
                             <li><a data-filter="" href="#">Other</a></li-->
                             <li><a data-filter="all" href="#" class="active">all</a></li>
                             {% for category in categories %}
-                            <li><a
-                              {% if category.name == 'Django' %} data-filter="{{category.name}}"
-                              {% elif category.name == 'AngularJs' %} data-filter="{{category.name}}"
-                              {% elif category.name == 'In Progress' %} data-filter="{{category.name}}"
-                              {% elif  category.name == 'Other'%} data-filter == "{{category.name}}"
-                              {% endif %}
-                              href="#">{{category.name}}</a></li>
+                            <li><a  data-filter={{catetory.name}} href="#">{{category.name}}</a></li>
                             {% endfor %}
                         </ul>
                         </div>
