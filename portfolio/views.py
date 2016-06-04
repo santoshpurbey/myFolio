@@ -6,8 +6,10 @@ from django.utils import timezone
 from .forms import CommentForm
 from .models import Project, Skill, Category, ProjectImage, Post, Comment
 
+
 def about(request):
-    return render( request, 'about.html', {} )
+    return render(request, 'about.html', {})
+
 
 def portfolio_list(request):
     projects = Project.objects.filter(end_date__lte=timezone.now()).order_by('end_date')
@@ -20,10 +22,11 @@ def portfolio_list(request):
 
                 })
 
+
 def portfolio_detail(request, pk):
     project = Project.objects.get(pk=pk)
     skills = Skill.objects.filter(project__pk=pk)
-    categories = Category.objects.filter(project__pk=pk)
+    # categories = Category.objects.filter(project__pk=pk)
     project_images = ProjectImage.objects.filter(project__pk=pk)
 
     return render(
@@ -32,25 +35,28 @@ def portfolio_detail(request, pk):
         {
             'project': project,
             'skills': skills,
-            'categories': categories,
+            #'categories': categories,
             'project_images': project_images
         }
     )
 
+
 def contact(request):
-    return render( request, 'contact.html', {})
+    return render(request, 'contact.html', {})
+
 
 def blog_list(request):
     posts = Post.objects.all()
-    return render( request, 'blog/blog_list.html', {'posts' : posts })
+    return render(request, 'blog/blog_list.html', {'posts': posts})
+
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
 
-    #grub categories
+    # grub categories
     categories = Category.objects.all()
 
-    ##### Comments
+    # Comments
 
     # List of active comments for this post
     comments = post.comments.filter(active=True)
@@ -72,8 +78,8 @@ def post_detail(request, pk):
         request, 'blog/post_detail.html',
         {
             'post': post,
-            'categories' : categories,
-            'comments' : comments,
-            'comment_form' : comment_form,
+            'categories': categories,
+            'comments': comments,
+            'comment_form': comment_form,
         }
     )
