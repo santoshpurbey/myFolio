@@ -42,18 +42,21 @@
 								        <ul class="post-meta">
 			                    <li>
 			                      <i class="icon-user"></i>
-			                            <span>Post by <a href="#">{{post.author}}</a></span>
+			                            <span>Post by: <a href="#">{{post.author}}</a></span>
 			                    </li>
-			                    <li>
-			                      <i class="icon-layout"></i><span> Tagged in <a href="#">
+			                    <!--li>
+			                      <i class="icon-layout"></i><span> Tagged in: <a href="#">
                                 {{post.tag}}
                               </a></span>
-			                    </li>
+			                    </li-->
                           <li>
-			                      <i class="icon-layout"></i><span> Category <a href="#">
-                              {%for category in categories %}
-                                {{category.name}}
-                              {% endfor %}</a></span>
+			                      <i class="icon-layout"></i>
+														<span> Category: <a href="#">
+															{% for category in categories %}
+															{% if category.post.all %}
+																 {{category.name}} |
+															{% endif %}
+															{% endfor %}</a></span>
 			                    </li>
 												  <li>
 														{% with comments.count as total_comments %}
@@ -78,7 +81,7 @@
 							 </div>
 							 <!--End content-->
 						 <!--Main title-->
-							 <div class="main-title">
+							 <!--div class="main-title">
 								 <h1>Comments <span class="cm-count">(2)</span></h1>
 									 <div class="divider">
 											 <div class="zigzag large clearfix "  data-svg-drawing="yes" >
@@ -91,7 +94,7 @@
 							 </div>
 						 <!--End main title-->
  					 	<!--Content-->
-						 <div class="content">
+						 <!div class="content">
 								 <!--Block content-->
 								 <div class="block-content ">
 									 <!--Comment-->
@@ -100,7 +103,7 @@
 										 <div class="row">
 											 <div class="col-md-12">
 												 <!--Comments and replys-->
-												 <ul class="comments clearfix">
+												 <!--ul class="comments clearfix">
 													{% for comment in comments %}
 													 <li>
 															 <div class="comment">
@@ -148,8 +151,8 @@
 															 </div>
 													 	 </div>
 													 </li>
-												 -->
-											 </ul>
+
+											 </ul-->
 								 		 	<!--End comments and replys-->
 									 </div>
 									</div>
@@ -164,7 +167,7 @@
 							 <h1>Your Comment has beeing added</h1>
 							 {% else %}
 								 <!--Main title-->
-									 <div class="main-title">
+									 <!--div class="main-title">
 										 <h1>Leave a comment</h1>
 											 <div class="divider">
 													 <div class="zigzag large clearfix "  data-svg-drawing="yes" >
@@ -211,7 +214,7 @@
 										 {% if new_comment %}
 										 <h2>Your Comment has beeing added</h1>
 										 {% else %}
-										   <h2>Add new comment </h2>
+										   <!--h2>Add new comment </h2>
 										   <form action="." method="post">
 										     {{ comment_form.as_p }}
 										     {% csrf_token %}
