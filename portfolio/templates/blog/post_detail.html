@@ -94,74 +94,29 @@
 							 </div>
 						 <!--End main title-->
  					 	<!--Content-->
-						 <!div class="content">
-								 <!--Block content-->
-								 <div class="block-content ">
-									 <!--Comment-->
-									 <div class="block-comment">
-										 <!--Row-->
-										 <div class="row">
-											 <div class="col-md-12">
-												 <!--Comments and replys-->
-												 <!--ul class="comments clearfix">
-													{% for comment in comments %}
-													 <li>
-															 <div class="comment">
+						 <div class="content">
+							 <div id="disqus_thread"></div>
+						 <script>
 
-															 <div class="author-img">
-																 <img src="img/comment/1.jpg" alt="">
-																	 <div class="reply-btn">
-																	 <a class="link" href="#replyForm">
-																	 Reply</a></div>
+						 /**
+						  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+						  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+						 /*
+						 var disqus_config = function () {
+						     this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+						     this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+						 };
+						 */
+						 (function() { // DON'T EDIT BELOW THIS LINE
+						     var d = document, s = d.createElement('script');
+						     s.src = '//kkabardi-me.disqus.com/embed.js';
+						     s.setAttribute('data-timestamp', +new Date());
+						     (d.head || d.body).appendChild(s);
+						 })();
+						 </script>
+						 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-															 </div>
-															 <div class="comment-content">
-																 <div class="comments-info">
-																	 <div class="author"><a href="#">{{comment.name}}</a></div>
-																	 <div class="date"><a href="#">{{comment.created}}</a></div>
-																 </div>
-																	 <p class="expert">{{comment.body|linebreaks}}
-																		</p>
-																</div>
-															</div>
-														</li>
-													{% empty %}
-														<p>There are no comments yet</p>
-													{% endfor %}
-													<!-- replys
-													 <li class="replys children">
-														<div class="comment children">
-															 <div class="author-img">
-																 <img src="img/comment/2.jpg" alt="">
-
-																	 <div class="reply-btn">
-																	 <a class="link" href="#replyForm">
-																	 Reply</a>
-																 </div>
-															 </div>
-															 <div class="comment-content">
-																 <div class="comments-info">
-																	 <div class="author"><a href="#">Benaissa Ghrib</a></div>
-																	 <div class="date"><a href="#">July 19, 2013 at 12 am</a></div>
-																 </div>
-																 <p class="expert">Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-																 ac turpis egestas. Curabitur tempor vehicula porta.
-																 Phasellus magna arcu, commodo non porta vulputate, mattis eget lacus. Nulla eget leo ipsum.
-															 	</p>
-															 </div>
-													 	 </div>
-													 </li>
-
-											 </ul-->
-								 		 	<!--End comments and replys-->
-									 </div>
-									</div>
-									 <!--End row-->
-								 </div>
-								 <!--End comment-->
-								 </div>
-								 <!--End block content-->
-							 </div>
+						 </div>
 							 <!--End content-->
 							 {% if new_comment %}
 							 <h1>Your Comment has beeing added</h1>
@@ -262,5 +217,5 @@
 </div>
 <!--End wrapper-->
 
-
+<script id="dsq-count-scr" src="//kkabardi-me.disqus.com/count.js" async></script>
 {% endblock %}
