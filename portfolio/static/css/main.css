@@ -449,7 +449,7 @@
 
 
 .skill.des .progress {
-	border:1px solid #efefef;
+	border: 1px solid #efefef;
 }
 
 
@@ -798,7 +798,7 @@
 
 
 .item a .desc {
-    background: rgba(85, 142, 106, 0.95);
+    background: rgba(130, 181, 65, 1)
     height: 100%;
     position: absolute;
     text-align: center;
