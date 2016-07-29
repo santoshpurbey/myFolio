@@ -224,7 +224,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: #E53F51;
+  background: #a0ce4e;
   -webkit-transform: scaleX(0);
   -ms-transform: scaleX(0);
   transform: scaleX(0);
@@ -290,7 +290,7 @@
 
 .main-nav li a.active{
 	color:#ffffff;
-	background: #E53F51;
+	background: #a0ce4e;
 }
 
 
@@ -325,8 +325,8 @@
 
 
 .social a:hover {
-    border: 2px solid #E53F51;
-    color: #E53F51;
+    border: 2px solid #a0ce4e;
+    color: #a0ce4e;
 }
 
 
@@ -454,7 +454,7 @@
 
 
 .skill.dev .progress {
-	border:1px solid #E53F51;
+	border:1px solid #a0ce4e;
 }
 
 .skill.prs .progress {
@@ -480,7 +480,7 @@
 
 
 .skill.dev .progress .percentage {
-	background-color: #E53F51;
+	background-color: #a0ce4e;
 }
 
 
@@ -527,7 +527,7 @@
 }
 
 .skill .title.dev{
-	border: 1px dashed #E53F51;
+	border: 1px dashed #a0ce4e;
 }
 
 .skill .title.prs{
@@ -597,7 +597,7 @@
 
 
 .exp:after{
- 	background: #E53F51;
+ 	background: #a0ce4e;
     border: 3px solid #ffffff;
     content: "";
     height: 15px;
@@ -640,7 +640,7 @@
 
 .exp .hgroup h6 span.current{
 	color:#ffffff;
-	background: #E53F51;
+	background: #a0ce4e;
 	border-radius:6px;
 	-moz-border-radius:6px
 	-webkit-border-radius :6px;
@@ -659,7 +659,7 @@
 .block.service .ico{
 	font-size:30px;
 	margin-bottom:10px;
-	color: #E53F51;
+	color: #a0ce4e;
 }
 
 
@@ -761,7 +761,7 @@
 
 
 .filter li a:hover {
-    color: #E53F51;
+    color: #a0ce4e;
 }
 
 
@@ -769,7 +769,7 @@
 
 
 .filter li a.active {
-    color: #E53F51;
+    color: #a0ce4e;
 }
 
 
@@ -873,7 +873,7 @@
 
 
 .block-nav-work li a:hover{
-	color:#E53F51;
+	color:#a0ce4e;
 }
 
 
@@ -910,7 +910,7 @@
 }
 
 span.meta-date{
- 	background: #E53F51;
+ 	background: #a0ce4e;
     border-radius: 6px;
 	-moz-border-radius:6px;
 	-webkit-border-radius :6px;
@@ -940,7 +940,7 @@ span.meta-date{
 }
 
 .post-meta  li a{
-    color:#E53F51;
+    color: #a0ce4e;
 }
 
 .post-meta i {
@@ -994,7 +994,7 @@ span.meta-date{
 }
 
 .search-form input[type="text"] {
-    background: #E53F51;
+    background: #a0ce4e;
 	color: #ffffff;
     font-size: 12px;
     border: none;
@@ -1122,7 +1122,7 @@ span.meta-date{
   color: #ffffff;
   font-size: 12px;
   text-transform: uppercase;
-  background: #E53F51;
+  background: #a0ce4e;
   border-radius: 6px;
  -moz-border-radius:6px;
  -webkit-border-radius :6px;
@@ -1141,7 +1141,7 @@ span.meta-date{
 .comment-content .date a {
     display: inline-block;
     font-size: 11px;
-	color: #E53F51;
+	color: #a0ce4e;
 	position: relative;
     top: -5px;
 }
@@ -1197,7 +1197,7 @@ span.meta-date{
 
 
 .pagination ul li a.selected {
-    color: #E53F51;
+    color: #a0ce4e;
 }
 
 
@@ -1312,7 +1312,7 @@ span.meta-date{
 
 
 .errorForm {
-    border: 1px solid #E53F51 !important;
+    border: 1px solid #a0ce4e !important;
 }
 
 
@@ -1339,7 +1339,7 @@ span.meta-date{
 
 
 .address-info i {
-    background:#E53F51;
+    background: #a0ce4e;
     color: #ffffff;
     display: inline-block;
     font-size: 28px;
