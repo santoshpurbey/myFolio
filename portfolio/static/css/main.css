@@ -18,6 +18,11 @@
   3/4-Contact tab
 4-Media queries
 
+
+
+
+
+
 /*Preloader*/
 #loader {
     background: #efefef;
@@ -127,6 +132,7 @@
 /*Header*/
 
 
+
 .img-profile{
 	position:relative;
 }
@@ -135,9 +141,7 @@
    	left: -22%;
     position: absolute;
     top: 23.2%;
-	-webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
-    transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
+	transform: rotate(-90deg);
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#33373d+0,33373d+100&amp;1+0,0+100 */
 	background: -moz-linear-gradient(left,  rgba(51,55,61,1) 0%, rgba(51,55,61,0) 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(51,55,61,1)), color-stop(100%,rgba(51,55,61,0))); /* Chrome,Safari4+ */
@@ -165,6 +169,10 @@
  	font-size: 8px;
     line-height: 5px;
 }
+
+
+
+
 
 
 
@@ -216,7 +224,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: #cd5353;
+  background: #E53F51;
   -webkit-transform: scaleX(0);
   -ms-transform: scaleX(0);
   transform: scaleX(0);
@@ -261,7 +269,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: #cd5353;
+  background: #E53F51;
   -webkit-transform: scaleX(1);
   -ms-transform: scaleX(1);
   transform: scaleX(1);
@@ -282,9 +290,8 @@
 
 .main-nav li a.active{
 	color:#ffffff;
-	background: #cd5353;
+	background: #E53F51;
 }
-
 
 
 .main-nav ul li a i{
@@ -318,8 +325,8 @@
 
 
 .social a:hover {
-    border: 2px solid #cd5353;
-    color: #cd5353;
+    border: 2px solid #E53F51;
+    color: #E53F51;
 }
 
 
@@ -327,8 +334,6 @@
     margin-top: 10px;
 	font-size:13px;
 }
-
-
 
 
 /*End header*/
@@ -449,7 +454,7 @@
 
 
 .skill.dev .progress {
-	border:1px solid #cd5353;
+	border:1px solid #E53F51;
 }
 
 .skill.prs .progress {
@@ -475,7 +480,7 @@
 
 
 .skill.dev .progress .percentage {
-	background-color: #cd5353;
+	background-color: #E53F51;
 }
 
 
@@ -522,7 +527,7 @@
 }
 
 .skill .title.dev{
-	border: 1px dashed #cd5353;
+	border: 1px dashed #E53F51;
 }
 
 .skill .title.prs{
@@ -592,7 +597,7 @@
 
 
 .exp:after{
- 	background: #cd5353;
+ 	background: #E53F51;
     border: 3px solid #ffffff;
     content: "";
     height: 15px;
@@ -635,7 +640,7 @@
 
 .exp .hgroup h6 span.current{
 	color:#ffffff;
-	background: #cd5353;
+	background: #E53F51;
 	border-radius:6px;
 	-moz-border-radius:6px
 	-webkit-border-radius :6px;
@@ -654,7 +659,7 @@
 .block.service .ico{
 	font-size:30px;
 	margin-bottom:10px;
-	color: #cd5353;
+	color: #E53F51;
 }
 
 
@@ -756,7 +761,7 @@
 
 
 .filter li a:hover {
-    color: #cd5353;
+    color: #E53F51;
 }
 
 
@@ -764,7 +769,7 @@
 
 
 .filter li a.active {
-    color: #cd5353;
+    color: #E53F51;
 }
 
 
@@ -793,7 +798,7 @@
 
 
 .item a .desc {
-    background: rgba(205, 83, 83, 0.95) none repeat scroll 0 0;
+    background: rgba(85, 142, 106, 0.95);
     height: 100%;
     position: absolute;
     text-align: center;
@@ -868,7 +873,7 @@
 
 
 .block-nav-work li a:hover{
-	color:#cd5353;
+	color:#E53F51;
 }
 
 
@@ -905,7 +910,7 @@
 }
 
 span.meta-date{
- 	background: #cd5353;
+ 	background: #E53F51;
     border-radius: 6px;
 	-moz-border-radius:6px;
 	-webkit-border-radius :6px;
@@ -935,7 +940,7 @@ span.meta-date{
 }
 
 .post-meta  li a{
-    color:#cd5353;
+    color:#E53F51;
 }
 
 .post-meta i {
@@ -989,7 +994,7 @@ span.meta-date{
 }
 
 .search-form input[type="text"] {
-    background: #cd5353;
+    background: #E53F51;
 	color: #ffffff;
     font-size: 12px;
     border: none;
@@ -1117,7 +1122,7 @@ span.meta-date{
   color: #ffffff;
   font-size: 12px;
   text-transform: uppercase;
-  background: #cd5353;
+  background: #E53F51;
   border-radius: 6px;
  -moz-border-radius:6px;
  -webkit-border-radius :6px;
@@ -1136,7 +1141,7 @@ span.meta-date{
 .comment-content .date a {
     display: inline-block;
     font-size: 11px;
-	color: #cd5353;
+	color: #E53F51;
 	position: relative;
     top: -5px;
 }
@@ -1192,7 +1197,7 @@ span.meta-date{
 
 
 .pagination ul li a.selected {
-    color: #cd5353;
+    color: #E53F51;
 }
 
 
@@ -1307,7 +1312,7 @@ span.meta-date{
 
 
 .errorForm {
-    border: 1px solid #cd5353 !important;
+    border: 1px solid #E53F51 !important;
 }
 
 
@@ -1334,7 +1339,7 @@ span.meta-date{
 
 
 .address-info i {
-    background:#cd5353;
+    background:#E53F51;
     color: #ffffff;
     display: inline-block;
     font-size: 28px;
@@ -1413,8 +1418,6 @@ span.meta-date{
 
 
 
-
-
 /* -------------------- Media queries -------------------- */
 
 
@@ -1461,8 +1464,8 @@ span.meta-date{
 	input, textarea{-webkit-appearance: none;-webkit-border-radius:0;}
 	.nopr {padding-right: 15px;}
 	.main-nav.tabbed ul li{float:left;width:25%;border-right:1px solid #26292e;border-bottom:none;}
-	.main-nav.tabbed ul li a{font-size:0;}
 	.main-nav.tabbed ul li:last-child{border-right:none;border-bottom:none;}
+	.main-nav.tabbed ul li a{font-size:0;}
 	.main-nav.tabbed ul li a i {left: 0;text-align: center;width: 100%;}
 	.img-profile .name-profile {display:none;}
 	.bottom-header{margin-bottom:10px;}
@@ -1537,6 +1540,3 @@ span.meta-date{
 }
 
 /* -------------------- End media queries -------------------- */
-.img-thumbnail {
-  height: 150px;
-}
