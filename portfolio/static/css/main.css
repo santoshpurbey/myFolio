@@ -798,7 +798,7 @@
 
 
 .item a .desc {
-    background: rgba(130, 181, 65, 1)
+    background: rgba(130, 181, 65, 0.68);
     height: 100%;
     position: absolute;
     text-align: center;
