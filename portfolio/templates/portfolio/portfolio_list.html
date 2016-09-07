@@ -61,7 +61,7 @@
                       <div class="row">
                         <ul class="work">
                         {% for project in projects %}
-                        <li class="col-md-4 ">
+                        <li class="col-md-4" style="list-style:none;">
                           <!--Item-->
                           <div class="item {{project.categories}}">
                             <a href="{% url 'portfolio_detail' pk=project.pk %}">
