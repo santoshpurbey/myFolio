@@ -40,9 +40,10 @@
 			                    <a href="{% url 'post_detail' pk=post.pk %}">
 			                      <h1>{{post.title}}</h1>
 			                    </a>
-						              <span class="meta-date">{{post.publish|date:"M d, Y"}}</span>
 			                  </div>
 											  <ul class="post-meta">
+													<li><span class="meta-date">{{post.publish|date:"M d, Y"}}</span>
+													</li>
 			                    <li><i class="icon-user"></i>
 			                        <span>Post by<a href="#"> {{post.author}}</a></span>
 			                    </li>

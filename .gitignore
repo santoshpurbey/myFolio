@@ -1,8 +1,8 @@
 .DS_Store
 /*.tgz
-db.sqlite3
+mydatabase.sqlite
 folioenv
-
+venv
 migrations
 *.pyc
 staticfiles
