@@ -2,13 +2,25 @@
         {% if page.has_previous %}
         <li class="prev"><a href="?page={{ page.previous_page_number }}"><i class="icon-left-open-mini"></i></a></li>
         {% endif %}
-        <!--li><a href="#">1</a></li-->
-        {% for object in page.paginator.page_range %}
-        <li><a class='{% ifequal current_page_pag page %}selected {% endifequal %}' href='{{current_url}}?page={{page}}'>{{ object }}</a></li>
+        {% for i in page.paginator.page_range %}
+          {% ifequal i page.number %}
+            <li><a class='selected' href='{{current_url}}?page={{i}}'>{{ i }}</a></li>
+          {% else %}
+            <li><a href='{{current_url}}?page={{i}}'>{{ i }}</a></li>
+          {% endifequal %}
         {% endfor %}
-        <!--li><a href="#">3</a></li>
-        <li><a href="#">4</a></li-->
         {% if page.has_next %}
         <li class="next"><a href="?page={{ page.next_page_number }}"><i class="icon-right-open-mini"></i></a></li>
         {% endif %}
 </ul>
+
+<!--ul>
+  <li class="prev"><a href="#"><i class="icon-left-open-mini"></i></a></li>
+  <li><a href="#" {% ifequal current_page_pag page %}selected {% endifequal %}>1</a></li>
+  <li><a class="selected" href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li class="next"><a href="#"><i class="icon-right-open-mini"></i></a></li>
+</ul-->
+
+{% ifequal i page.number %}selected {% endifequal %}
