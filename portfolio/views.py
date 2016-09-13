@@ -3,6 +3,8 @@ from django.http import Http404
 from django.shortcuts import render, redirect
 from django.template.context import RequestContext
 from django.utils import timezone
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 from .forms import CommentForm
 from .models import Project, Skill, Category, ProjectImage, Post, Comment
 
@@ -46,8 +48,23 @@ def contact(request):
 
 
 def blog_list(request):
-    posts = Post.objects.all()
-    return render(request, 'blog/blog_list.html', {'posts': posts})
+    object_list = Post.published.all()
+    paginator = Paginator(object_list, 3)
+    page = request.GET.get('page')
+
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        # if page is not an integer deliver the first page
+        posts = paginator.page(1)
+    except EmptyPage:
+        # if page is out of range deliver the last page of results
+        posts = paginator.page(paginator.num_pages)
+
+    return render(request, 'blog/blog_list.html', {
+        'posts': posts,
+        'page' : page,
+        })
 
 
 def post_detail(request, pk):

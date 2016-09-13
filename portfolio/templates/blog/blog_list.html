@@ -85,14 +85,7 @@
 	              </div>
 												<!--End row-->
 								<div class="block pagination tCenter margTSmall margBSmall">
-										<ul>
-														<li class="prev"><a href="#"><i class="icon-left-open-mini"></i></a></li>
-														<li><a href="#">1</a></li>
-														<li><a class="selected" href="#">2</a></li>
-														<li><a href="#">3</a></li>
-														<li><a href="#">4</a></li>
-														<li class="next"><a href="#"><i class="icon-right-open-mini"></i></a></li>
-											</ul>
+									{% include "blog/pagination.html" with page=posts %}
 								</div>
               </div>
 											<!--End blog-->

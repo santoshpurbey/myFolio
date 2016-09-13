@@ -5,6 +5,13 @@ from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 from django.forms import ModelForm
 
+# custom model managers
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        return super (PublishedManager, self).get_queryset().filter(status='published')
+
+
+
 class Project(models.Model):
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=50, unique=True)
@@ -80,6 +87,9 @@ class Post(models.Model):
     updated = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10,choices=STATUS_CHOICES,default='draft')
     image = models.ImageField(upload_to='blog')
+
+    objects = models.Manager() # default model Manager
+    published = PublishedManager() # my custom model Manager
 
     class Meta:
         ordering = ('-publish',)
