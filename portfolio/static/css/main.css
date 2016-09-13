@@ -1539,3 +1539,10 @@ span.meta-date{
 }
 
 /* -------------------- End media queries -------------------- */
+
+
+.custom-h5 {
+    font-family: ubuntu;
+    text-transform: none;
+    font-style: italic;
+}
