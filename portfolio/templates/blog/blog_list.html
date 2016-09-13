@@ -29,6 +29,7 @@
 							<!--Blog posts-->
 								<div class="block-posts ">
                   {% for post in posts %}
+									{% if post.status == 'published' %}
 									<!--Block post-->
 										<div class="block-post clearfix">
 											<div class="col-md-12">
@@ -77,6 +78,7 @@
 											<!--End divider-->
 							      </div>
 										<!--End block post-->
+										{% endif %}
                     {% endfor %}
                   </div>
 									<!--End blog posts-->
