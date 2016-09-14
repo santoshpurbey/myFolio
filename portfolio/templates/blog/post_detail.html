@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load social_widgets %}
 {% block content %}
 <!--Right content-->
 <div class="col-md-12 right-content">
@@ -69,7 +70,15 @@
 											<article id="content1" contenteditable="true">
 	                    	<p > {{post.body|safe}}</p>
 											</article>
+											<div class="social">
+		 									 <h1>Share this article</h1>
+											 <ul class="social">
+												 <li><a href="https://www.linkedin.com/share"><i class="icon-linkedin"></i></a></li>
+				       					 <li><a href="https://twitter.com/share"><i class="icon-twitter"></i></a></li>
+				                 <li><a href="https://www.facebook.com/share"><i class="icon-facebook"></i></a></li>
+		 								 </div>
 								 </div>
+
 							 </div>
 							 <!--End block post-->
 							 </div>
@@ -82,19 +91,7 @@
 							 <!--End block content-->
 							 </div>
 							 <!--End content-->
-						 <!--Main title-->
-							 <!--div class="main-title">
-								 <h1>Comments <span class="cm-count">(2)</span></h1>
-									 <div class="divider">
-											 <div class="zigzag large clearfix "  data-svg-drawing="yes" >
-												 <svg xml:space="preserve" viewBox="0 0 69.172 14.975" width="37" height="28" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
-												 <path d="M1.357,12.26 10.807,2.81 20.328,12.332
-													 29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 "  style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"/>
-												 </svg>
- 										 	</div>
- 									</div>
-							 </div>
-						 <!--End main title-->
+
  					 	<!--Content-->
 						 <div class="content">
 							 <div id="disqus_thread"></div>
@@ -142,32 +139,6 @@
 									 <div class="block-content margBMedium">
 									 <!--Reply-->
 									 	<div class="block-reply">
-											 <!--Row -- >
-											<!--div class="row">
-												 <div class="col-md-12">
-													  <form class="reply-form" action="." method="post">
-														  <div class="input-columns clearfix">
-															  <div class="column1">
-															    <div class="column-inner">
-																  	<input type="text" placeholder="Name" value="" id="name" name="name">
-																  </div>
-															  </div>
-															  <div class="column2">
-															    <div class="column-inner">
-															  		<input type="text" placeholder="Email" value="" id="email" name="email">
-																  </div>
-															  </div>
-														  </div>
-														  <input type="text" placeholder="WebSite" value="" id="website" name="website">
-															  <textarea name="message" placeholder="Message" id="message" cols="45" rows="10"></textarea>
-															{% csrf_token %}
-														  <input type="submit" value="Post a comment" class="but opc-2 submit">
-													  </form>
-												</div>
-
-										 </div>
-										 <!--End row-->
-
 										 {% if new_comment %}
 										 <h2>Your Comment has beeing added</h1>
 										 {% else %}
