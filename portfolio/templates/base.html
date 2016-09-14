@@ -83,6 +83,16 @@
                 <li><a href="https://www.facebook.com/katerina.kabardi"><i class="icon-facebook"></i></a></li>
       				</ul>
 
+              {% if request.user.is_authenticated	%}
+              <div class="auth">
+                <a href="{% url 'logout' %}?next=/blog" class="but brd">Sign Out</a>
+              </div>
+              <!-- TODO: Remove sign in button -->
+              {% else %}
+              <div class="auth">
+                <a class="but opc-2" href="{% url 'login' %}">Sign In</a>
+              </div>
+              {% endif %}
       				<p>&copy; 2016 by PyCat</p>
       				</div>
       		  </header>

@@ -21,9 +21,13 @@ from django.conf import settings
 from django.contrib import admin
 from django.views.generic import TemplateView, RedirectView
 from django.contrib.staticfiles.urls import *
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
         url(r'^admin/', include(admin.site.urls)),
+        url(r'^accounts/logout/$', auth_views.logout, name='logout'),
+        # TODO: remove login urls it is just for testing
+        url(r'^accounts/login/$', auth_views.login, name='login'),
         # url(r'', include('portfolio.urls')),
         url(r'^blog/$', views.blog_list, name='blog_list'),
         url(r'^post/(?P<pk>\d+)/$', views.post_detail, name='post_detail'),
