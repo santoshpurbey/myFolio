@@ -225,6 +225,18 @@ var styles = [
 
 </script>
 
+<script type="text/javascript">
+  var theContent = $('#content1');
+
+  #('#save').on('click', function(){
+    var editContent = theContent.html();
+    localStorage.newContent = editContent;
+  })
+
+  if(localStorage.getItem('newContent')){
+    theContent.html(localStorage.getItem('newContent'));
+  }
+</script>
 
 <!-- Google analytics -->
 

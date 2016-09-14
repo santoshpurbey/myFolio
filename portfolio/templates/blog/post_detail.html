@@ -66,9 +66,32 @@
 													{% endwith %}
                         </ul>
 											<hr>
-											<article id="content1" contenteditable="true">
-	                    	<p > {{post.body|safe}}</p>
-											</article>
+											{% if request.user.is_authenticated %}
+											<div class="fe-edit">
+												<article id="content" contenteditable="true">
+		                    	<p > {{post.body|safe}}</p>
+													<button id="save" class="but opc-2 icon-phone">Save Changes</button>
+												</article>
+											</div>
+											<hr>
+											<!-- begin the script -->
+											<script src="jquery.js" type="text/javascript"></script>
+											<script>
+												var theContent = $('#content2');// set the content
+
+												$('#save').on('click', function(){ // store the new content in localStorage when the button is clicked
+													var editedContent 	= theContent.html();
+													localStorage.newContent = editedContent;
+												});
+
+												if(localStorage.getItem('newContent')) { // apply the newContent when it is exist ini localStorage
+													theContent.html(localStorage.getItem('newContent'));
+												}
+											</script>
+											{% else %}
+												<p > {{post.body|safe}}</p>
+												<hr>
+												{% endif %}
 											<div class="social">
 		 									 <h1>Share this article</h1>
 											 <ul class="social">
