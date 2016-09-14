@@ -1546,3 +1546,7 @@ span.meta-date{
     text-transform: none;
     font-style: italic;
 }
+
+.auth{
+  margin: 30px;
+}
