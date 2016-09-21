@@ -1,236 +1,74 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block content %}
-<!--About Tab-->
-<section id="about" class="bgWhite ofsInBottom active" >
-        <!--About -->
-        <div class="about">
-            <!--Main title-->
-            <div class="main-title">
-                  <h1>who i am</h1>
-                  <div class="divider">
-                    <div class="zigzag large clearfix " data-svg-drawing="yes">
-                       <svg xml:space="preserve" viewBox="0 0 69.172 14.975" width="37" height="28" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                          <path d="M1.357,12.26 10.807,2.81 20.328,12.332
-                            29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 " style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"></path>
-                      </svg>
-                    </div>
-                  </div>
+<div class="site-content">
+  <div class="page-content">
+    <h1 class="bndl-title large center">About Me</h1>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <h4>Who i am?</h4>
+            <p>Duis iaculis vestibulum viverra. Donec ac odio maximus, porta tellus ut, cursus felis. Nunc gravida lobortis metus venenatis aliquet. Cras vel semper dolor. Phasellus pharetra lorem in euismod convallis. Nulla faucibus, leo a viverra feugiat, neque eros iaculis nisl, non suscipit dui diam vitae lorem. Nunc tristique urna mollis felis ornare, eu laoreet erat facilisis.</p>
+            <h4>What i do?</h4>
+            <p>Morbi porta lacus eros, eget varius justo malesuada eu. Aliquam scelerisque varius est. Nulla ut tempor magna. Nullam et lectus eu est iaculis volutpat in eu ex. Pellentesque dapibus urna at placerat facilisis. In aliquam eget dui vitae efficitur. Sed interdum urna vel sagittis dignissim. Sed sed lectus eu orci facilisis sagittis. Sed hendrerit tempor lacinia. Aliquam sed justo diam.</p>
+            <p>Vestibulum tempor ipsum eu leo blandit, nec auctor quam maximus. Suspendisse lorem orci, fermentum a mattis ut, volutpat eu ipsum. Duis at facilisis quam, ut accumsan mauris. Curabitur sollicitudin ut magna in sollicitudin. Cras molestie et neque ac condimentum.</p>
+            <h4>Something About my personal life</h4>
+            <p>Ut lacinia maximus ipsum, id ultricies dolor commodo vel. Donec ut malesuada purus. Mauris maximus leo non nisi ornare viverra eget vel diam. Sed lacinia ante sit amet nulla ornare, at hendrerit velit pretium. Vivamus orci nulla, gravida eget lorem id, pharetra efficitur ante. Duis porttitor, nulla quis facilisis lacinia, dolor est hendrerit magna, quis accumsan ex odio non sapien. Aenean mattis enim sit amet diam fringilla aliquet. Aliquam non luctus enim, in congue orci.</p>
+            <p>Nam ultricies non elit at sagittis. Vestibulum sollicitudin non purus a lacinia. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis auctor hendrerit ipsum eget feugiat. Sed sed eleifend erat. Pellentesque viverra consectetur lectus sed efficitur.</p>
+            <h4>My Vision in my life</h4>
+            <p>Integer a molestie nibh, at dapibus eros. Fusce aliquet, velit pretium feugiat imperdiet, augue dolor vulputate elit, eget aliquet massa magna id tortor. Aliquam interdum placerat tellus. Nunc sed tristique lorem. Praesent volutpat urna et nisi cursus lacinia. Sed commodo et turpis nec interdum. Vestibulum ullamcorper suscipit velit, id tincidunt augue lacinia eget. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+            <p>Aliquam sed dolor vitae mi interdum rutrum. Mauris eget risus sem. Morbi fermentum nisi dui, quis ullamcorper risus laoreet sit amet. Morbi ut erat vitae massa tincidunt laoreet. Morbi eleifend lectus tortor, fringilla efficitur libero pretium et. Nullam ut erat quis eros consectetur imperdiet. Vivamus fermentum tempor hendrerit. Phasellus volutpat velit eget auctor facilisis. In quis justo gravida, lacinia sapien sit amet, euismod metus. Suspendisse hendrerit turpis ac felis varius, eu pellentesque dolor pellentesque.</p>
+            <p>Nulla id luctus velit. Morbi arcu erat, viverra at est nec, fringilla dapibus odio. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce quis dignissim leo. Donec tristique a sapien eget hendrerit. Sed at facilisis turpis.</p>
+            <p>Add me to your social network:</p>
+            <!-- SOCIAL ICONS-->
+            <div class="bndl-social-icons"><a href="#"><i class="ei-sc-facebook"></i></a><a href="#"><i class="ei-sc-twitter"></i></a><a href="#"><i class="ei-sc-google-plus"></i></a><a href="#"><i class="ei-sc-youtube"></i></a></div>
+            <!-- END / SOCIAL ICONS-->
+          </div>
+          <div class="col-md-4"><img src="../media/placeholder.jpg" alt="alternate text" class="aligncenter">
+            <hr class="bndl-space">
+            <h2 class="bndl-title left">My Skills</h2>
+            <div class="bndl-shortcode bndl-progress-bar-group">
+              <!-- PROGRESS BAR SHORTCODE-->
+              <div data-anim-to="63" class="bndl-progress-bar"><b class="progress-title">Wordpress</b><span class="progress-amount">0</span><span class="progress-graph"></span></div>
+              <!-- END / PROGRESS BAR SHORTCODE-->
+              <!-- PROGRESS BAR SHORTCODE-->
+              <div data-anim-to="90" class="bndl-progress-bar"><b class="progress-title">Jade & Less</b><span class="progress-amount">0</span><span class="progress-graph"></span></div>
+              <!-- END / PROGRESS BAR SHORTCODE-->
+              <!-- PROGRESS BAR SHORTCODE-->
+              <div data-anim-to="71" class="bndl-progress-bar"><b class="progress-title">Laravel</b><span class="progress-amount">0</span><span class="progress-graph"></span></div>
+              <!-- END / PROGRESS BAR SHORTCODE-->
             </div>
-            <!--End main title-->
-            <!--Content-->
-            <div class="content">
-              <!--Block content-->
-                <div class="block-content margBSmall">
-                  <div class=" profile margBSmall">
-                      <h1>katerina kabardi</h1>
-                      <h5 class="custom-h5">Also known as PyCat</h5>
-                      <h3>Full Stack Developer</h3>
-                  </div>
-                  <!--Row-->
-                  <div class="row">
-                    <div class="col-md-6">
-                      <p>My core expertise is Front End UI Frameworks / Bootstrap, Front End Javascript Frameworks,
-                        AngularJS while for Back End I primarily use Python DJango Web and REST Frameworks.
-                        My strong focus is on accessible and usable Front End Development and Back End Applications
-                        based on MVC pattern.
-                     </p>
-                    </div>
-                    <div class="col-md-6">
-                      <p>Excellent knowledge of Wordpress and Cms Made Simple Customizations, through my past experience
-                         as an employed and freelance Web Developer.
-                         Areas of specific interest include DJango Frameworks, thus I’m currently seeking to join a non-profit
-                         to challenge my creative skills and further develop my experience in the field.
-                      </p>
-                    </div>
-                   </div>
-                  <!--End row-->
+            <hr class="bndl-space">
+            <h2 class="bndl-title left">Reference</h2>
+            <!-- TESTIMONIAL SHORTCODE-->
+            <div class="bndl-testimonial bndl-shortcode">
+              <div class="header"><img src="../media/face.jpg" alt="alternate text">
+                <div class="author-info">
+                  <div class="name">Lindsay Cohen</div><a href="#" class="website">www.codecanyon.net</a>
                 </div>
-                <!--End block content-->
               </div>
-              <!--End content-->
-            <!-- main title skills -->
-            <div class="main-title">
-                <h1>professional skills</h1>
-                  <div class="divider">
-                      <div class="zigzag large clearfix " data-svg-drawing="yes">
-                        <svg xml:space="preserve" viewBox="0 0 69.172 14.975" width="37" height="28" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                        <path d="M1.357,12.26 10.807,2.81 20.328,12.332
-                          29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 " style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"></path>
-                        </svg>
-                        </div>
-                    </div>
+              <div class="testimonial-text">
+                <p>Nulla faucibus, leo a viverra feugiat, neque eros iaculis nisl, non suscipit dui diam vitae lorem. Nunc tristique urna mollis felis ornare, eu laoreet erat facilisis.</p>
+              </div>
             </div>
-            <!-- end main title -->
-            <!--Content skills -->
-            <div class="content">
-              <!--Block content-->
-                <div class="block-content margBMedium">
-                  <!--Skill design-->
-                  <div class=" skill des">
-                      <!--Row-->
-                      <div class="row ">
-                        <div class="vc">
-                          <div class="col-md-11">
-                            <ul class="skills-list clearfix">
-                              <li>
-                                <h4>HTML5/CSS3/JS</h4>
-                                <div class="progress">
-                                <div class="percentage">
-                                97%
-                                </div>
-                                </div>
-                              </li>
-                              <li>
-                                <h4>Bootstrap Frontend UI Framework</h4>
-                                  <div class="progress">
-                                  <div class="percentage">
-                                  95%
-                                  </div>
-                                  </div>
-                              </li>
-                              <li>
-                                <h4>AngularJS Frontend JS Framework</h4>
-                                  <div class="progress">
-                                  <div class="percentage">
-                                  75%
-                                  </div>
-                                  </div>
-                              </li>
-                            </ul>
-                          </div>
-                          <div class="col-md-1">
-                            <div class="title des">
-                              <span>frontend</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!--End row-->
-                    </div>
-                 <!--End skill design-->
+            <!-- END / TESTIMONIAL SHORTCODE-->
+            <!-- TESTIMONIAL SHORTCODE-->
+            <div class="bndl-testimonial bndl-shortcode">
+              <div class="header"><img src="../media/face.jpg" alt="alternate text">
+                <div class="author-info">
+                  <div class="name">Jerome Ray</div><a href="#" class="website">www.videohive.net</a>
                 </div>
-                <!--End block content-->
-                <!--Block content-->
-                <div class="block-content margBMedium">
-                  <!--Skill design-->
-                  <div class=" skill dev">
-                    <!--Row-->
-                      <div class="row">
-                        <div class="vc">
-                          <div class="col-md-11">
-                            <ul class="skills-list clearfix">
-                              <li>
-                                <h4>Python</h4>
-                                <div class="progress">
-                                <div class="percentage">
-                                85%
-                                </div>
-                                </div>
-                              </li>
-                              <li>
-                                <h4>Django Framework</h4>
-                                  <div class="progress">
-                                  <div class="percentage">
-                                  98%
-                                  </div>
-                                  </div>
-                              </li>
-                              <li>
-                                <h4>Mysql/Postgresql</h4>
-                                  <div class="progress">
-                                  <div class="percentage">
-                                  90%
-                                  </div>
-                                  </div>
-                              </li>
-                            </ul>
-                          </div>
-                        <div class="col-md-1">
-                          <div class="title dev">
-                            <span>backend </span>
-                          </div>
-                        </div>
-                        </div>
-                      </div>
-                      <!--End row-->
-                    </div>
-                  <!--End skill design-->
-                </div>
-                <!--End block content-->
-                <!--Block content-->
-                <div class="block-content ">
-                 <!--Skill design-->
-                       <div class=" skill prs">
-                         <!--Row-->
-                        <div class="row ">
-                          <div class="vc">
-                            <div class="col-md-11">
-                              <ul class="skills-list clearfix">
-                                <li>
-                                  <h4>Responsible</h4>
-                                  <div class="progress">
-                                  <div class="percentage">
-                                  95%
-                                  </div>
-                                  </div>
-                                </li>
-                                <li>
-                                  <h4>Creative</h4>
-                                    <div class="progress">
-                                    <div class="percentage">
-                                    85%
-                                    </div>
-                                    </div>
-                                </li>
-                                <li>
-                                  <h4>Multitasking</h4>
-                                    <div class="progress">
-                                    <div class="percentage">
-                                    97%
-                                    </div>
-                                    </div>
-                                </li>
-                              </ul>
-                            </div>
-                            <div class="col-md-1">
-                              <div class="title prs">
-                                <span>assets </span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!--End row-->
-                         </div>
-                  <!--End skill design-->
-                  </div>
-                  <!--End block content-->
-                <!--End block content-->
+              </div>
+              <div class="testimonial-text">
+                <p>Morbi porta lacus eros, eget varius justo malesuada eu. Aliquam scelerisque varius est. Nulla ut tempor magna. Nullam et lectus eu est iaculis volutpat in eu ex.</p>
+              </div>
             </div>
-            <!--End Content skills-->
-
-            <!--Button-->
-            <div class="button margTop ofsInTop tCenter">
-                <div class="divider">
-                    <div class="zigzag large clearfix "  data-svg-drawing="yes" >
-                      <svg xml:space="preserve" viewBox="0 0 69.172 14.975" width="37" height="28" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                      <path d="M1.357,12.26 10.807,2.81 20.328,12.332
-                        29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 "  style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"/>
-                      </svg>
-                    </div>
-                </div>
-                <!--Row-->
-                <div class="row ">
-                  <div class="col-md-12">
-                    <a class="but opc-1 icon-github" href="https://github.com/kkampardi">View my Github</a>
-                    <a class="but opc-2 icon-phone" href="http://kkabardi.me/contact/">Contact Me</a>
-                  </div>
-                </div>
-                <!--End row-->
-            </div>
-            <!--End button-->
+            <!-- END / TESTIMONIAL SHORTCODE-->
+          </div>
         </div>
-        <!--End about-->
-</section>
-<!--End about tab-->
+      </div>
+    </section>
+  </div>
+</div>
 {% endblock content %}

@@ -1,201 +1,48 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block content %}
-<section id="contact" class="bgWhite ofsInBottom active">
-											<!--Contact -->
-											<div class="contact">
-												<!--Main title-->
-													<div class="main-title">
-														<h1>contact info</h1>
-															<div class="divider">
-																	<div class="zigzag large clearfix " data-svg-drawing="yes">
-																			<svg xml:space="preserve" viewBox="0 0 69.172 14.975" width="37" height="28" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
-																			<path d="M1.357,12.26 10.807,2.81 20.328,12.332
-																				29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 " style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"></path>
-																			</svg>
-																		</div>
-															</div>
-													</div>
-												<!--End main title-->
-										<!--Content-->
-										<div class="content">
-
-											<!--Block content-->
-											<div class="block-content ">
-
-											<!--Info-->
-											<div class="block-info">
-
-												<!--Row-->
-												<div class="row">
-
-												<div class="col-md-12">
-
-													<div class="info-holder   margTMedium">
-
-													<!--Address info-->
-													<div class="address-info">
-													<i class="icon-location"></i>
-													<p>Katerina Kampardi <br>Patras, Greece.</p>
-													</div>
-													<!--End address info-->
-
-
-													<!--Contact info-->
-													<div class="contact-info tCenter">
-													<ul>
-														<li><div class="ico"><i class="icon-mail"></i></div>
-														<p>kkampardi@gmail.com </p></li>
-														<li><div class="ico"><i class="icon-skype"></i></div>
-														<p>kkampardi</p></li>
-														<li><div class="ico"><i class="icon-github"></i></div>
-															<p> <a href="https://github.com/kkampardi">View my Github</a></p></li>
-													</ul>
-													</div>
-													<!--End contact info-->
-
-													</div>
-
-												</div>
-
-												</div>
-												<!--End row-->
-
-			                            </div>
-										<!--End info-->
-
-										</div>
-										<!--End block content-->
-
-
-
-										</div>
-										<!--End content-->
-
-
-
-
-
-
-
-										<!--Main title-->
-
-											<div class="main-title">
-												<h1>send me an email</h1>
-													<div class="divider">
-															<div class="zigzag large clearfix " data-svg-drawing="yes">
-				<svg xml:space="preserve" viewBox="0 0 69.172 14.975" width="37" height="28" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
-				<path d="M1.357,12.26 10.807,2.81 20.328,12.332
-					29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 " style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"></path>
-				</svg>
-				</div>
-				</div>
-											</div>
-
-										<!--End main title-->
-
-
-
-
-								<!--Content-->
-								<div class="content">
-
-									<!--Block content-->
-									<div class="block-content ">
-
-									<!--Contact-->
-									<div class="block-contact margBSSmall">
-
-										<!--Row-->
-										<div class="row">
-
-										<div class="col-md-12">
-
-
-														<form class="contact-form" method="post" action="send.php">
-
-															<!--Input columns-->
-															<div class="input-columns clearfix">
-
-															<div class="column1">
-																<div class="column-inner">
-															<input type="text" placeholder="Name" value="" id="name" name="name">
-															</div>
-															</div>
-
-															<!--Column-->
-															<div class="column2">
-																<div class="column-inner">
-															<input type="text" placeholder="Email" value="" id="email" name="email">
-															</div>
-															</div>
-															<!--End column-->
-
-															</div>
-															<!--End input columns-->
-
-															<input type="text" placeholder="Subject" value="" id="subject" name="subject">
-														<textarea name="message" placeholder="Message" id="message" cols="45" rows="10"></textarea>
-														<input type="submit" value="send your email" class="but opc-2 submit">
-														</form>
-
-														<!--Contact form message-->
-														<div id="success"><h2>Your message has been sent. Thank you!</h2></div>
-														<div id="error"><h2>Sorry your message can not be sent.</h2></div>
-														<!--End contact form message-->
-
-
-										</div>
-
-
-										</div>
-										<!--End row-->
-
-	                            </div>
-								<!--End contact-->
-
-								</div>
-								<!--End block content-->
-
-
-
-								</div>
-								<!--End content-->
-
-
-
-
-
-										<!--Button-->
-										<div class="button ofsInTop tCenter">
-
-												<div class="divider">
-														<div class="zigzag large clearfix " data-svg-drawing="yes">
-			<svg xml:space="preserve" viewBox="0 0 69.172 14.975" width="37" height="28" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
-			<path d="M1.357,12.26 10.807,2.81 20.328,12.332
-				29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 " style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"></path>
-			</svg>
-			</div>
-			</div>
-
-
-			<!--Row-->
-		 <div class="row ">
-			 <div class="col-md-12">
-				 <a class="but opc-1 icon-github" href="https://github.com/kkampardi">View my Github</a>
-			 </div>
-		 </div>
-		 <!--End row-->
-
-
-				                            </div>
-											<!--End button-->
-
-
-
-
-											</div>
-											<!--End contact-->
-
-										</section>
+<div class="site-content">
+  <div class="page-content">
+    <h1 class="bndl-title large center">Contact</h1>
+    <section>
+      <div class="container">
+        <div class="row vertical-align">
+          <div class="col-md-3"><b class="contact-name">John Doe:</b></div>
+          <div class="col-md-3">
+            <p>Phone number:<br><b>202-555-0148</b></p>
+          </div>
+          <div class="col-md-3">
+            <p>Adress:<br><b>3569 Harrison Street</b></p>
+          </div>
+          <div class="col-md-3">
+            <!-- SOCIAL ICONS-->
+            <div class="bndl-social-icons"><a href="#"><i class="ei-sc-facebook"></i></a><a href="#"><i class="ei-sc-twitter"></i></a><a href="#"><i class="ei-sc-google-plus"></i></a><a href="#"><i class="ei-sc-youtube"></i></a></div>
+            <!-- END SOCIAL ICONS-->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <!-- CONTACT FORM-->
+            <form>
+              <div class="row">
+                <div class="col-md-4">
+                  <input type="text" placeholder="Name" name="name">
+                </div>
+                <div class="col-md-4">
+                  <input type="email" placeholder="Email" name="email">
+                </div>
+                <div class="col-md-4">
+                  <input type="text" placeholder="Subject" name="subject">
+                </div>
+              </div>
+              <textarea placeholder="Your message" name="message"></textarea>
+              <input type="submit" value="Send Message" class="bndl-btn medium">
+            </form>
+            <!-- END CONTACT FORM-->
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
 {% endblock %}
