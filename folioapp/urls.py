@@ -31,11 +31,10 @@ urlpatterns = [
         # url(r'', include('portfolio.urls')),
         url(r'^blog/$', views.blog_list, name='blog_list'),
         url(r'^post/(?P<pk>\d+)/$', views.post_detail, name='post_detail'),
-        url(r'^work/$', views.portfolio_list, name='portfolio_list'),
+        url(r'^$', views.portfolio_list, name='portfolio_list'),
         url(r'^project/(?P<pk>[0-9]+)/$', views.portfolio_detail, name='portfolio_detail'),
-        url(r'^$', TemplateView.as_view(template_name='about.html'), name='about'),
-        url(r'^contact/$', TemplateView.as_view(template_name='contact.html'),
-            name='contact'),
+        url(r'^about/$', TemplateView.as_view(template_name='about.html'), name='about'),
+        url(r'^contact/$', TemplateView.as_view(template_name='contact.html'),name='contact'),
 ]
 
 ##code bellow added to fix server error when debug mode disabled
