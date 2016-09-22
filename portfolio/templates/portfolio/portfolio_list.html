@@ -1,117 +1,54 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 {% block content %}
 <div class="site-content grey-background">
   <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-9">
-        <!-- BLOG CATEGORIES-->
+    <div class="row ">
+      <div class="col-md-9 works">
+        <!-- PROJECT CATEGORIES-->
         <div class="page-breadcrumb">
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-12">
                 <div class="bndl-breadcrumb blog-categories">
-                  <div class="breadcrumb-title"><span>My Blog</span></div>
-                  <div class="bndl-categories"><a href="#" class="active">All</a><a href="#">Travel</a><a href="#">Work</a><a href="#">Lifestyle</a></div>
+                  <div class="breadcrumb-title"><span>My Projects</span></div>
+                  <div class="widget tag_cloud widget_tag_cloud">
+                      <div id="category" class="tagcloud filter">
+                        <a data-filter="all" href="#" class="active">all</a>
+                        {% for category in categories %}
+                        {% if category.projects.all %}
+                        <a data-filter="{{category.name}}"  href="#">{{category.name}}</a>
+                        {% endif %}
+                        {% endfor %}
+                      </div>
+                    </div>
                   <div class="bndl-search"><i data-popup="popup-search" class="ei-search bndl-search"></i></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- END / BLOG CATEGORIES-->
+        <!-- END / PROJECT CATEGORIES-->
         <div class="blog-loop masonry-col-2">
-          <!-- BLOG THUMBNAIL LAYOUT-->
+          <!-- PROJECT THUMBNAIL LAYOUT-->
           <div class="loop thumbnail-layout">
+            {% for project in projects %}
             <!-- POST LARGE-->
-            <article class="post image">
+            <article class="post image item {{project.categories}}">
               <div class="post-content">
                 <div class="post-media">
-                  <div class="post-image"><img src="{% static 'media/masonry-06.jpg' %}" alt="alternative text"></div>
+                  <div class="post-image"><img src="/media/media/{{project.image}}" alt="{{project.name}}"></div>
                 </div>
                 <div class="post-body">
-                  <div class="post-category"><i class="ei-pencil"></i><a href="#">Travel</a></div>
+                  <div class="post-category"><i class="ei-pencil"></i><a href="#">{{project.categories}}</a></div>
                   <div class="post-title">
-                    <h2><a href="{% static 'pages/post-types/hero-image.html">10 Things Your Competitors Can Teach You About Life</a></h2>
+                    <h2><a href="{% url 'portfolio_detail' pk=project.pk %}">{{project.name}}</a></h2>
                   </div>
                 </div>
               </div>
             </article>
             <!-- END POST LARGE-->
-            <!-- POST LARGE-->
-            <article class="post image">
-              <div class="post-content">
-                <div class="post-media">
-                  <div class="post-image"><img src="{% static 'media/masonry-02.jpg' %}" alt="alternative text"></div>
-                </div>
-                <div class="post-body">
-                  <div class="post-category"><i class="ei-pencil"></i><a href="#">Work</a></div>
-                  <div class="post-title">
-                    <h2><a href="{% static 'pages/post-types/hero-image.html">5 Tools Everyone In The Time Industry Should Be Using</a></h2>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <!-- END POST LARGE-->
-            <!-- POST LARGE-->
-            <article class="post image">
-              <div class="post-content">
-                <div class="post-media">
-                  <div class="post-image"><img src="{% static 'media/masonry-01.jpg' %}" alt="alternative text"></div>
-                </div>
-                <div class="post-body">
-                  <div class="post-category"><i class="ei-pencil"></i><a href="#">Lifestyle</a></div>
-                  <div class="post-title">
-                    <h2><a href="{% static 'pages/post-types/hero-image.html">5 Tools Everyone In The Time Industry Should Be Using</a></h2>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <!-- END POST LARGE-->
-            <!-- POST LARGE-->
-            <article class="post image">
-              <div class="post-content">
-                <div class="post-media">
-                  <div class="post-image"><img src="{% static 'media/masonry-04.jpg' %}" alt="alternative text"></div>
-                </div>
-                <div class="post-body">
-                  <div class="post-category"><i class="ei-pencil"></i><a href="#">Work</a></div>
-                  <div class="post-title">
-                    <h2><a href="pages/post-types/hero-image.html">15 Best Blogs To Follow About Life</a></h2>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <!-- END POST LARGE-->
-            <!-- POST LARGE-->
-            <article class="post image">
-              <div class="post-content">
-                <div class="post-media">
-                  <div class="post-image"><img src="{% static 'media/masonry-05.jpg' %}" alt="alternative text"></div>
-                </div>
-                <div class="post-body">
-                  <div class="post-category"><i class="ei-pencil"></i><a href="#">Travel</a></div>
-                  <div class="post-title">
-                    <h2><a href="{% static 'pages/post-types/hero-image.html">15 Best Blogs To Follow About Life</a></h2>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <!-- END POST LARGE-->
-            <!-- POST LARGE-->
-            <article class="post image">
-              <div class="post-content">
-                <div class="post-media">
-                  <div class="post-image"><img src="{% static 'media/masonry-03.jpg' %}" alt="alternative text"></div>
-                </div>
-                <div class="post-body">
-                  <div class="post-category"><i class="ei-pencil"></i><a href="#">Lifestyle</a></div>
-                  <div class="post-title">
-                    <h2><a href="{% static 'pages/post-types/hero-image.html">15 Best Blogs To Follow About Life</a></h2>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <!-- END POST LARGE-->
+            {% endfor %}
           </div>
           <!-- END BLOG THUMBNAIL LAYOUT-->
         </div>
