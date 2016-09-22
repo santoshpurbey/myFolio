@@ -1547,6 +1547,18 @@ span.meta-date{
     font-style: italic;
 }
 
+.social{
+  text-align: center;
+}
 .auth{
   margin: 30px;
+}
+
+.fe-edit{
+  margin-bottom: 50px;
+}
+
+.fe-edit button{
+  float: right;
+  border: none;
 }

@@ -1,0 +1,96 @@
+#style-switcher {
+  background-color: #1b1c1e;
+  position: fixed;
+  padding: 25px;
+  width: 250px;
+  right: -250px;
+  z-index: 100;
+  -webkit-transition: 0.6s all ease;
+  -moz-transition: 0.6s all ease;
+  transition: 0.6s all ease;
+  top: 200px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+#style-switcher.active {
+  right: 0;
+}
+#style-switcher:not(.active) .open-btn {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+#style-switcher .open-btn {
+  background: #1b1c1e;
+  position: absolute;
+  padding: 15px;
+  left: -50px;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+  top: 0;
+}
+#style-switcher .open-btn:after {
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Evil Icons';
+  vertical-align: middle;
+  display: inline-block;
+  font-size: 25px;
+  font-weight: normal;
+  font-style: normal;
+  content: "\0053";
+  line-height: 1;
+  color: #ff8a01;
+}
+#style-switcher .theme-option {
+  margin-bottom: 20px;
+}
+#style-switcher .theme-option label {
+  padding-bottom: 10px;
+  color: #c2c2c2;
+  font-size: 13px;
+  display: block;
+}
+#style-switcher .theme-option select {
+  background: #0f0f11;
+  padding: 10px 10px;
+  width: 100%;
+  border: 0;
+}
+#style-switcher .bndl-theme-colors {
+  display: table;
+}
+#style-switcher .bndl-theme-colors span {
+  display: inline-block;
+  border-radius: 3px;
+  margin-right: 8px;
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+}
+#style-switcher .bndl-theme-colors span:last-child {
+  margin-right: 0;
+}
+#style-switcher .bndl-theme-colors .orange {
+  background-color: #ff8a01;
+}
+#style-switcher .bndl-theme-colors .red {
+  background-color: #ff1f01;
+}
+#style-switcher .bndl-theme-colors .lime {
+  background-color: #b9c628;
+}
+#style-switcher .bndl-theme-colors .teal {
+  background-color: #28c681;
+}
+#style-switcher .bndl-theme-colors .cyan {
+  background-color: #28b5c6;
+}
+#style-switcher .bndl-theme-colors .purple {
+  background-color: #bd28c6;
+}
+#style-switcher .bndl-theme-colors .pink {
+  background-color: #c62863;
+}
+#style-switcher .bndl-theme-colors .black {
+  background-color: #333333;
+}

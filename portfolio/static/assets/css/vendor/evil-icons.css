@@ -1,0 +1,92 @@
+@font-face {
+    font-family: 'evil icons';
+    src: url('../../fonts/evil-icons.eot');
+    src: url('../../fonts/evil-icons.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/evil-icons.woff') format('woff'),
+         url('../../fonts/evil-icons.ttf') format('truetype'),
+         url('../../fonts/evil-icons.svg#evil-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+[class*='ei-']:before{
+	display: inline-block;
+   font-family: 'evil icons';
+   font-style: normal;
+   font-weight: normal;
+   line-height: 1;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale
+}
+.ei-archive:before{content:'\0041';}
+.ei-arrow-down:before{content:'\0042';}
+.ei-arrow-left:before{content:'\0043';}
+.ei-arrow-right:before{content:'\0044';}
+.ei-arrow-up:before{content:'\0045';}
+.ei-bell:before{content:'\0046';}
+.ei-calendar:before{content:'\0047';}
+.ei-camera:before{content:'\0048';}
+.ei-cart:before{content:'\0049';}
+.ei-clock:before{content:'\004a';}
+.ei-close:before{content:'\004b';}
+.ei-close-o:before{content:'\004c';}
+.ei-comment:before{content:'\004d';}
+.ei-credit-card:before{content:'\004e';}
+.ei-envelope:before{content:'\004f';}
+.ei-exclamation:before{content:'\0050';}
+.ei-external-link:before{content:'\0051';}
+.ei-eye:before{content:'\0052';}
+.ei-gear:before{content:'\0053';}
+.ei-heart:before{content:'\0054';}
+.ei-chart:before{content:'\0055';}
+.ei-check:before{content:'\0056';}
+.ei-chevron-down:before{content:'\0057';}
+.ei-chevron-left:before{content:'\0058';}
+.ei-chevron-right:before{content:'\0059';}
+.ei-chevron-up:before{content:'\005a';}
+.ei-image:before{content:'\0061';}
+.ei-like:before{content:'\0062';}
+.ei-link:before{content:'\0063';}
+.ei-location:before{content:'\0064';}
+.ei-lock:before{content:'\0065';}
+.ei-minus:before{content:'\0066';}
+.ei-navicon:before{content:'\0067';}
+.ei-paperclip:before{content:'\0068';}
+.ei-pencil:before{content:'\0069';}
+.ei-play:before{content:'\006a';}
+.ei-plus:before{content:'\006b';}
+.ei-pointer:before{content:'\006c';}
+.ei-question:before{content:'\006d';}
+.ei-redo:before{content:'\006e';}
+.ei-refresh:before{content:'\006f';}
+.ei-retweet:before{content:'\0070';}
+.ei-sc-facebook:before{content:'\0071';}
+.ei-sc-github:before{content:'\0072';}
+.ei-sc-google-plus:before{content:'\0073';}
+.ei-sc-instagram:before{content:'\0074';}
+.ei-sc-linkedin:before{content:'\0075';}
+.ei-sc-odnoklassniki:before{content:'\0076';}
+.ei-sc-pinterest:before{content:'\0077';}
+.ei-sc-skype:before{content:'\0078';}
+.ei-sc-soundcloud:before{content:'\0079';}
+.ei-sc-telegram:before{content:'\007a';}
+.ei-sc-tumblr:before{content:'\0030';}
+.ei-sc-twitter:before{content:'\0031';}
+.ei-sc-vimeo:before{content:'\0032';}
+.ei-sc-vk:before{content:'\0033';}
+.ei-sc-youtube:before{content:'\0034';}
+.ei-search:before{content:'\0035';}
+.ei-share-apple:before{content:'\0036';}
+.ei-share-google:before{content:'\0037';}
+.ei-spinner:before{content:'\0038';}
+.ei-spinner-2:before{content:'\0039';}
+.ei-spinner-3:before{content:'\0021';}
+.ei-star:before{content:'\0022';}
+.ei-tag:before{content:'\0023';}
+.ei-trash:before{content:'\0024';}
+.ei-trophy:before{content:'\0025';}
+.ei-undo:before{content:'\0026';}
+.ei-unlock:before{content:'\0027';}
+.ei-user:before{content:'\0028';}
+.ei-reply:before{content:'\0029';}
+.ei-reply-link:before{content:'\002a';}
+.ei-chevron-menu:before{content:'\002b';}

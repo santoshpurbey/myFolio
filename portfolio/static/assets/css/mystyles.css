@@ -1,0 +1,148 @@
+.github {
+    text-align: center;
+}
+
+
+/** Portfolio Filter */
+
+
+.block-filter ul {
+    display: inline-block;
+    position: relative;
+}
+
+
+.filter {
+    display: inline-block;
+    margin: 0 10px;
+    position: relative;
+	text-transform:uppercase;
+	font-size:13px;
+}
+
+
+
+.filter a {
+    color: #33373d;
+}
+
+
+.filter a.active {
+    color: #28b5c6;
+}
+
+
+
+
+.item {
+
+    position: relative;
+	margin-bottom:30px;
+}
+
+
+.disable:before {
+    background-color: #ffffff;
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.7;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 12;
+}
+
+
+
+.item a .desc {
+    background: rgba(130, 181, 65, 0.68);
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+    opacity:0;
+
+}
+
+
+.item a .desc:hover{
+	opacity:1;
+}
+
+
+.item a .desc h3 {
+    color: #ffffff;
+	font-size:13px;
+	bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height:55px;
+}
+
+.item a .desc h3 span {
+    display:block;
+	font-size:12px;
+	text-transform:none;
+	position:relative;
+	top:-5px;
+}
+
+
+.zigzag.work {
+    stroke: #ffffff;
+	position:relative !important;
+	top:-1px !important;
+}
+
+
+
+.block-nav-work {
+	display:inline-block;
+	position:relative;
+	width:100%;
+
+}
+
+
+.block-nav-work ul {
+	text-align:center;
+
+}
+
+
+.block-nav-work li{
+	display:inline-block;
+	margin:0 2px;
+}
+
+
+.block-nav-work li a{
+	display:inline-block;
+	color:#cccccc;
+	font-size:15px;
+	border:1px solid #efefef;
+	padding:5px;
+}
+
+
+.block-nav-work li a:hover{
+	color:#a0ce4e;
+}
+
+
+
+.block-single h1.large-title{
+	font-size:40px;
+	letter-spacing:20px;
+	line-height:50px;
+}
+
+.block-single ul{
+	font-size:13px;
+}

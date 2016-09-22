@@ -3,6 +3,25 @@
 404 - {{ block.super }}
 {% endblock title %}
 {% block content %}
-<h1>404 Error</h1>
-<p>You’ve run into a page that doesn’t exist!</p>
+<div class="site-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="page-content">
+          <!-- HERO TITLE-->
+          <div class="hero-title"><i class="ei-trash bndl-center"></i>
+            <h2>404</h2>
+          </div>
+          <!-- END / HERO TITLE-->
+          <div class="section-text text-center">
+            <h1 class="bndl-title large">Page Not Found</h1>
+            <p class="notice">Sorry, i can’t find this page.</p>
+          </div>
+          <div class="text-center"><a href="../pages/blog-layout/mosaic.html" class="bndl-btn medium">Visit Homepage</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock content %}

@@ -1,235 +1,517 @@
 <!doctype html>
 <html class="no-js">
 <head>
+  <title>Katerina Kabardi | PyCat</title>
+  <!-- METATAGS-->
   <meta charset="utf-8">
-  <title>K.Kabardi - PyCat</title>
-  <meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	{% load staticfiles %}
-  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all"/>
-  <link href="{% static 'css/owl-carousel/owl.carousel.css' %}" rel="stylesheet"  media="all">
-	<link href="{% static 'css/owl-carousel/owl.theme.css' %}" rel="stylesheet"  media="all">
-	<link href="{% static 'css/magnific-popup.css' %}" type="text/css" rel="stylesheet" media="all" />
-	<link href="{% static 'css/font.css' %}" rel="stylesheet" type="text/css"  media="all">
-	<link href="{% static 'css/fontello.css' %}" rel="stylesheet" type="text/css"  media="all">
-	<link href="{% static 'css/base.css' %}" rel="stylesheet" type="text/css" media="all"/>
-	<link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css" media="all"/>
+  <meta name="description" content="Beautiful HTML template for bloggers, all you will need for blogging now.">
+  <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <!-- OPENGRAPHS-->
+  <meta property="og:title" content="| Boundly, HTML Template For Your Blog">
+  <meta property="og:site_name" content="Boundly">
+  <meta property="og:description" content="Beautiful HTML template for bloggers, all you will need for blogging now.">
+  <meta property="og:image" content="{% static 'assets/images/og-image.jpg">
+  <!-- STYLESHEETS-->
+  {% load staticfiles %}
+  <link href="{% static 'assets/css/vendor/bootstrap.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'assets/css/light-template/cyan.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'assets/css/responsive.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'assets/css/mystyles.css' %}" rel="stylesheet" type="text/css">
+  <!-- PLUGINS-->
+  <link href="{% static 'assets/css/vendor/jquery.jscrollpane.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'assets/css/vendor/evil-icons.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'assets/css/vendor/animate.css' %}" rel="stylesheet" type="text/css">
+  <!-- GOOGLE FONT-->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" type="text/css">
+  <!-- FAVICON-->
+  <link href="{% static 'assets/images/favicon.ico' %}" rel="shortcut icon" type="image/x-icon">
+  <!-- APPLE TOUCH ICON-->
+  <link href="{% static 'assets/images/apple-touch-icon.png' %}" rel="apple-touch-icon">
 </head>
 <body>
+<!-- SPINNER-->
+<div class="spinner"><i class="ei-spinner-3 spinner-icon"></i></div>
+<!-- END / SPINNER-->
 
-  <div id="fb-root"></div>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
-
-
-	<!-- Preloader -->
-<div id="loader">
-<!-- Preloader inner -->
-  <div id="loaderInner">
-    <div class="spinner"></div>
-  </div>
-	<!-- End preloader inner -->
-</div>
-<!-- End preloader-->
-
-<!--Wrapper-->
-<div id="wrapper" class="margLTop  margLBottom">
-	<!--Container-->
-    <div class="container">
-    	<div class="row ">
-    		<!--Left content-->
-    		<div class="col-md-3 nopr left-content">
-    			<!--Header-->
-    			<header id="header">
-    					<!--Main header-->
-    					<div class="main-header">
-
-    					<!--Profile image-->
-    					<figure class="img-profile">
-    						<img src="{% static 'img/profile.png' %}" alt=""/>
-
-    						<figcaption class="name-profile">
-    							<span>Katerina Kabardi<sup>&reg;</sup></span>
-    						</figcaption>
-
-    					</figure>
-      					<!--End profile image-->
-      					<!--Main navigation-->
-      							<nav id="main-nav" class="main-nav tabbed">
-      						<ul>
-                    {% url 'about' as url %}
-      							<li ><a {% if request.path == url %}class="active"{% endif %} href="{{ url }}"><i class="icon-user"></i>About</a></li>
-                    {% url 'portfolio_list' as url %}
-      							<li><a  {% if request.path == url %}class="active"{% endif %} href="{{ url }}"><i class="icon-camera"></i>Portfolio</a></li>
-                    {% url 'blog_list' as url %}
-      							<li><a  {% if request.path == url %}class="active"{% endif %} href="{{url}}"><i class="icon-chat"></i>Blog</a></li>
-                    {% url 'contact' as url %}
-      							<li><a {% if request.path == url %}class="active"{% endif %} href="{{ url }}"><i class="icon-phone"></i>Contact</a></li>
-      						</ul>
-      					</nav>
-      						<!--End main navigation-->
-      				</div>
-      				<!--End main header-->
-      				<div class="bottom-header bgWhite ofsTSmall ofsBSmall tCenter">
-      					<ul class="social">
-                <li><a href="https://github.com/kkampardi"><i class="icon-github"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/katerina-kampardi-6a319582?trk=nav_responsive_tab_profile"><i class="icon-linkedin"></i></a></li>
-      					<li><a href="https://twitter.com/kkampardi"><i class="icon-twitter"></i></a></li>
-                <li><a href="https://www.facebook.com/katerina.kabardi"><i class="icon-facebook"></i></a></li>
-      				</ul>
-
-              {% if request.user.is_authenticated	%}
-              <div class="auth">
-                <a href="{% url 'logout' %}?next=/blog" class="but brd">Sign Out</a>
-              </div>
-              <!-- TODO: Remove sign in button -->
-              {% else %}
-              <div class="auth">
-                <a class="but opc-2" href="{% url 'login' %}">Sign In</a>
-              </div>
-              {% endif %}
-      				<p>&copy; 2016 by PyCat</p>
-      				</div>
-      		  </header>
-          		  <!--End  header-->
-          </div>
-          <!--End left content-->
-
-            <!--Right content-->
-        <div class="col-md-9 right-content" style="">
-          {% block content %}
-
-          {% endblock %}
-        </div>
-
+<!-- MENU SIDEBAR-->
+<div class="bndl-sidebar mobile left ">
+  <div class="content-wrapper">
+    <!-- LOGO WIDGET-->
+    <div class="widget"><a href=""><img src="{% static 'assets/images/boundly-logo-vertical.svg' %}" alt="Alternative Text" class="logo"></a></div>
+    <!-- END / LOGO WIDGET-->
+    <!-- MENU VERTICAL-->
+    <div class="widget">
+      <ul class="bndl-menu vertical">
+        {% url 'portfolio_list' as url %}
+        <li><a href="{{ url }}">Portfolio</a></li>
+        {% url 'about' as url %}
+        <li><a href="{{ url }}">About</a></li>
+        {% url 'blog_list' as url %}
+        <li><a href="{{ url }}">Blog</a></li>
+        {% url 'contact' as url %}
+        <li><a href="{{ url }}">Contact</a></li>
+      </ul>
     </div>
-    <!--End  row-->
-  </div>
-<!--End  container-->
+    <!-- END / MENU VERTICAL-->
+    <!-- SOCIAL ICONS-->
+    <div class="widget">
+      <div class="bndl-social-icons"><a href="#"><i class="ei-sc-facebook"></i></a><a href="#"><i class="ei-sc-twitter"></i></a><a href="#"><i class="ei-sc-google-plus"></i></a><a href="#"><i class="ei-sc-youtube"></i></a></div>
+    </div>
+    <!-- END / SOCIAL ICONS-->
+    <!-- FOOTER-->
+    <div class="widget">
+      <footer>
+        <p>Katerina Kabardi Blog | Coded by <a href="kkabardi.me" target="_blank">PyCat</a> 2016</p>
+      </footer>
+    </div>
+    <!-- END / FOOTER-->
+  </div><i class="close-sidebar-mobile ei-close"></i>
 </div>
-<!--End wrapper-->
+<!-- END / MENU SIDEBAR-->
+
+<!-- WIDGET SIDEBAR-->
+<div class="bndl-sidebar right">
+  <div class="content-wrapper">
+    <!-- LATEST TWEETS WIDGET-->
+    <div class="widget latest_tweets">
+      <h4 class="widget-title">Latest Tweets</h4>
+      <ul>
+        <li>
+          <div class="logo"></div>
+          <div class="content">
+            <p>Free Apple Watch app presentation video template for Adobe After.</p><a href="#">pic.twitter.com/6UoNe1YXK2</a>
+            <time datetime="2016-06-10 00:00">38 minutes ago</time>
+          </div>
+        </li>
+        <li>
+          <div class="logo"></div>
+          <div class="content">
+            <p>Free Apple Watch app presentation video template for Adobe After.</p><a href="#">pic.twitter.com/6UoNe1YXK2</a>
+            <time datetime="2016-06-10 00:00">59 minutes ago</time>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- END / LATEST TWEETS WIDGET-->
+    <!-- RECENT COMMENTS WIDGET-->
+    <div class="widget widget_recent_comments">
+      <h4 class="widget-title">Recent Comments</h4>
+      <ul>
+        <li><span class="comment-author-link">Peter</span>on<a href="#">10 Signs You Should Invest In Write</a></li>
+        <li><span class="comment-author-link">Chesus</span>on<a href="#">17 Freaky Reasons Blogs Could Get You Fired</a></li>
+        <li><span class="comment-author-link">Danielka</span>on<a href="#">How Blogs are Like a School Bully</a></li>
+      </ul>
+    </div>
+    <!-- END / RECENT COMMENTS  WIDGET-->
+    <!-- INSTAGRAM FEED WIDGET-->
+    <div class="widget widget_instagram_feed">
+      <h4 class="widget-title">Instagram Feed</h4>
+      <div class="bndl-widget-carousel">
+        <ul>
+          <li class="active"><a href="#"><i class="ei-search btn medium"></i><img src="{% static 'media/instagram.jpg' %}" alt="alternative text"></a><a href="#"><i class="ei-search btn medium"></i>
+            <img src="{% static 'media/instagram.jpg' %}" alt="alternative text"></a><a href="#"><i class="ei-search btn medium"></i><img src="{% static 'media/instagram.jpg' %}" alt="alternative text"></a><a href="#"><i class="ei-search btn medium"></i><img src="{% static 'media/instagram.jpg" alt="alternative text' %}"></a></li>
+          <li><a href="#"><i class="ei-search btn medium"></i><img src="{% static 'media/instagram.jpg' %}" alt="alternative text"></a><a href="#"><i class="ei-search btn medium"></i><img src="{% static 'media/instagram.jpg' %}" alt="alternative text"></a><a href="#"><i class="ei-search btn medium"></i><img src="{% static 'media/instagram.jpg' %}" alt="alternative text"></a><a href="#"><i class="ei-search btn medium"></i><img src="{% static 'media/instagram.jpg' %}" alt="alternative text"></a></li>
+          <li><a href="#"><i class="ei-search btn medium"></i><img src="{% static 'media/instagram.jpg' %}" alt="alternative text"></a><a href="#"><i class="ei-search btn medium"></i><img src="{% static 'media/instagram.jpg' %}" alt="alternative text"></a><a href="#"><i class="ei-search btn medium"></i><img src="{% static 'media/instagram.jpg' %}" alt="alternative text"></a><a href="#"><i class="ei-search btn medium"></i><img src="{% static 'media/instagram.jpg' %}" alt="alternative text"></a></li>
+        </ul>
+        <div class="controller"><span class="active"></span><span></span><span></span></div>
+      </div>
+      <div class="instagram-acc"><span class="muted-text">Follow Me</span><a href="https://www.instagram.com/boundly/" target="_blank" class="instagram-link">@Boundly</a></div>
+    </div>
+    <!-- END / INSTAGRAM FEED WIDGET-->
+    <!-- CATEGORIES WIDGET-->
+    <div class="widget widget_categories">
+      <h4 class="widget-title">Categories</h4>
+      <ul>
+        <li><a href="#">Work</a>7</li>
+        <li><a href="#">Travel</a>12</li>
+        <li><a href="#">Lifestyle</a>3</li>
+      </ul>
+    </div>
+    <!-- END / CATEGORIES WIDGET-->
+    <!-- CALENDAR WIDGET-->
+    <div class="widget widget_calendar">
+      <h4 class="widget-title">Calendar</h4>
+      <div id="calendar_wrap">
+        <table id="wp-calendar">
+          <caption>May 2016</caption>
+          <thead>
+            <tr>
+              <th scope="col" title="Monday">M</th>
+              <th scope="col" title="Tuesday">T</th>
+              <th scope="col" title="Wednesday">W</th>
+              <th scope="col" title="Thursday">T</th>
+              <th scope="col" title="Friday">F</th>
+              <th scope="col" title="Saturday">S</th>
+              <th scope="col" title="Sunday">S</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th colspan="3" id="prev"><a href="#">« Apr</a></th>
+              <th class="pad">&nbsp;</th>
+              <th colspan="3" id="next">&nbsp;</th>
+            </tr>
+          </tfoot>
+          <tbody>
+            <tr>
+              <td colspan="6" class="pad">&nbsp;</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td id="today">10</td>
+              <td>11</td>
+              <td>12</td>
+              <td>13</td>
+              <td>14</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>16</td>
+              <td>17</td>
+              <td>18</td>
+              <td>19</td>
+              <td>20</td>
+              <td>21</td>
+              <td>22</td>
+            </tr>
+            <tr>
+              <td>23</td>
+              <td>24</td>
+              <td>25</td>
+              <td>26</td>
+              <td>27</td>
+              <td>28</td>
+              <td>29</td>
+            </tr>
+            <tr>
+              <td>30</td>
+              <td>31</td>
+              <td colspan="5" class="pad">&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- END / CALENDAR  WIDGET-->
+    <!-- POPULAR POST WIDGET-->
+    <div class="widget widget_bndl_popular_post">
+      <h4 class="widget-title">Popular Post</h4>
+      <ul>
+        <li>
+          <div class="image-thumbnail"><span class="comment-counter">17</span><img src="{% static 'media/widget-thumbnail.jpg' %}" alt="alternative text"></div>
+          <div class="content"><a href="#">5 Tools Everyone In The Time Industry Should Be Using</a>
+            <time datetime="2016-06-10 00:00">June 15, 2016</time>
+          </div>
+        </li>
+        <li>
+          <div class="image-thumbnail"><span class="comment-counter">7</span><img src="{% static 'media/widget-thumbnail.jpg' %}" alt="alternative text"></div>
+          <div class="content"><a href="#">What Will Work Be Like In 100 Years?</a>
+            <time datetime="2016-06-10 00:00">June 12, 2016</time>
+          </div>
+        </li>
+        <li>
+          <div class="image-thumbnail"><span class="comment-counter">9</span><img src="{% static 'media/widget-thumbnail.jpg' %}" alt="alternative text"></div>
+          <div class="content"><a href="#">10 Things Your Competitors Can Teach You About Life</a>
+            <time datetime="2016-06-10 00:00">June 9, 2016</time>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- END / POPULAR POST WIDGET-->
+    <!-- SOCIAL MEDIA WIDGET-->
+    <div class="widget widget_social_icons">
+      <h4 class="widget-title">Me on Social Media</h4>
+      <div class="bndl-social-icons"><a href="#"><i class="ei-sc-facebook"></i></a><a href="#"><i class="ei-sc-twitter"></i></a><a href="#"><i class="ei-sc-google-plus"></i></a><a href="#"><i class="ei-sc-youtube"></i></a></div>
+      <p class="muted-text">Add me to your social network</p>
+    </div>
+    <!-- END / SOCIAL MEDIA WIDGET-->
+    <!-- RECENT POST WIDGET-->
+    <div class="widget widget_recent_entries">
+      <h4 class="widget-title">Recent Post</h4>
+      <ul>
+        <li><a href="#">10 Signs You Should Invest In Write</a>
+          <div class="post-date">June 14, 2016</div>
+        </li>
+        <li><a href="#">The Ultimate Cheat Sheet On Sound</a>
+          <div class="post-date">June 9, 2016</div>
+        </li>
+        <li><a href="#">What Will Writing Be Like In 100 Years?</a>
+          <div class="post-date">June 1, 2016</div>
+        </li>
+      </ul>
+    </div>
+    <!-- END / RECENT POST WIDGET-->
+    <!-- SUBSCRIBE WIDGET-->
+    <div class="widget widget_bndl_subscribe">
+      <h4 class="widget-title">Subscribe To Newsletter</h4>
+      <form class="search-form">
+        <input type="search" placeholder="Type email" class="search-field"><span class="disclaimer">Don’t worry, we hate spam!</span>
+        <button type="submit" class="search-submit bndl-btn medium">Subscribe</button>
+      </form>
+    </div>
+    <!-- END / SUBSCRIBE WIDGET-->
+    <!-- ABOUT ME WIDGET-->
+    <div class="widget widget_about_me">
+      <h4 class="widget-title">About Me</h4>
+      <div class="widget-content"><img src="{% static 'media/avatar.jpg' %}" alt="alternative text" class="me-image"><b>John Doe</b>
+        <p>Aenean porttitor fringilla lobortis. Donec tristique leo eu tellus viverra hendrerit a nec metus.</p>
+      </div>
+    </div>
+    <!-- END / ABOUT ME WIDGET-->
+    <!-- CUSTOM MENU-->
+    <!-- END / CUSTOM MENU WIDGET-->
+    <!-- SEARCH WIDGET-->
+    <div class="widget widget_search">
+      <h4 class="widget-title">Search</h4>
+      <form class="search-form">
+        <input type="search" placeholder="Type something" class="search-field">
+        <button type="submit" class="search-submit"></button>
+      </form>
+    </div>
+    <!-- END / SEARCH  WIDGET-->
+    <!-- TOP POSTS WIDGET-->
+    <div class="widget widget_top_posts">
+      <h4 class="widget-title">Top Posts</h4>
+      <ul>
+        <li><a href="#">
+            <div class="top-post-title">
+              <h5>15 Best Blogs To Follow About Life</h5>
+            </div><img src="{% static 'media/top-post.jpg' %}" alt="alternative text"></a></li>
+        <li><a href="#">
+            <div class="top-post-title">
+              <h5>What Will Work Be Like In 100 Years?</h5>
+            </div><img src="{% static 'media/top-post.jpg' %}" alt="alternative text"></a></li>
+      </ul>
+    </div>
+    <!-- END / TOP POSTS WIDGET-->
+    <!-- META WIDGET-->
+    <div class="widget widget_meta">
+      <h4 class="widget-title">Meta</h4>
+      <ul>
+        <li><a href="#">Site Admin</a></li>
+        <li><a href="#">Log Out</a></li>
+        <li><a href="#">Entries<abbr>RSS</abbr></a></li>
+        <li><a href="#">Comments<abbr>RSS</abbr></a></li>
+        <li><a href="#">Wordpress.org</a></li>
+      </ul>
+    </div>
+    <!-- END / META WIDGET-->
+    <!-- TAGS WIDGET-->
+    <div class="widget tag_cloud widget_tag_cloud">
+      <h4 class="widget-title">Tags</h4>
+      <div class="tagcloud"><a href="#">Work</a><a href="#">Travel</a><a href="#">Lifestyle</a><a href="#">Quotes</a><a href="#">Awesome</a><a href="#">Work</a><a href="#">Career</a></div>
+    </div>
+    <!-- END / TAGS WIDGET-->
+    <!-- ARCHIVES WIDGET-->
+    <div class="widget widget_archive">
+      <h4 class="widget-title">Archives</h4>
+      <ul>
+        <li><a href="#">January 2016</a>(6)</li>
+        <li><a href="#">February 2016</a>(12)</li>
+        <li><a href="#">March 2016</a>(3)</li>
+        <li><a href="#">April 2016</a>(19)</li>
+        <li><a href="#">May 2016</a>(19)</li>
+      </ul>
+    </div>
+    <!-- END / ARCHIVES WIDGET-->
+    <!-- PAGES WIDGET-->
+    <!-- END / PAGES WIDGET-->
+  </div><i class="close-sidebar-mobile ei-close"></i>
+</div>
+<!-- END / WIDGET SIDEBAR-->
+
+<!-- PAGE CONTENT-->
+<div id="page-wrapper" class="sidebar-fixed">
+  <!-- SMALL HEADER-->
+  <header class="page-header big sticky">
+    <div class="bar-left">
+      <!-- BURGER ICON-->
+      <div class="bndl-burger"><span class="bndl-burger-icon"><span></span><span></span><span></span></span><span class="bndl-icon-mark">Menu</span></div>
+      <!-- END BURGER ICON-->
+    </div>
+    <div class="bar-center">
+      <!-- LOGO--><a href="#"><img src="{% static 'assets/images/boundly-logo.svg' %}" alt="Alternative Text" class="logo"></a>
+      <!-- END LOGO-->
+    </div>
+    <div class="bar-right">
+      <!-- WIDGET ICON-->
+      <div class="bndl-widget"><span class="bndl-widget-icon"><span></span><span></span><span></span></span></div>
+      <!-- END WIDGET ICON-->
+    </div>
+  </header>
+  <!-- END SMALL HEADER-->
+  <!-- BREADCRUMB-->
+  <div class="page-breadcrumb">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="bndl-breadcrumb">
+            <div class="link"><a href="#">Read Blog</a></div>
+            <div class="bndl-categories"><a href="{% static 'pages/blog-layout/mosaic.html' %}">Home</a><a href="#" class="active">About Me</a></div>
+            <div class="bndl-search"><i data-popup="popup-search" class="ei-search bndl-search"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END / BREADCRUMB-->
+  <!-- PAGE MAIN CONTENT -->
+  {% block content %}
+
+  {% endblock %}
+  <!-- END PAGE MAIN CONTENT -->
+  <!-- FOOTER-->
+  <footer class="bndl-main-footer">
+    <!-- FOOTER UPPER-->
+    <div class="bndl-footer-upper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <!-- ABOUT ME WIDGET-->
+            <div class="widget widget_about_me">
+              <h4 class="widget-title">About Me</h4>
+              <div class="widget-content"><img src="{% static 'media/avatar.jpg' %}" alt="alternative text" class="me-image"><b>John Doe</b>
+                <p>Aenean porttitor fringilla lobortis. Donec tristique leo eu tellus viverra hendrerit a nec metus.</p>
+                <div class="bndl-social-icons"><a href="#"><i class="ei-sc-facebook"></i></a><a href="#"><i class="ei-sc-twitter"></i></a><a href="#"><i class="ei-sc-google-plus"></i></a><a href="#"><i class="ei-sc-youtube"></i></a></div>
+              </div>
+            </div>
+            <!-- END / ABOUT ME WIDGET-->
+          </div>
+          <div class="col-md-6">
+            <!-- INSTAGRAM FOOTER WIDGET-->
+            <div class="widget widget_instagram_feed_footer">
+              <div class="bndl-center">
+                <div class="instagram-link"><span>Follow me</span><a href="#" target="_blank" class="instagram-account">@Boundly</a></div>
+              </div>
+              <ul class="instagram-images">
+                <li><a href="#"><i class="ei-search btn medium"></i><img src="{% static 'media/instagram.jpg' %}" alt="alternative text"></a><a href="#"><i class="ei-search btn medium"></i>
+                  <img src="{% static 'media/instagram.jpg' %}" alt="alternative text"></a><a href="#"><i class="ei-search btn medium"></i><img src="{% static 'media/instagram.jpg' %}" alt="alternative text"></a><a href="#"><i class="ei-search btn medium"></i>
+                    <img src="{% static 'media/instagram.jpg' %}" alt="alternative text"></a><a href="#"><i class="ei-search btn medium"></i><img src="{% static 'media/instagram.jpg' %}" alt="alternative text"></a><a href="#"><i class="ei-search btn medium"></i><img src="{% static '/media/instagram.jpg' %}" alt="alternative text"></a></li>
+              </ul>
+            </div>
+            <!-- END / INSTAGRAM FOOTER WIDGET-->
+          </div>
+          <div class="col-md-3">
+            <!-- RECENT COMMENTS WIDGET-->
+            <div class="widget widget_recent_comments">
+              <h4 class="widget-title">Recent Comments</h4>
+              <ul>
+                <li><span class="comment-author-link">Peter</span>on<a href="#">10 Signs You Should Invest In Write</a></li>
+                <li><span class="comment-author-link">Chesus</span>on<a href="#">17 Freaky Reasons Blogs Could Get You Fired</a></li>
+                <li><span class="comment-author-link">Danielka</span>on<a href="#">How Blogs are Like a School Bully</a></li>
+                <li><span class="comment-author-link">Peter</span>on<a href="#">10 Signs You Should Invest In Write</a></li>
+              </ul>
+            </div>
+            <!-- END / RECENT COMMENTS  WIDGET-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END / FOOTER UPPER-->
+    <!-- FOOTER LOWER-->
+    <div class="bndl-footer-lower">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-5">
+            <!-- WIDGET-->
+            <div class="widget">
+              <p><b>kkabardi portfolio</b> created by <b>PyCat</b> 2016</p>
+            </div>
+            <!-- END / WIDGET-->
+          </div>
+          <div class="col-md-2">
+            <!-- WIDGET-->
+            <div class="widget"><a href="{% static 'pages/blog-layout/mosaic.html' %}"><img src="{% static 'assets/images/boundly-logo.svg' %}" alt="alternative text" class="logo"></a></div>
+            <!-- END / WIDGET-->
+          </div>
+          <div class="col-md-5">
+            <!-- WIDGET-->
+            <div class="widget">
+              <ul>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#" target="_blank">Themeforest</a></li>
+                <li><a href="{% static 'pages/purchase.html' %}">Purchase</a></li>
+              </ul>
+            </div>
+            <!-- END / WIDGET-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END / FOOTER LOWER-->
+  </footer>
+  <!-- END / FOOTER-->
+</div>
+<!-- END PAGE CONTENT-->
+<!-- POPUPS-->
+<div class="popup-content">
+  <!-- SUBSCRIBE POPUP-->
+  <div class="popup-subscribe"><i class="ei-close btn medium destroy-popup"></i>
+    <form>
+      <input type="email" placeholder="Type your email here" class="user-input"><span class="bottom-line"></span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+      <input type="submit" value="Subscribe my email" class="bndl-btn medium">
+    </form>
+  </div>
+  <!-- END / SUBSCRIBE POPUP-->
+  <!-- SEARCH POPUP-->
+  <div class="popup-search"><i class="ei-close btn medium destroy-popup"></i>
+    <form>
+      <input type="text" placeholder="Type something..." class="user-input"><span class="bottom-line"></span>
+      <input type="submit" value="Search" class="bndl-btn medium">
+    </form>
+  </div>
+  <!-- END / SEARCH POPUP-->
+</div>
+<!-- END POPUPS-->
+<!-- SCROLL TOP--><i class="scroll-top ei-chevron-up btn small"></i>
+<!-- END SCROLL TOP-->
+<!-- CORE-->
+  <script src="{% static 'assets/js/vendor/jquery-2.2.2.min.js' %}"></script>
+  <script src="{% static 'assets/js/vendor/jquery.plugin.min.js' %}"></script>
+  <!-- PLUGINS-->
+  <script src="{% static 'assets/js/vendor/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/js/vendor/minigrid.min.js' %}"></script>
+  <script src="{% static 'assets/js/vendor/jquery.mousewheel.js' %}"></script>
+  <script src="{% static 'assets/js/vendor/jquery.jscrollpane.min.js' %}"></script>
+  <script src="{% static 'assets/js/vendor/jquery.countdown.min.js' %}"></script>
+  <script src="{% static 'assets/js/vendor/jquery.waypoints.js' %}"></script>
+  <!-- SCRIPTS-->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+<!-- FILTERED PORTFOLIO -->
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.filter a').on("click", function(e){
+      e.preventDefault();
+      $(this).addClass('active');
+      $(this).parent().find('a').removeClass('active');
+          var filters = $(this).attr('data-filter');
+          $(this).closest('.works').find('.item').removeClass('disable');
+          if (filters !== 'all') {
+          var selected =  $(this).closest('.works').find('.item');
+          for(var i = 0; i < selected.length; i++){
+            if (!selected.eq(i).hasClass(filters)) {
+                        selected.eq(i).addClass('disable');
+            }
+          }
+        }
 
 
-<!--Javascript-->
-<script src="{% static 'js/jquery-1.11.3.min.js' %}" type="text/javascript"></script>
-<script src="{% static 'js/jquery-migrate-1.2.1.js' %}" type="text/javascript"></script>
-<script src="{% static 'js/owl.carousel.js' %}" type="text/javascript"></script>
-<script src="{% static 'js/jquery.magnific-popup.js' %}" type="text/javascript"></script>
-<script src="{% static 'js/jquery.easytabs.min.js' %}" type="text/javascript"></script>
-<script src="{% static 'js/jquery.easing.1.3.js' %}" type="text/javascript"></script>
-<script src="{% static 'js/modernizr.js' %}" type="text/javascript"></script>
-<script src="{% static 'js/placeholders.min.js' %}" type="text/javascript"></script>
-<script src="{% static 'js/script.js' %}" type="text/javascript"></script>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
-<script>
-
-(function($) {
-"use strict";
-
-$(document).ready(function(){
-
-$('#wrapper').easytabs({
-animate			: true,
-updateHash		: false,
-transitionIn	:'fadeIn',
-transitionOut	:'fadeOut',
-animationSpeed	:100,
-tabActiveClass	:'active',
-tabs            :' #main-nav.tabbed > ul > li ',
-transitionInEasing: 'linear',
-transitionOutEasing: 'linear'
-
+  });
 });
-
-
-//---------------------------------- Google map location -----------------------------------------//
-
-
-$('#wrapper').bind('easytabs:after', function() {
-
-
-
-
-var styles = [
-         {
-             stylers: [
-                 { saturation: -100 }
-
-             ]
-         },{
-             featureType: 'road',
-             elementType: 'geometry',
-             stylers: [
-                 { hue: "#74b7b0" },
-                 { visibility: 'simplified' }
-             ]
-         },{
-             featureType: 'road',
-             elementType: 'labels',
-             stylers: [
-                 { visibility: 'on' }
-             ]
-         }
-       ],
-
-        lat = -33.867487,
-        lng = 151.20699,
-
-
-
-
-
-       customMap = new google.maps.StyledMapType(styles,
-           {name: 'Styled Map'}),
-
-
-       mapOptions = {
-           zoom: 14,
-     scrollwheel: false,
-     disableDefaultUI: true,
-           center: new google.maps.LatLng( lat, lng ),
-           mapTypeControlOptions: {
-               mapTypeIds: [google.maps.MapTypeId.ROADMAP]
-           }
-       },
-       map = new google.maps.Map(document.getElementById('map'), mapOptions),
-       myLatlng = new google.maps.LatLng( lat, lng ),
-
-
-
-
-       marker = new google.maps.Marker({
-         position: myLatlng,
-         map: map,
-     icon: {
-                 url: 'img/marker.png',
-                 scaledSize: new google.maps.Size(26, 42)
-             }
-       });
-
-       map.mapTypes.set('map_style', customMap);
-       map.setMapTypeId('map_style');
-
-});
-
-//---------------------------------- End google map location -----------------------------------------//
-
-});
-
-})(jQuery);
 
 </script>
-
-
-<!-- Google analytics -->
-
-
-<!-- End google analytics -->
-
 </body>
 </html>

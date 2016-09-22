@@ -1,121 +1,86 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block content %}
-<!--Portfolio Tab-->
-<section id="portfolio" class="bgWhite ofsInBottom">
-              <!--Portfolio -->
-                    <div class="portfolio">
-                      <!--Main title-->
-                        <div class="main-title">
-                          <h1>my works</h1>
-                            <div class="divider">
-                                <div class="zigzag large clearfix " data-svg-drawing="yes">
-                                  <svg xml:space="preserve" viewBox="0 0 69.172 14.975" width="37" height="28" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                                  <path d="M1.357,12.26 10.807,2.81 20.328,12.332
-                                    29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 " style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"></path>
-                                  </svg>
-                                  </div>
-                            </div>
-                        </div>
-                      <!--End main title-->
-                    <!--Content-->
-                    <div class="content">
-                      <!--Block content-->
-                      <div class="block-content ">
-                      <!--Works-->
-                      <div class="works">
-                      <!--Row-->
-                      <div class="row">
-                        <div class="block-filter tCenter">
-                          <ul id="category" class="filter">
-                            <!--li><a data-filter="all" href="#" class="active">all</a></li>
-                            <li><a data-filter="web" href="#">AngularJs</a></li>
-                            <li><a data-filter="graphic" href="#">Django</a></li>
-                            <li><a data-filter="motion" href="#">In Progess</a></li>
-                            <li><a data-filter="" href="#">Other</a></li-->
-                            <li><a data-filter="all" href="#" class="active">all</a></li>
-                            {% for category in categories %}
-                            {% if category.projects.all %}
-                            <li><a  data-filter="{{category.name}}" href="#">{{category.name}}</a></li>
-                            {% endif %}
-                            {% endfor %}
-                        </ul>
-                        </div>
-                      </div>
-                      <!--End row-->
-                      <!--Row-->
-                      <div class="row">
-                        <div class="divider-m tCenter margTSSmall margBSmall clearfix">
-                          <div class="col-md-12">
-                            <div class="zigzag medium clearfix " data-svg-drawing="yes">
-                              <svg xml:space="preserve" viewBox="0 0 69.172 14.975" width="45" height="5" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                              <path d="M1.357,12.26 10.807,2.81 20.328,12.332
-                                29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 " style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"></path>
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!--End row-->
-                      <!--Row-->
-                      <div class="row">
-                        <ul class="work">
-                        {% for project in projects %}
-                        <li class="col-md-4" style="list-style:none;">
-                          <!--Item-->
-                          <div class="item {{project.categories}}">
-                            <a href="{% url 'portfolio_detail' pk=project.pk %}">
-                              <div class="desc">
-                              <h3 class="proj-desc">{{project.name}}
-                              <span class="zigzag work clearfix " data-svg-drawing="yes">
-                                  <svg xml:space="preserve" viewBox="0 0 69.172 14.975" width="25" height="10" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                                  <path d="M1.357,12.26 10.807,2.81 20.328,12.332
-                                    29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 " style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"></path>
-                                  </svg>
-                                </span>
-                               <span>{{project.short_description}}</span></h3>
-                              </div>
-                              <img class="img-responsive img-thumbnail" alt="{{project.name}}" src="/media/media/{{project.image}}">
-                            </a>
-                        </div>
-                        <!--End item-->
-                        {% if forloop.counter|divisibleby:3 %}
-                      </div><div class="row">
-                        {% endif %}
-                      </li>
-                      {% endfor %}
-                  </ul>
-                </div>
-              <!--End row-->
-            </div>
-            <!--End works-->
-            <div class="clearfix"></div>
-          </div>
-          <!--End block content-->
-        </div>
-      <!--End content-->
-      <!--Button-->
-      <div class="button ofsInTop tCenter clearfix">
-            <div class="divider">
-                <div class="zigzag large clearfix " data-svg-drawing="yes">
-                  <svg xml:space="preserve" viewBox="0 0 69.172 14.975" width="37" height="28" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                  <path d="M1.357,12.26 10.807,2.81 20.328,12.332
-                    29.781,2.879 39.223,12.321 48.754,2.79 58.286,12.321 67.815,2.793 " style="stroke-dasharray: 93.9851, 93.9851; stroke-dashoffset: 0;"></path>
-                  </svg>
-                  </div>
-            </div>
-            <!--Row-->
-            <div class="row ">
+<div class="site-content grey-background">
+  <div class="container-fluid">
+    <div class="row ">
+      <div class="col-md-9 works">
+        <!-- PROJECT CATEGORIES-->
+        <div class="page-breadcrumb">
+          <div class="container-fluid">
+            <div class="row">
               <div class="col-md-12">
-                <a class="but opc-1 icon-github" href="https://github.com/kkampardi">View my Github</a>
-                <a class="but opc-2 icon-phone" href="http://kkabardi.me/contact/">Contact Me</a>
+                <div class="bndl-breadcrumb blog-categories">
+                  <div class="breadcrumb-title"><span>My Projects</span></div>
+                  <div class="widget tag_cloud widget_tag_cloud">
+                      <div id="category" class="tagcloud filter">
+                        <a data-filter="all" href="#" class="active">all</a>
+                        {% for category in categories %}
+                        {% if category.projects.all %}
+                        <a data-filter="{{category.name}}"  href="#">{{category.name}}</a>
+                        {% endif %}
+                        {% endfor %}
+                      </div>
+                    </div>
+                </div>
               </div>
             </div>
-            <!--End row-->
+          </div>
+        </div>
+        <!-- END / PROJECT CATEGORIES-->
+        <div class="blog-loop masonry-col-2">
+          <!-- PROJECT THUMBNAIL LAYOUT-->
+          <div class="loop thumbnail-layout">
+            {% for project in projects %}
+            <!-- POST LARGE-->
+            <article class="post image item {{project.categories}}">
+              {{project.name}}
+              <div class="post-content">
+                <div class="post-media">
+                  <div class="post-image"><img src="{% static 'media/instagram.jpg' %}" alt="{{project.name}}"></div>
+                </div>
+                <div class="post-body">
+                  <div class="post-category"><i class="ei-pencil"></i><a href="#">{{project.categories}}</a></div>
+                  <div class="post-title">
+                    <h2><a href="{% url 'portfolio_detail' pk=project.pk %}">{{project.name}}</a></h2>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <!-- END POST LARGE-->
+            {% endfor %}
+          </div>
+          <!-- END BLOG THUMBNAIL LAYOUT-->
+        </div>
+        <!-- PAGINATION-->
+        <nav class="pagination"><span class="page-numbers current">1</span><a href="#" class="page-numbers">2</a><a href="#" class="page-numbers">3</a><a href="#" class="page-numbers next">Next</a></nav>
+        <!-- END / PAGINATION-->
       </div>
-      <!--End button-->
+      <div class="col-md-3">
+        <!-- ABOUT ME WIDGET-->
+        <div class="widget widget_about_me">
+          <h4 class="widget-title">About Me</h4>
+          <div class="widget-content"><img src="{% static 'media/profile.png' %}" alt="alternative text" class="me-image">
+            <h3>Katerina Kabardi</h3>
+            <h4><i>Also known as PyCat</i></h4>
+
+            <p>I am a Full Stack Developer from Greece, passionate about Web Technologies and extremely excited to be asked to build your own Web Application</p>
+          </div>
+        </div>
+        <!-- END / ABOUT ME WIDGET-->
+
+        <!-- SOCIAL MEDIA WIDGET-->
+        <div class="widget widget_social_icons">
+          <h4 class="widget-title">Find Me</h4>
+          <div class="bndl-social-icons">
+            <a href="https://github.com/kkampardi"><i class="ei-sc-github"></i></a>
+            <a href="https://twitter.com/kkampardi"><i class="ei-sc-twitter"></i></a>
+            <a href="https://www.facebook.com/katerina.kabardi"><i class="ei-sc-facebook"></i></a>
+          <p class="muted-text">Add me to your social network</p>
+        </div>
+        <!-- END / SOCIAL MEDIA WIDGET-->
+      </div>
     </div>
-    <!--End portfolio-->
-  </section>
-  <!--End portfolio tab-->
+  </div>
+</div>
 {% endblock %}
