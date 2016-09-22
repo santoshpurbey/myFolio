@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+  <title>Katerina Kabardi | PyCat</title>
+  <!-- METATAGS-->
+  <meta charset="utf-8">
+  <meta name="description" content="Beautiful HTML template for bloggers, all you will need for blogging now.">
+  <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <!-- OPENGRAPHS-->
+  <meta property="og:title" content="| Boundly, HTML Template For Your Blog">
+  <meta property="og:site_name" content="Boundly">
+  <meta property="og:description" content="Beautiful HTML template for bloggers, all you will need for blogging now.">
+  <meta property="og:image" content="{% static 'assets/images/og-image.jpg">
+  <!-- STYLESHEETS-->
+  {% load staticfiles %}
+  <link href="{% static 'assets/css/vendor/bootstrap.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'assets/css/light-template/cyan.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'assets/css/responsive.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'assets/css/mystyles.css' %}" rel="stylesheet" type="text/css">
+  <!-- PLUGINS-->
+  <link href="{% static 'assets/css/vendor/jquery.jscrollpane.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'assets/css/vendor/evil-icons.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'assets/css/vendor/animate.css' %}" rel="stylesheet" type="text/css">
+  <!-- GOOGLE FONT-->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" type="text/css">
+  <!-- FAVICON-->
+  <link href="{% static 'assets/images/favicon.ico' %}" rel="shortcut icon" type="image/x-icon">
+  <!-- APPLE TOUCH ICON-->
+  <link href="{% static 'assets/images/apple-touch-icon.png' %}" rel="apple-touch-icon">
+</head>
+<body>
+  <body>
+    <!-- SPINNER-->
+    <div class="spinner"><i class="ei-spinner-3 spinner-icon"></i></div>
+    <!-- END / SPINNER-->
+    <div id="bndl-center-page">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- LOGO--><h1>PyCat</h1>
+            <p>
+              Site down for maintenance 
+            </p>
+            <!-- END LOGO-->
+            <!-- HERO TITLE-->
+            <div class="hero-title"><i class="ei-clock bndl-center"></i>
+              <!-- COUNTER-->
+              <div data-date="Oct 1 2016" data-format="DHMS" data-type="until" class="bndl-countdown"></div>
+              <!-- END COUNTER-->
+            </div>
+            <!-- END / HERO TITLE-->
+            <div class="section-text text-center">
+              <h1 class="bndl-title large">Coming soon</h1>
+            </div>
+            <!-- SOCIAL ICONS-->
+            <div class="bndl-social-icons">
+              <a href="https://github.com/kkampardi"><i class="ei-sc-github"></i></a>
+              <a href="https://twitter.com/kkampardi"><i class="ei-sc-twitter"></i></a>
+              <a href="https://facebook.com/kkampardi"><i class="ei-sc-facebook"></i></a>
+            <!-- END SOCIAL ICONS-->
+          </div>
+        </div>
+      </div>
+      <!-- CORE-->
+      <script src="{% static 'assets/js/vendor/jquery-2.2.2.min.js' %}"></script>
+      <script src="{% static 'assets/js/vendor/jquery.plugin.min.js' %}"></script>
+      <!-- PLUGINS-->
+      <script src="{% static 'assets/js/vendor/jquery.countdown.min.js' %}"></script>
+      <!-- SCRIPTS-->
+      <script src="{% static 'assets/js/main.js' %}"></script>
+    </div>
+  </body>
+</html>

@@ -100,3 +100,7 @@ def post_detail(request, pk):
             'comment_form': comment_form,
         }
     )
+
+
+def comming_soon(request):
+    return render(request, 'comming_soon.html', {})
