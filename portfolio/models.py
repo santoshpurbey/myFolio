@@ -70,24 +70,37 @@ class ProjectImage(models.Model):
     def get_absolute_url(self):
         return self.image.url
 
+class PostLayout(models.Model):
+    name = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=50, unique=True)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name = "layoout"
+        verbose_name_plural = "layouts"
+
+    def __unicode__(self):
+        return self.name
+
 #basic blog Model
 class Post(models.Model):
     STATUS_CHOICES = (
         ('draft', 'Draft'),
         ('published', 'Published'),
         )
+
     title = models.CharField(max_length=250)
     slug = models.SlugField(max_length=250,unique_for_date='publish')
     author = models.ForeignKey(User,related_name='blog_posts')
     short_description = models.CharField(max_length=300)
     body = RichTextField()
-    category = models.ManyToManyField('Category', related_name="post")
+    category = models.ManyToManyField('Category', related_name="posts")
     publish = models.DateTimeField(default=timezone.now, )
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10,choices=STATUS_CHOICES,default='draft')
     image = models.ImageField(upload_to='blog')
-
+    layouts = models.ForeignKey('PostLayout', blank=True, null=True, related_name="posts")
     objects = models.Manager() # default model Manager
     published = PublishedManager() # my custom model Manager
 

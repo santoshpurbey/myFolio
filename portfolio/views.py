@@ -6,7 +6,7 @@ from django.utils import timezone
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from .forms import CommentForm
-from .models import Project, Skill, Category, ProjectImage, Post, Comment
+from .models import Project, Skill, Category, ProjectImage, Post, Comment, PostLayout
 
 
 def about(request):
@@ -55,6 +55,9 @@ def blog_list(request):
     # grub categories
     categories = Category.objects.all()
 
+    # grub post layouts
+    layouts = PostLayout.objects.all()
+
 
     try:
         posts = paginator.page(page)
@@ -69,6 +72,7 @@ def blog_list(request):
         'posts': posts,
         'page' : page,
         'categories': categories,
+        'layouts' : layouts,
         })
 
 
