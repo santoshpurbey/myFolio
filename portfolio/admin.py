@@ -1,5 +1,5 @@
 from django.contrib import admin
-from models import Project, Category, Skill, ProjectImage, Post, Comment
+from models import Project, Category, Skill, ProjectImage, Post, Comment, PostLayout
 
 # set up automated slug creation
 class ProjectAdmin(admin.ModelAdmin):
@@ -9,11 +9,15 @@ class ProjectAdmin(admin.ModelAdmin):
 
 class PostAdmin(admin.ModelAdmin):
     model = Post
-    list_display = ('title', 'publish', 'status',)
+    list_display = ('title', 'publish', 'status', 'layouts')
     prepopulated_fields = {'slug':('title',)}
 
 class CategoryAdmin(admin.ModelAdmin):
     model = Category
+    prepopulated_fields = { 'slug':('name',)}
+
+class PostLayoutAdmin(admin.ModelAdmin):
+    model = PostLayout
     prepopulated_fields = { 'slug':('name',)}
 
 class CommentAdmin(admin.ModelAdmin):
@@ -29,3 +33,4 @@ admin.site.register(Skill)
 admin.site.register(ProjectImage)
 admin.site.register(Post, PostAdmin)
 admin.site.register(Comment, CommentAdmin)
+admin.site.register(PostLayout, PostLayoutAdmin)
