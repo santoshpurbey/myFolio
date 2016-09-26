@@ -14,7 +14,7 @@
   <!-- STYLESHEETS-->
   {% load staticfiles %}
   <link href="{% static 'assets/css/vendor/bootstrap.css' %}" rel="stylesheet" type="text/css">
-  <link href="{% static 'assets/css/light-template/cyan.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'assets/css/light-template/lime.css' %}" rel="stylesheet" type="text/css">
   <link href="{% static 'assets/css/responsive.css' %}" rel="stylesheet" type="text/css">
   <link href="{% static 'assets/css/mystyles.css' %}" rel="stylesheet" type="text/css">
   <!-- PLUGINS-->
@@ -55,13 +55,18 @@
     <!-- END / MENU VERTICAL-->
     <!-- SOCIAL ICONS-->
     <div class="widget">
-      <div class="bndl-social-icons"><a href="#"><i class="ei-sc-facebook"></i></a><a href="#"><i class="ei-sc-twitter"></i></a><a href="#"><i class="ei-sc-google-plus"></i></a><a href="#"><i class="ei-sc-youtube"></i></a></div>
+      <div class="bndl-social-icons">
+        <a href="https://github.com/kkampardi"><i class="ei-sc-github"></i></a>
+        <a href="https://www.linkedin.com/in/katerina-kampardi-6a319582?trk=nav_responsive_tab_profile"><i class="ei-sc-linkedin"></i></a>
+        <a href="https://twitter.com/kkampardi"><i class="ei-sc-twitter"></i></a>
+        <a href="https://www.facebook.com/katerina.kabardi"><i class="ei-sc-facebook"></i></a>
+      </div>
     </div>
     <!-- END / SOCIAL ICONS-->
     <!-- FOOTER-->
     <div class="widget">
       <footer>
-        <p>Katerina Kabardi Blog | Coded by <a href="kkabardi.me" target="_blank">PyCat</a> 2016</p>
+        <p>Katerina Kabardi <br>Coded by <a href="kkabardi.me" target="_blank">PyCat</a> 2016</p>
       </footer>
     </div>
     <!-- END / FOOTER-->
@@ -402,17 +407,31 @@
             <!-- END / INSTAGRAM FOOTER WIDGET-->
           </div>
           <div class="col-md-3">
-            <!-- RECENT COMMENTS WIDGET-->
-            <div class="widget widget_recent_comments">
-              <h4 class="widget-title">Recent Comments</h4>
+            <!-- POPULAR POST WIDGET-->
+            <div class="widget widget_bndl_popular_post">
+              <h4 class="widget-title">Popular Post</h4>
               <ul>
-                <li><span class="comment-author-link">Peter</span>on<a href="#">10 Signs You Should Invest In Write</a></li>
-                <li><span class="comment-author-link">Chesus</span>on<a href="#">17 Freaky Reasons Blogs Could Get You Fired</a></li>
-                <li><span class="comment-author-link">Danielka</span>on<a href="#">How Blogs are Like a School Bully</a></li>
-                <li><span class="comment-author-link">Peter</span>on<a href="#">10 Signs You Should Invest In Write</a></li>
+                <li>
+                  <div class="image-thumbnail"><span class="comment-counter">17</span><img src="../media/widget-thumbnail.jpg" alt="alternative text"></div>
+                  <div class="content"><a href="#">5 Tools Everyone In The Time Industry Should Be Using</a>
+                    <time datetime="2016-06-10 00:00">June 15, 2016</time>
+                  </div>
+                </li>
+                <li>
+                  <div class="image-thumbnail"><span class="comment-counter">7</span><img src="../media/widget-thumbnail.jpg" alt="alternative text"></div>
+                  <div class="content"><a href="#">What Will Work Be Like In 100 Years?</a>
+                    <time datetime="2016-06-10 00:00">June 12, 2016</time>
+                  </div>
+                </li>
+                <li>
+                  <div class="image-thumbnail"><span class="comment-counter">9</span><img src="../media/widget-thumbnail.jpg" alt="alternative text"></div>
+                  <div class="content"><a href="#">10 Things Your Competitors Can Teach You About Life</a>
+                    <time datetime="2016-06-10 00:00">June 9, 2016</time>
+                  </div>
+                </li>
               </ul>
             </div>
-            <!-- END / RECENT COMMENTS  WIDGET-->
+            <!-- END / POPULAR POST WIDGET-->
           </div>
         </div>
       </div>
