@@ -14,7 +14,7 @@
                     <div class="bndl-categories">
                       <a href="#" class="active">All</a>
                       {% for category in categories %}
-                      {% if category.posts.all %}
+                      {% if category.post.all %}
                       <a href="#">{{ category.name }}</a>
                       {% endif %}
                       {% endfor %}
