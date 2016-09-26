@@ -11,7 +11,14 @@
               <div class="col-md-12">
                 <div class="bndl-breadcrumb blog-categories">
                   <div class="breadcrumb-title"><span>My Blog</span></div>
-                  <div class="bndl-categories"><a href="#" class="active">All</a><a href="#">Travel</a><a href="#">Work</a><a href="#">Lifestyle</a></div>
+                    <div class="bndl-categories">
+                      <a href="#" class="active">All</a>
+                      {% for category in categories %}
+                      {% if category.post.all %}
+                      <a href="#">{{ category.name }}</a>
+                      {% endif %}
+                      {% endfor %}
+                    </div>
                   <div class="bndl-search"><i data-popup="popup-search" class="ei-search bndl-search"></i></div>
                 </div>
               </div>
@@ -23,6 +30,8 @@
           <!-- BLOG HORIZONTAL LAYOUT-->
           <div class="loop horizontal-layout">
             <!-- POST GALLERY TILE-->
+            {% for post in posts %}
+            {% if post.status == 'published'%}
             <article class="post post-left gallery-tile">
               <div class="post-content">
                 <div class="post-body">
@@ -132,6 +141,7 @@
                 </div>
               </div>
             </article>
+
             <!-- END / POST STANDARD-->
             <!-- POST VIDEO-->
             <article class="post post-right video">
@@ -195,12 +205,15 @@
               </div>
             </article>
             <!-- END / POST AUDIO-->
+            {% endif %}
+            {% endfor %}
           </div>
           <!-- END / BLOG HORIZONTAL LAYOUT-->
 
         </div>
         <!-- PAGINATION-->
-        <nav class="pagination"><span class="page-numbers current">1</span><a href="#" class="page-numbers">2</a><a href="#" class="page-numbers">3</a><a href="#" class="page-numbers next">Next</a></nav>
+
+        {% include "blog/pagination.html" with page=posts %}
         <!-- END / PAGINATION-->
       </div>
       <div class="col-md-3">

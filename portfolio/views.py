@@ -52,6 +52,10 @@ def blog_list(request):
     paginator = Paginator(object_list, 3)
     page = request.GET.get('page')
 
+    # grub categories
+    categories = Category.objects.all()
+
+
     try:
         posts = paginator.page(page)
     except PageNotAnInteger:
@@ -64,6 +68,7 @@ def blog_list(request):
     return render(request, 'blog/blog_list.html', {
         'posts': posts,
         'page' : page,
+        'categories': categories,
         })
 
 
