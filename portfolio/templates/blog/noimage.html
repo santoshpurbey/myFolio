@@ -1,0 +1,18 @@
+<article style="position: absolute; overflow: hidden; backface-visibility: hidden; transform-style: preserve-3d; transform: translate3d(508px, 700px, 0px);" class="post post-right standard">
+  <div class="post-content">
+    <div class="post-body">
+      <div class="post-category"><i class="ei-pencil"></i><a href="#">{{ post.category }}</a></div>
+      <div class="post-title">
+        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h2>
+      </div>
+      <div class="post-entry">
+        <p>{{ post.short_description }}</p>
+      </div>
+      <div class="post-meta">
+        <div class="post-likes"><i class="ei-heart"></i><a href="#">2</a></div>
+        <div class="post-comments"><i class="ei-comment"></i><a href="#">4</a></div>
+        <div class="post-date">June 4, 2016</div>
+      </div>
+    </div>
+  </div>
+</article>
