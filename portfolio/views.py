@@ -8,7 +8,6 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .forms import CommentForm
 from .models import Project, Skill, Category, ProjectImage, Post, Comment, PostLayout
 
-
 def about(request):
     return render(request, 'about.html', {})
 
@@ -49,7 +48,7 @@ def contact(request):
 
 def blog_list(request):
     object_list = Post.published.all()
-    paginator = Paginator(object_list, 3)
+    paginator = Paginator(object_list, 5)
     page = request.GET.get('page')
 
     # grub categories

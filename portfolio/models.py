@@ -76,7 +76,7 @@ class PostLayout(models.Model):
 
     class Meta:
         ordering = ('name',)
-        verbose_name = "layoout"
+        verbose_name = "layout"
         verbose_name_plural = "layouts"
 
     def __unicode__(self):
@@ -94,13 +94,14 @@ class Post(models.Model):
     author = models.ForeignKey(User,related_name='blog_posts')
     short_description = models.CharField(max_length=300)
     body = RichTextField()
-    category = models.ManyToManyField('Category', related_name="posts")
+    category = models.ForeignKey('Category', related_name="posts")
     publish = models.DateTimeField(default=timezone.now, )
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10,choices=STATUS_CHOICES,default='draft')
     image = models.ImageField(upload_to='blog')
     layouts = models.ForeignKey('PostLayout', blank=True, null=True, related_name="posts")
+
     objects = models.Manager() # default model Manager
     published = PublishedManager() # my custom model Manager
 
