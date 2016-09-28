@@ -3,7 +3,7 @@
 <div class="site-content grey-background">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-9">
+      <div class="col-md-9 works">
         <!-- BLOG CATEGORIES-->
         <div class="page-breadcrumb">
           <div class="container-fluid">
@@ -11,11 +11,11 @@
               <div class="col-md-12">
                 <div class="bndl-breadcrumb blog-categories">
                   <div class="breadcrumb-title"><span>My Blog</span></div>
-                    <div class="bndl-categories">
-                      <a href="#" class="active">All</a>
+                    <div class="bndl-categories filter">
+                      <a data-filter="all" href="#" class="active">All</a>
                       {% for category in categories %}
                         {% if category.posts.all %}
-                          <a href="#">{{ category.name }}</a>
+                          <a data-filter="{{category.name}}" href="#">{{ category.name }}</a>
                         {% endif %}
                       {% endfor %}
                     </div>
@@ -32,9 +32,6 @@
             {% for post in posts %}
               {% for layout in layouts %}
                 {% ifequal post.layouts layout %}
-                <!-- POST GALLERY TILE-->
-                <!-- END / POST GALLERY TILE-->
-                <!-- POST LARGE-->
                 {% load mytags %}
                 {% with "blog/"|addstr:post.layouts|addstr:".html" as template %}
                   {% include template %}
@@ -42,13 +39,10 @@
                 {% endifequal %}
               {% endfor %}
             {% endfor %}
-
             </div>
           <!-- END / BLOG HORIZONTAL LAYOUT-->
-
         </div>
         <!-- PAGINATION-->
-
         {% include "blog/pagination.html" with page=posts %}
         <!-- END / PAGINATION-->
       </div>
