@@ -8,19 +8,33 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .forms import CommentForm
 from .models import Project, Skill, Category, ProjectImage, Post, Comment, PostLayout
 
-
 def about(request):
     return render(request, 'about.html', {})
 
 
 def portfolio_list(request):
-    projects = Project.objects.filter(end_date__lte=timezone.now()).order_by('end_date')
+    object_list = Project.objects.filter(end_date__lte=timezone.now()).order_by('end_date')
     categories = Category.objects.all()
+
+    # pagenation
+    paginator = Paginator(object_list, 4)
+    page = request.GET.get('page')
+
+
+    try:
+        projects = paginator.page(page)
+    except PageNotAnInteger:
+        # if page is not an integer deliver the first page
+        projects = paginator.page(1)
+    except EmptyPage:
+        # if page is out of range deliver the last page of results
+        projects = paginator.page(paginator.num_pages)
 
     return render(request, 'portfolio/portfolio_list.html',
                 {
                     'projects': projects,
-                    'categories': categories
+                    'categories': categories,
+                    'page': page,
 
                 })
 
@@ -49,7 +63,7 @@ def contact(request):
 
 def blog_list(request):
     object_list = Post.published.all()
-    paginator = Paginator(object_list, 3)
+    paginator = Paginator(object_list, 5)
     page = request.GET.get('page')
 
     # grub categories

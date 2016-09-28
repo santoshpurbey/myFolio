@@ -1,0 +1,21 @@
+<article class="post post-right video item {{ post.category }}">
+  <div class="post-content">
+    <div class="post-media">
+      <iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe></div>
+    <div class="post-body">
+      <div class="post-category"><i class="ei-sc-youtube"></i><a href="#">Video</a></div>
+      <div class="post-title">
+        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+      </div>
+      <div class="post-entry">
+        <p>{{ post.short_description }}</p>
+      </div>
+      <div class="post-meta">
+        <div class="post-likes"><i class="ei-heart"></i><a href="#">0</a></div>
+        <div class="post-comments"><i class="ei-comment"></i><a href="#">3</a></div>
+        <div class="post-date">{{post.publish|date:"M d, Y"}}</div>
+        <span>Post by<a href="#"> {{post.author}}</a></span>
+      </div>
+    </div>
+  </div>
+</article>

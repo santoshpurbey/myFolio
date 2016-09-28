@@ -3,7 +3,7 @@
 <div class="site-content grey-background">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-9">
+      <div class="col-md-9 works">
         <!-- BLOG CATEGORIES-->
         <div class="page-breadcrumb">
           <div class="container-fluid">
@@ -11,12 +11,12 @@
               <div class="col-md-12">
                 <div class="bndl-breadcrumb blog-categories">
                   <div class="breadcrumb-title"><span>My Blog</span></div>
-                    <div class="bndl-categories">
-                      <a href="#" class="active">All</a>
+                    <div class="bndl-categories filter">
+                      <a data-filter="all" href="#" class="active custom-a">All</a>
                       {% for category in categories %}
-                      {% if category.post.all %}
-                      <a href="#">{{ category.name }}</a>
-                      {% endif %}
+                        {% if category.posts.all %}
+                          <a data-filter="{{category.name}}" href="#">{{ category.name }}</a>
+                        {% endif %}
                       {% endfor %}
                     </div>
                   <div class="bndl-search"><i data-popup="popup-search" class="ei-search bndl-search"></i></div>
@@ -26,194 +26,24 @@
           </div>
         </div>
         <!-- END / BLOG CATEGORIES-->
-        <div class="blog-loop masonry-col-2">
+        <div class="blog-loop masonry-col-3">
           <!-- BLOG HORIZONTAL LAYOUT-->
           <div class="loop horizontal-layout">
-            <!-- POST GALLERY TILE-->
             {% for post in posts %}
-            {% if post.status == 'published'%}
-            <article class="post post-left gallery-tile">
-              <div class="post-content">
-                <div class="post-body">
-                  <div class="post-category"><i class="ei-image"></i><a href="#">Gallery Tile</a></div>
-                  <div class="post-title">
-                    <h2><a href="../../pages/post-types/gallery-tile.html">10 Signs You Should Invest In Write</a></h2>
-                  </div>
-                  <div class="post-entry">
-                    <p>Yes, some of the grammar and word choices are strange, but these...</p>
-                  </div>
-                  <div class="post-meta">
-                    <div class="post-likes"><i class="ei-heart"></i><a href="#">4</a></div>
-                    <div class="post-comments"><i class="ei-comment"></i><a href="#">12</a></div>
-                    <div class="post-date">June 17, 2016</div>
-                  </div>
-                </div>
-                <div class="post-media">
-                  <div class="gallery-entry">
-                    <div class="gallery-fancybox">
-                      <dl style="background-image: url(../../democontent/post-thumbnail-01.jpg)" class="gallery-item"></dl>
-                      <dl style="background-image: url(../../democontent/post-thumbnail-02.jpg)" class="gallery-item"></dl>
-                      <dl style="background-image: url(../../democontent/post-thumbnail-03.jpg)" class="gallery-item"></dl>
-                      <dl style="background-image: url(../../democontent/post-thumbnail-04.jpg)" class="gallery-item"></dl>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <!-- END / POST GALLERY TILE-->
-            <!-- POST LARGE-->
-            <article class="post large">
-              <div class="post-content">
-                <div class="post-body">
-                  <div class="post-category"><i class="ei-camera"></i><a href="#">Large Image</a></div>
-                  <div class="post-title">
-                    <h2><a href="../../pages/post-types/hero-image.html">The Worst Advice We've Ever Heard About Write</a></h2>
-                  </div>
-                  <div class="post-entry">
-                    <p>Aenean sit amet scelerisque mi. Fusce faucibus finibus nisl id tempus. Vivamus sit amet tellus ex. Curabitur interdum tristique lorem.</p>
-                  </div>
-                  <div class="post-meta">
-                    <div class="post-likes"><i class="ei-heart"></i><a href="#">5</a></div>
-                    <div class="post-comments"><i class="ei-comment"></i><a href="#">14</a></div>
-                    <div class="post-date">June 15, 2016</div>
-                  </div>
-                </div>
-                <div class="post-media">
-                  <div style="background-image: url(../../democontent/post-big-01.jpg)" class="post-image"></div>
-                </div>
-              </div>
-            </article>
-            <!-- END / POST LARGE-->
-            <!-- POST LINK-->
-            <article class="post link">
-              <div class="post-content">
-                <div class="post-body">
-                  <div class="post-category"><i class="ei-link"></i><a href="#">Link</a></div>
-                  <div class="post-title">
-                    <h2><a href="../../pages/post-types/link.html">http://boundly.makingcg.com/</a></h2>
-                  </div>
-                  <div class="post-meta">
-                    <div class="post-likes"><i class="ei-heart"></i><a href="#">8</a></div>
-                    <div class="post-comments"><i class="ei-comment"></i><a href="#">12</a></div>
-                    <div class="post-date">June 14, 2016</div>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <!-- END / POST LINK-->
-            <!-- POST QUOTE-->
-            <article class="post quote">
-              <div class="post-content">
-                <div class="post-body">
-                  <div class="post-category"><i class="ei-like"></i><a href="#">Quote</a></div>
-                  <blockquote>
-                    <h2>“Progress is born from crisis”</h2>
-                    <cite>- John Doe</cite>
-                  </blockquote>
-                  <div class="post-meta">
-                    <div class="post-likes"><i class="ei-heart"></i><a href="#">3</a></div>
-                    <div class="post-comments"><i class="ei-comment"></i><a href="#">23</a></div>
-                    <div class="post-date">June 11, 2016</div>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <!-- END / POST QUOTE-->
-            <!-- POST STANDARD-->
-            <article class="post post-right standard">
-              <div class="post-content">
-                <div class="post-media">
-                  <div style="background-image: url(../../media/post-thumbnail.jpg)" class="post-image"></div>
-                </div>
-                <div class="post-body">
-                  <div class="post-category"><i class="ei-pencil"></i><a href="#">Post Standard</a></div>
-                  <div class="post-title">
-                    <h2><a href="../../pages/post-types/standard.html">The Worst Advice We've Ever Heard About Write</a></h2>
-                  </div>
-                  <div class="post-entry">
-                    <p>Yes, some of the grammar and word choices are strange, but these...</p>
-                  </div>
-                  <div class="post-meta">
-                    <div class="post-likes"><i class="ei-heart"></i><a href="#">1</a></div>
-                    <div class="post-comments"><i class="ei-comment"></i><a href="#">0</a></div>
-                    <div class="post-date">June 8, 2016</div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- END / POST STANDARD-->
-            <!-- POST VIDEO-->
-            <article class="post post-right video">
-              <div class="post-content">
-                <div class="post-media"><iframe width="560" height="315" src="https://www.youtube.com/embed/Jld8jXIdcY4" frameborder="0" allowfullscreen></iframe></div>
-                <div class="post-body">
-                  <div class="post-category"><i class="ei-sc-youtube"></i><a href="#">Video</a></div>
-                  <div class="post-title">
-                    <h2><a href="../../pages/post-types/video.html">Headhunterz & Skytech - Kundalini (Trailer)</a></h2>
-                  </div>
-                  <div class="post-entry">
-                    <p>Yes, some of the grammar and word choices are strange, but these...</p>
-                  </div>
-                  <div class="post-meta">
-                    <div class="post-likes"><i class="ei-heart"></i><a href="#">0</a></div>
-                    <div class="post-comments"><i class="ei-comment"></i><a href="#">3</a></div>
-                    <div class="post-date">June 5, 2016</div>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <!-- END / POST VIDEO-->
-            <!-- POST WITHOUT IMAGE-->
-            <article class="post post-right standard">
-              <div class="post-content">
-                <div class="post-body">
-                  <div class="post-category"><i class="ei-pencil"></i><a href="#">Without Image</a></div>
-                  <div class="post-title">
-                    <h2><a href="../../pages/post-types/standard.html">You haven’t seen this blogs list on buzfeed, but you now see</a></h2>
-                  </div>
-                  <div class="post-entry">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                  </div>
-                  <div class="post-meta">
-                    <div class="post-likes"><i class="ei-heart"></i><a href="#">2</a></div>
-                    <div class="post-comments"><i class="ei-comment"></i><a href="#">4</a></div>
-                    <div class="post-date">June 4, 2016</div>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <!-- END / POST WITHOUT IMAGE-->
-            <!-- POST AUDIO-->
-            <article class="post post-left audio">
-              <div class="post-content">
-                <div class="post-body">
-                  <div class="post-category"><i class="ei-sc-soundcloud"></i><a href="#">Audio</a></div>
-                  <div class="post-title">
-                    <h2><a href="../../pages/post-types/audio.html">Headhunterz & Skytech - Kundalini (Available May 9)</a></h2>
-                  </div>
-                  <div class="post-entry">
-                    <p>Yes, some of the grammar and word choices are strange, but these...</p>
-                  </div>
-                  <div class="post-meta">
-                    <div class="post-likes"><i class="ei-heart"></i><a href="#">1</a></div>
-                    <div class="post-comments"><i class="ei-comment"></i><a href="#">7</a></div>
-                    <div class="post-date">June 1, 2016</div>
-                  </div>
-                </div>
-                <div class="post-media"><iframe width="650" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/260154280&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe></div>
-              </div>
-            </article>
-            <!-- END / POST AUDIO-->
-            {% endif %}
+              {% for layout in layouts %}
+                {% ifequal post.layouts layout %}
+                {% load mytags %}
+                {% with "blog/"|addstr:post.layouts|addstr:".html" as template %}
+                  {% include template %}
+                {% endwith %}
+                {% endifequal %}
+              {% endfor %}
             {% endfor %}
-          </div>
+            </div>
           <!-- END / BLOG HORIZONTAL LAYOUT-->
-
         </div>
         <!-- PAGINATION-->
-
-        {% include "blog/pagination.html" with page=posts %}
+        {% include "pagination.html" with page=posts %}
         <!-- END / PAGINATION-->
       </div>
       <div class="col-md-3">

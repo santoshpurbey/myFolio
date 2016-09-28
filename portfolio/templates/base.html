@@ -14,7 +14,7 @@
   <!-- STYLESHEETS-->
   {% load staticfiles %}
   <link href="{% static 'assets/css/vendor/bootstrap.css' %}" rel="stylesheet" type="text/css">
-  <link href="{% static 'assets/css/light-template/lime.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'assets/css/light-template/red.css' %}" rel="stylesheet" type="text/css">
   <link href="{% static 'assets/css/responsive.css' %}" rel="stylesheet" type="text/css">
   <link href="{% static 'assets/css/mystyles.css' %}" rel="stylesheet" type="text/css">
   <!-- PLUGINS-->
@@ -514,8 +514,8 @@
   $(document).ready(function(){
     $('.filter a').on("click", function(e){
       e.preventDefault();
-      $(this).addClass('active');
       $(this).parent().find('a').removeClass('active');
+      $(this).addClass('active');
           var filters = $(this).attr('data-filter');
           $(this).closest('.works').find('.item').removeClass('disable');
           if (filters !== 'all') {
@@ -526,9 +526,7 @@
             }
           }
         }
-
-
-  });
+    });
 });
 
 </script>
