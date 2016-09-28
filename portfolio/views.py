@@ -13,13 +13,28 @@ def about(request):
 
 
 def portfolio_list(request):
-    projects = Project.objects.filter(end_date__lte=timezone.now()).order_by('end_date')
+    object_list = Project.objects.filter(end_date__lte=timezone.now()).order_by('end_date')
     categories = Category.objects.all()
+
+    # pagenation
+    paginator = Paginator(object_list, 4)
+    page = request.GET.get('page')
+
+
+    try:
+        projects = paginator.page(page)
+    except PageNotAnInteger:
+        # if page is not an integer deliver the first page
+        projects = paginator.page(1)
+    except EmptyPage:
+        # if page is out of range deliver the last page of results
+        projects = paginator.page(paginator.num_pages)
 
     return render(request, 'portfolio/portfolio_list.html',
                 {
                     'projects': projects,
-                    'categories': categories
+                    'categories': categories,
+                    'page': page,
 
                 })
 

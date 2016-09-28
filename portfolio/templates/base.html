@@ -514,8 +514,8 @@
   $(document).ready(function(){
     $('.filter a').on("click", function(e){
       e.preventDefault();
-      $(this).addClass('active');
       $(this).parent().find('a').removeClass('active');
+      $(this).addClass('active');
           var filters = $(this).attr('data-filter');
           $(this).closest('.works').find('.item').removeClass('disable');
           if (filters !== 'all') {
@@ -526,7 +526,7 @@
             }
           }
         }
-  });
+    });
 });
 
 </script>

@@ -12,7 +12,7 @@
                 <div class="bndl-breadcrumb blog-categories">
                   <div class="breadcrumb-title"><span>My Blog</span></div>
                     <div class="bndl-categories filter">
-                      <a data-filter="all" href="#" class="active">All</a>
+                      <a data-filter="all" href="#" class="active custom-a">All</a>
                       {% for category in categories %}
                         {% if category.posts.all %}
                           <a data-filter="{{category.name}}" href="#">{{ category.name }}</a>
@@ -26,7 +26,7 @@
           </div>
         </div>
         <!-- END / BLOG CATEGORIES-->
-        <div class="blog-loop masonry-col-2">
+        <div class="blog-loop masonry-col-3">
           <!-- BLOG HORIZONTAL LAYOUT-->
           <div class="loop horizontal-layout">
             {% for post in posts %}
@@ -43,7 +43,7 @@
           <!-- END / BLOG HORIZONTAL LAYOUT-->
         </div>
         <!-- PAGINATION-->
-        {% include "blog/pagination.html" with page=posts %}
+        {% include "pagination.html" with page=posts %}
         <!-- END / PAGINATION-->
       </div>
       <div class="col-md-3">
