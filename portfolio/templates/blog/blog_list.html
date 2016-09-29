@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 {% block content %}
 <div class="site-content grey-background">
   <div class="container-fluid">
@@ -50,8 +51,8 @@
         <!-- ABOUT ME WIDGET-->
         <div class="widget widget_about_me">
           <h4 class="widget-title">About Me</h4>
-          <div class="widget-content"><img src="../../media/avatar.jpg" alt="alternative text" class="me-image"><b>John Doe</b>
-            <h6><i>Also known as PyCat</i></h6>
+          <div class="widget-content"><img src="{% static 'media/profile.png' %}" alt="alternative text" class="me-image"><b>Katerina Kabardi</b>
+            <h5><i>Also known as Pycat</i></h5>
             <p>I am a geek from Greece, passionate about Web Technologies and extremely excited to be asked to build your own Web Application</p>
           </div>
           <div class="widget tag_cloud widget_tag_cloud">
@@ -81,7 +82,7 @@
             {% for project in latest_projects %}
             <li><a href="#">
                 <div class="top-post-title">
-                  <h5>{{ project.title}}</h5>
+                  <h5>{{ project.name }}</h5>
                 </div><img src="/media/media/{{project.image}}" alt="{{ project.name }}"></a></li>
             {% endfor %}
           </ul>
