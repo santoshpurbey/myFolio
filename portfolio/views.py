@@ -16,8 +16,11 @@ def portfolio_list(request):
     object_list = Project.objects.filter(end_date__lte=timezone.now()).order_by('end_date')
     categories = Category.objects.all()
 
+    # grub post layouts
+    layouts = PostLayout.objects.all()
+
     # pagenation
-    paginator = Paginator(object_list, 4)
+    paginator = Paginator(object_list, 7)
     page = request.GET.get('page')
 
 
@@ -35,7 +38,7 @@ def portfolio_list(request):
                     'projects': projects,
                     'categories': categories,
                     'page': page,
-
+                    'layouts': layouts,
                 })
 
 
@@ -63,7 +66,7 @@ def contact(request):
 
 def blog_list(request):
     object_list = Post.published.all()
-    paginator = Paginator(object_list, 5)
+    paginator = Paginator(object_list, 6)
     page = request.GET.get('page')
 
     # grub categories

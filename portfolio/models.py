@@ -24,6 +24,7 @@ class Project(models.Model):
     categories = models.ForeignKey('Category', blank=True, null=True, related_name="projects")
     skills = models.ManyToManyField('Skill')
     image = models.ImageField(upload_to='portfolio', blank=True, null=True)
+    layouts = models.ForeignKey('PostLayout', blank=True, null=True, related_name="projects")
 
     class Meta:
         ordering = [ '-end_date', ]
