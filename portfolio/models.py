@@ -27,7 +27,7 @@ class Project(models.Model):
     layouts = models.ForeignKey('PostLayout', blank=True, null=True, related_name="projects")
 
     class Meta:
-        ordering = [ '-end_date', ]
+        ordering = [ 'end_date', ]
 
     def __unicode__(self):
         return self.name
