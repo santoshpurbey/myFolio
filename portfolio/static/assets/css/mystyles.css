@@ -22,15 +22,7 @@
 
 
 
-.filter a {
-    color: #33373d;
-}
 
-
-.filter a.active, .filter a.hover {
-    color: #ff1f01;
-    border-color: #ff1f01;
-}
 
 .item {
   position: relative;
