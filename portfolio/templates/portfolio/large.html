@@ -1,0 +1,22 @@
+<!-- END / POST STANDARD-->
+<article class="post large item {{ post.category }}">
+  <div class="post-content">
+    <div class="post-body">
+      <div class="post-category"><a href="#">{{ project.categories }}</a></div>
+      <div class="post-title">
+        <h2><a href="{% url 'portfolio_detail' pk=project.pk %}">{{ project.name }}</a></h2>
+      </div>
+      <div class="post-entry">
+        <p>{{ project.short_description}}</p>
+      </div>
+      <div class="post-meta">
+        <div class="post-comments"><i class="ei-comment"></i><a href="#">5</a></div>
+        <div class="post-date">{{ project.end_date}}</div>
+      </div>
+    </div>
+    <div class="post-media">
+      <div style="background-image: url(/media/media/{{project.image}})" class="post-image"></div>
+    </div>
+  </div>
+</article>
+<!-- END / POST LARGE-->

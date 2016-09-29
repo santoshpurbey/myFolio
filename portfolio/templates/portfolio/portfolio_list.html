@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block content %}
-<div class="site-content grey-background">
+<div class="site-content grey-background works">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
@@ -9,7 +9,7 @@
         <div class="page-breadcrumb">
           <div class="container-fluid">
             <div class="row">
-              <div class="col-md-12 works">
+              <div class="col-md-12 ">
                 <div class="bndl-breadcrumb blog-categories">
                   <div class="breadcrumb-title"><span>My Projects</span></div>
                   <div class="widget tag_cloud widget_tag_cloud">
@@ -30,38 +30,23 @@
         <!-- END / BLOG CATEGORIES-->
         <div class="blog-loop masonry-col-3">
           <!-- MASONRY LAYOUT-->
-          <div class="loop masonry-layout">
+          <div class="loop horizontal-layout bndl-show">
             <!-- POST STANDARD-->
-            {%  for project in projects %}
-            <article class="post standard item {{project.categories}}">
-              <div class="post-content">
-                <div class="post-media">
-                  <div class="post-image">
-                    <img src="/media/media/{{project.image}}" alt="{{project.name}}"></div>
-                </div>
-                <div class="post-body">
-                  <div class="post-category">
-                    <i class="ei-pencil"></i><a href="#">{{ project.cateogories }}</a></div>
-                  <div class="post-title">
-                    <h2><a href="{% url 'portfolio_detail' pk=project.pk %}">{{project.name}}</a></h2>
-                  </div>
-                  <div class="post-entry">
-                    <p>Proin sed justo quis erat convallis maximus. Proin neque ipsum, laoreet in rutrum vitae, suscipit in ipsum. Maecenas luctus enim a dapibus mollis. Integer.</p>
-                  </div>
-                  <div class="post-meta">
-                    <div class="post-likes"><i class="ei-heart"></i><a href="#">2</a></div>
-                    <div class="post-comments"><i class="ei-comment"></i><a href="#">1</a></div>
-                    <div class="post-date">June 12, 2016</div>
-                  </div>
-                </div>
-              </div>
-            </article>
+            {% for project in projects %}
+            {% for layout in layouts %}
+              {% ifequal project.layouts layout %}
+              {% load mytags %}
+              {% with "portfolio/"|addstr:project.layouts|addstr:".html" as template %}
+                {% include template %}
+              {% endwith %}
+              {% endifequal %}
             {% endfor %}
-            <!-- END / POST STANDARD-->
+            {% endfor %}
+              <!-- POST STANDARD-->
           </div>
           <!-- END / MASONRY LAYOUT-->
         </div>
-        <!-- PAGINATION-->
+        <!-- PAGINATION -->
         {% include "pagination.html" with page=projects %}
         <!-- END / PAGINATION-->
       </div>
