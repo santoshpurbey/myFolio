@@ -69,15 +69,5 @@ docs/_build/
 
 # PyBuilder
 target/
-
-
-# remove them after finishing new layout
-
-portfolio/templates/blog/old_blog_list.html
-	portfolio/templates/blog/old_post_detail.html
-	portfolio/templates/old_about.html
-	portfolio/templates/old_base.html
-	portfolio/templates/old_contact.html
-	portfolio/templates/portfolio/old_portfolio_detail.html
-	portfolio/templates/portfolio/old_portfolio_list.html
-	portfolio/templates/registration/
+folioapp/wsgi.py
+manage.py
