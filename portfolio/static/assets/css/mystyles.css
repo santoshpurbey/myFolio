@@ -27,16 +27,13 @@
 }
 
 
-.filter a.active {
-    color: #28b5c6;
+.filter a.active, .filter a.hover {
+    color: #ff1f01;
+    border-color: #ff1f01;
 }
 
-
-
-
 .item {
-
-    position: relative;
+  position: relative;
 	margin-bottom:30px;
 }
 
