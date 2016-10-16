@@ -20,7 +20,7 @@ def portfolio_list(request):
     layouts = PostLayout.objects.all()
 
     # pagenation
-    paginator = Paginator(object_list, 7)
+    paginator = Paginator(object_list, 6)
     page = request.GET.get('page')
 
 
