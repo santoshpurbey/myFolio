@@ -4,7 +4,7 @@
       <div class="post-category"><i class="ei-like"></i><a href="#">{{ post.category }}</a></div>
       <blockquote>
         <h2>“{{ post.title }}”</h2>
-        <cite>- {{ post.short_description }}</cite>
+        <cite>- {{ post.short_description | truncatechars:60 }}</cite>
       </blockquote>
       <div class="post-meta">
         <div class="post-likes"><i class="ei-heart"></i><a href="#">3</a></div>

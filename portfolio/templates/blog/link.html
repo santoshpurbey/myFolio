@@ -6,7 +6,7 @@
         <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
       </div>
       <div class="post-entry">
-        <p>{{ post.short_description }}</p>
+        <p>{{ post.short_description | truncatechars:60 }}</p>
       </div>
       <div class="post-meta">
         <div class="post-likes"><i class="ei-heart"></i><a href="#">8</a></div>
