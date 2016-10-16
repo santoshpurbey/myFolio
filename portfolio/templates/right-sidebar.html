@@ -1,0 +1,51 @@
+{% load staticfiles %}
+<div class="bndl-sidebar right">
+  <div class="content-wrapper">
+    <!-- ABOUT ME WIDGET-->
+    <div class="widget widget_about_me">
+      <h4 class="widget-title">About Me</h4>
+      <div class="widget-content"><img src="{% static 'img/profile.png' %}" alt="alternative text" class="me-image"><b>Katerina Kabardi</b>
+        <h5><i>Also known as Pycat</i></h5>
+        <p>I am a geek from Greece, passionate about Web Technologies and extremely excited to be asked to build your own Web Application</p>
+      </div>
+      <div class="widget tag_cloud widget_tag_cloud">
+        <div class="tagcloud">
+          <a href="http://kkabardi.me//about" >Read More</a>
+          <a href="http://kkabardi.me/contact">Hire Me</a>
+        </div>
+      </div>
+    </div>
+    <!-- END / ABOUT ME WIDGET-->
+    <!-- SOCIAL MEDIA WIDGET-->
+    <div class="widget widget_social_icons">
+      <h4 class="widget-title">Find Me</h4>
+      <div class="bndl-social-icons">
+        <a href="https://github.com/kkampardi"><i class="ei-sc-github"></i></a>
+        <a href="https://www.linkedin.com/in/katerina-kampardi-6a319582?trk=nav_responsive_tab_profile"><i class="ei-sc-linkedin"></i></a>
+        <a href="https://twitter.com/kkampardi"><i class="ei-sc-twitter"></i></a>
+        <a href="https://www.facebook.com/katerina.kabardi"><i class="ei-sc-facebook"></i></a>
+      </div>
+      <p class="muted-text">Add me to your social network</p>
+    </div>
+    <!-- END / SOCIAL MEDIA WIDGET-->
+    <!-- TOP POSTS WIDGET-->
+    <div class="widget widget_top_posts">
+      <h4 class="widget-title">My Latest Projects</h4>
+      <ul>
+        {% for project in latest_projects %}
+        <li><a href="#">
+            <div class="top-post-title">
+              <h5>{{ project.name }}</h5>
+            </div><img src="/media/media/{{project.image}}" alt="{{ project.name }}"></a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="widget tag_cloud widget_tag_cloud">
+      <div class="tagcloud">
+        <a href="http://kkabardi.me">View Full Portfolio</a>
+      </div>
+    </div>
+    <!-- END / TOP POSTS WIDGET-->
+  </div>
+  <i class="close-sidebar-mobile ei-close"></i>
+</div>
