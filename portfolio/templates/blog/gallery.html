@@ -7,7 +7,7 @@
         <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
       </div>
       <div class="post-entry">
-        <p>{{ post.content }}</p>
+        <p>{{ post.short_description | truncatechars:60 }}</p>
       </div>
       <div class="post-meta">
         <div class="post-comments"><i class="ei-comment"></i><a href="#">12</a></div>
@@ -18,7 +18,7 @@
     <div class="post-media">
       <div class="gallery-entry">
         <div class="gallery-fancybox">
-          <dl style="background-image: url('/media/media/{{post.image}}')" class="gallery-item"></dl>
+          <dl style="background-image: url('/media/{{post.image}}')" class="gallery-item"></dl>
           <dl style="background-image: url('democontent/post-thumbnail-02.jpg')" class="gallery-item"></dl>
           <dl style="background-image: url('democontent/post-thumbnail-03.jpg')" class="gallery-item"></dl>
           <dl style="background-image: url('democontent/post-thumbnail-04.jpg')" class="gallery-item"></dl>
