@@ -5,10 +5,10 @@
   </div>
   <ul class="instagram-images">
     <li>
-      {% for latest in latest_projects %}
+      {% for project in latest_projects %}
       <a href="#">
         <i class="ei-search btn medium"></i>
-        <img src="{% static '/media/{{ latest.image }}' %}" alt="{{ latest.name }}">
+        <img src="/media/{{project.image}}" alt="{{project.name}}">
       </a>
       {% endfor %}
     </li>
