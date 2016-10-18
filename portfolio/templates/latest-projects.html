@@ -4,7 +4,7 @@
     <div class="instagram-link"><span>View my </span><a href="#" target="_blank" class="instagram-account">Latest Projects</a></div>
   </div>
   <ul class="instagram-images">
-    <li>{% for project in latest_projects %}<a href="{% url 'portfolio_detail' pk=project.pk %}"><i class="ei-search btn medium"></i><img src="/media/{{project.image}}" alt="{{project.name}}"></a>{% endfor %}
+    <li>{% for project in latest_projects %}<a href="{% url 'portfolio_detail' pk=project.pk %}"><i class="ei-search btn medium" style="z-index:100;"></i><img src="/media/{{project.image}}" alt="{{project.name}}"></a>{% endfor %}
     </li>
   </ul>
 </div>
