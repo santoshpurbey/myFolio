@@ -13,7 +13,7 @@ def about(request):
 
 
 def portfolio_list(request):
-    object_list = Project.objects.filter(end_date__lte=timezone.now()).order_by('end_date')
+    object_list = Project.objects.filter(end_date__lte=timezone.now()).order_by('-end_date')
     categories = Category.objects.all()
 
     # grub post layouts
