@@ -1,0 +1,16 @@
+{% load staticfiles %}
+<div class="widget widget_instagram_feed_footer">
+  <div class="bndl-center">
+    <div class="instagram-link"><span>View my </span><a href="#" target="_blank" class="instagram-account">Latest Projects</a></div>
+  </div>
+  <ul class="instagram-images">
+    <li>
+      {% for latest in latest_projects %}
+      <a href="#">
+        <i class="ei-search btn medium"></i>
+        <img src="{% static '/media/{{ latest.image }}' %}" alt="{{ latest.name }}">
+      </a>
+      {% endfor %}
+    </li>
+  </ul>
+</div>

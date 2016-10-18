@@ -23,7 +23,6 @@ def portfolio_list(request):
     paginator = Paginator(object_list, 6)
     page = request.GET.get('page')
 
-
     try:
         projects = paginator.page(page)
     except PageNotAnInteger:
@@ -85,15 +84,18 @@ def blog_list(request):
         # if page is out of range deliver the last page of results
         posts = paginator.page(paginator.num_pages)
 
-    # fetch limited latest projects for the related sidebar widjet
+    # fetch latest posts list for sidebar and footer
+    latest_posts = Post.published.filter(created__lte=timezone.now()).order_by('-created')[:3]
 
-    latest_projects = Project.objects.all().order_by('end_date')[:3]
+    # fetch limited latest projects for the related sidebar widjet
+    latest_projects = Project.objects.all().order_by('end_date')[:6]
     return render(request, 'blog/blog_list.html', {
         'posts': posts,
         'page' : page,
         'categories': categories,
         'layouts' : layouts,
         'latest_projects': latest_projects,
+        'latest_posts' : latest_posts,
         })
 
 

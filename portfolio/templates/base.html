@@ -1,3 +1,4 @@
+{% load mytags %}
 <!doctype html>
 <html class="no-js">
 <head>
@@ -146,39 +147,7 @@
           </div>
           <div class="col-md-6">
             <!-- INSTAGRAM FOOTER WIDGET-->
-            <div class="widget widget_instagram_feed_footer">
-              <div class="bndl-center">
-                <div class="instagram-link"><span>View my </span><a href="#" target="_blank" class="instagram-account">Latest Projects</a></div>
-              </div>
-              <ul class="instagram-images">
-                <li>
-                  <a href="#">
-                    <i class="ei-search btn medium"></i>
-                    <img src="{% static 'media/instagram.jpg' %}" alt="alternative text">
-                  </a>
-                  <a href="#">
-                    <i class="ei-search btn medium"></i>
-                    <img src="{% static 'media/instagram.jpg' %}" alt="alternative text">
-                  </a>
-                  <a href="#">
-                    <i class="ei-search btn medium"></i>
-                    <img src="{% static 'media/instagram.jpg' %}" alt="alternative text">
-                  </a>
-                  <a href="#">
-                    <i class="ei-search btn medium"></i>
-                    <img src="{% static 'media/instagram.jpg' %}" alt="alternative text">
-                  </a>
-                  <a href="#">
-                    <i class="ei-search btn medium"></i>
-                    <img src="{% static 'media/instagram.jpg' %}" alt="alternative text">
-                  </a>
-                  <a href="#">
-                    <i class="ei-search btn medium"></i>
-                    <img src="{% static '/media/instagram.jpg' %}" alt="alternative text">
-                  </a>
-                </li>
-              </ul>
-            </div>
+            {% show_latest_projects latest_projects  %}
             <!-- END / INSTAGRAM FOOTER WIDGET-->
           </div>
           <div class="col-md-3">
@@ -197,7 +166,6 @@
         </div>
       </div>
     </div>
-    <!-- END / FOOTER UPPER-->
     <!-- FOOTER LOWER-->
     <div class="bndl-footer-lower">
       <div class="container-fluid">
