@@ -1,0 +1,13 @@
+{% load staticfiles %}
+<div class="widget widget_bndl_popular_post in-progress">
+  <h4 class="widget-title">Latest Posts</h4>
+  <ul>
+    <li>
+      {% for latest in latest_posts %}
+      <div class="content">
+        <a href="{% url 'post_detail' pk=latest.pk %}">{{ latest.title }}</a>
+      </div>
+      {% endfor %}
+    </li>
+  </ul>
+</div>
