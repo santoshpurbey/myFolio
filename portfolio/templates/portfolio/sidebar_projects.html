@@ -4,7 +4,7 @@
   <h4 class="widget-title">My Latest Projects</h4>
   <ul>
     {% for project in sidebar_projects %}
-    <li><a href="#">
+    <li><a href="{% url 'portfolio_detail' pk=project.pk %}">
         <div class="top-post-title">
           <h5>{{ project.name }}</h5>
         </div><img src="/media/{{project.image}}" alt="{{ project.name }}"></a></li>

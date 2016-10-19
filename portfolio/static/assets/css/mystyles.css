@@ -135,3 +135,22 @@
 .block-single ul{
 	font-size:13px;
 }
+
+pre {
+    background: black;
+    -webkit-border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    -ms-border-radius: 0.4em;
+    -o-border-radius: 0.4em;
+    border-radius: 0.4em;
+    border: 1px solid #05232b;
+    line-height: 1.45em;
+    font-size: 13px;
+    margin-bottom: 2.1em;
+    padding: .8em 1em;
+    color: #93a1a1;
+    overflow: auto;
+}
+code{
+  font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
+}
