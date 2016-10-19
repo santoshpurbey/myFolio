@@ -1,0 +1,18 @@
+{% load staticfiles %}
+
+<div class="widget widget_top_posts">
+  <h4 class="widget-title">My Latest Projects</h4>
+  <ul>
+    {% for project in sidebar_projects %}
+    <li><a href="#">
+        <div class="top-post-title">
+          <h5>{{ project.name }}</h5>
+        </div><img src="/media/{{project.image}}" alt="{{ project.name }}"></a></li>
+    {% endfor %}
+  </ul>
+</div>
+<div class="widget tag_cloud widget_tag_cloud">
+  <div class="tagcloud">
+    <a href="http://kkabardi.me">View Full Portfolio</a>
+  </div>
+</div>

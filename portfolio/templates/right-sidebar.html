@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load mytags %}
 <div class="bndl-sidebar right">
   <div class="content-wrapper">
     <!-- ABOUT ME WIDGET-->
@@ -28,24 +29,9 @@
       <p class="muted-text">Add me to your social network</p>
     </div>
     <!-- END / SOCIAL MEDIA WIDGET-->
-    <!-- TOP POSTS WIDGET-->
-    <div class="widget widget_top_posts">
-      <h4 class="widget-title">My Latest Projects</h4>
-      <ul>
-        {% for project in latest_projects %}
-        <li><a href="#">
-            <div class="top-post-title">
-              <h5>{{ project.name }}</h5>
-            </div><img src="/media/media/{{project.image}}" alt="{{ project.name }}"></a></li>
-        {% endfor %}
-      </ul>
-    </div>
-    <div class="widget tag_cloud widget_tag_cloud">
-      <div class="tagcloud">
-        <a href="http://kkabardi.me">View Full Portfolio</a>
-      </div>
-    </div>
-    <!-- END / TOP POSTS WIDGET-->
+    <!-- SIDEBAR  PROJECTS WIDGET-->
+    {% show_sidebar_projects sidebar_projects  %}
+    <!-- END / TOP SIDEBAR PROJECTS WIDGET-->
   </div>
   <i class="close-sidebar-mobile ei-close"></i>
 </div>

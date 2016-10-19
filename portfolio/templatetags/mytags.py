@@ -10,7 +10,7 @@ def addstr(arg1, arg2):
 
 
 # add tag for lates projects
-@register.inclusion_tag('latest-projects.html')
+@register.inclusion_tag('portfolio/latest_projects.html')
 def show_latest_projects(latest_projects):
     # fetch limited latest projects for the related sidebar widjet
     latest_projects = Project.objects.all().order_by('-end_date')[:6]
@@ -20,9 +20,8 @@ def show_latest_projects(latest_projects):
     }
 
 
-
 # add tag for latest posts
-@register.inclusion_tag('latest-posts.html')
+@register.inclusion_tag('blog/latest-posts.html')
 def show_latest_posts(latest_posts):
     # fetch latest posts list for sidebar and footer
     latest_posts = Post.published.filter(created__lte=timezone.now()).order_by('-created')[:3]
@@ -30,3 +29,13 @@ def show_latest_posts(latest_posts):
     return {
         'latest_posts' : latest_posts,
         }
+
+
+# add tag for sidebar latest projects
+@register.inclusion_tag('portfolio/sidebar_projects.html')
+def show_sidebar_projects(sidebar_projects):
+    sidebar_projects = Project.objects.all().order_by('-end_date')[:2]
+
+    return {
+        'sidebar_projects' : sidebar_projects,
+    }
