@@ -22,7 +22,7 @@ class Project(models.Model):
     end_date = models.DateField(blank=True, null=True)
     client = models.CharField(max_length=200, blank=True, null=True)
     categories = models.ForeignKey('Category', blank=True, null=True, related_name="projects")
-    skills = models.ManyToManyField('Skill')
+    skills = models.ManyToManyField('Skill', related_name="projects")
     image = models.ImageField(upload_to='portfolio', blank=True, null=True)
     layouts = models.ForeignKey('PostLayout', blank=True, null=True, related_name="projects")
 
@@ -96,6 +96,7 @@ class Post(models.Model):
     short_description = models.CharField(max_length=300)
     body = RichTextField()
     category = models.ForeignKey('Category', related_name="posts")
+    skills = models.ManyToManyField('Skill', related_name="posts")
     publish = models.DateTimeField(default=timezone.now, )
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

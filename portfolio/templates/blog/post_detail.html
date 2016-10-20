@@ -27,9 +27,11 @@
         </article>
         <!-- POST TAGS-->
         <div class="post-tags">
-          <a href="#">Business,</a>
-          <a href="#">Travel,</a>
-          <a href="#">Live Hacks</a>
+          {% for skill in skills %}
+          {% if skill.posts.all %}
+            <a href="#">{{ skill.name }}</a>
+          {% endif %}
+          {% endfor %}
         </div>
         <!-- END POST TAGS-->
         <!-- AUTHOR SIDEBAR-->

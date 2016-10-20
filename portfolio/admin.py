@@ -12,6 +12,10 @@ class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'publish', 'status', 'layouts')
     prepopulated_fields = {'slug':('title',)}
 
+class SkillAdmin(admin.ModelAdmin):
+    model = Skill
+    prepopulated_fields = {'slug':('name',)}
+
 class CategoryAdmin(admin.ModelAdmin):
     model = Category
     prepopulated_fields = { 'slug':('name',)}

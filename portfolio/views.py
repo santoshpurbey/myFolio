@@ -102,9 +102,11 @@ def blog_list(request):
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
 
-    # grub categories
+    # grub Categories
     categories = Category.objects.all()
 
+    # grub Skills
+    skills = Skill.objects.all()
     # Comments
 
     # List of active comments for this post
@@ -128,6 +130,7 @@ def post_detail(request, pk):
         {
             'post': post,
             'categories': categories,
+            'skills': skills,
             'comments': comments,
             'comment_form': comment_form,
         }
