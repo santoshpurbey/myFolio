@@ -40,7 +40,7 @@
     <!-- LOGO WIDGET-->
     <div class="widget custom-logo">
       <a href="http://kkabardi.me/">
-          <h1>pycat@ghost:~$</h1> 
+          <h1>pycat@ghost:~$</h1>
       </a>
     </div>
     <!-- END / LOGO WIDGET-->
@@ -102,7 +102,7 @@
       <!-- END BURGER ICON-->
     </div>
     <div class="bar-center">
-      <!-- LOGO--><a href="{{ url }}"><img src="{% static 'assets/images/boundly-logo.svg' %}" alt="Alternative Text" class="logo"></a>
+      <!-- LOGO--><a href="{{ url }}">{{ url }}</a>
       <!-- END LOGO-->
     </div>
     <div class="bar-right">
@@ -118,8 +118,22 @@
       <div class="row">
         <div class="col-md-12">
           <div class="bndl-breadcrumb">
-            <div class="link"><a href="#">Read</a></div>
-            <div class="bndl-categories"><a href="{% static 'pages/blog-layout/mosaic.html' %}">Home</a><a href="#" class="active">About Me</a></div>
+            <div class="link">
+              {% if request.get_full_path == '/' %}
+              <a href="http://kkabardi.me/blog">Read The Blog</a></div>
+              {% elif request.get_full_path != '/blog/' %}
+              <a href="http://kkabardi.me/blog">View Portfolio</a></div>
+              {% else %}
+              <a href="http://kkabardi.me/blog">View Portfolio</a></div>
+              {% endif %}
+            <div class="bndl-categories"><a href="http://kkabardi.me">Home</a>
+              {% if request.get_full_path == '/blog/' %}
+              <a href="{{ request.get_full_path }}" class="active">Blog</a></div>
+              {% elif request.get_full_path == '/about/' %}
+              <a href="{{ request.get_full_path }}" class="active">About</a></div>
+              {% elif request.get_full_path == '/contact/' %}
+              <a href="{{ request.get_full_path }}" class="active">Contact</a></div>
+              {% endif %}
           </div>
         </div>
       </div>
