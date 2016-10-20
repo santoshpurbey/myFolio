@@ -5,7 +5,6 @@
 
 /** Portfolio Filter */
 
-
 .block-filter ul {
     display: inline-block;
     position: relative;
@@ -40,8 +39,6 @@
     z-index: 12;
 }
 
-
-
 .item a .desc {
     background: rgba(130, 181, 65, 0.68);
     height: 100%;
@@ -53,11 +50,9 @@
 
 }
 
-
 .item a .desc:hover{
 	opacity:1;
 }
-
 
 .item a .desc h3 {
     color: #ffffff;
@@ -79,14 +74,11 @@
 	top:-5px;
 }
 
-
 .zigzag.work {
     stroke: #ffffff;
 	position:relative !important;
 	top:-1px !important;
 }
-
-
 
 .block-nav-work {
 	display:inline-block;
@@ -95,18 +87,15 @@
 
 }
 
-
 .block-nav-work ul {
 	text-align:center;
 
 }
 
-
 .block-nav-work li{
 	display:inline-block;
 	margin:0 2px;
 }
-
 
 .block-nav-work li a{
 	display:inline-block;
@@ -116,11 +105,9 @@
 	padding:5px;
 }
 
-
 .block-nav-work li a:hover{
 	color:#a0ce4e;
 }
-
 
 
 .block-single h1.large-title{
@@ -151,7 +138,6 @@ pre {
 code{
   font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
 }
-
 
 .custom-logo h1{
   font-size: 20px;
