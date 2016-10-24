@@ -43,7 +43,7 @@ def portfolio_list(request):
 
 def portfolio_detail(request, pk):
     project = Project.objects.get(pk=pk)
-    skills = Skill.objects.filter(project__pk=pk)
+    skills = Skill.objects.filter(projects__pk=pk)
     # categories = Category.objects.filter(project__pk=pk)
     project_images = ProjectImage.objects.filter(project__pk=pk)
 
