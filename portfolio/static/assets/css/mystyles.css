@@ -140,7 +140,6 @@ code{
   font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
   text-decoration: none;
   background: black;
-  border-radius: 5px 20px;
   padding: 20px;
 }
 
@@ -149,8 +148,8 @@ code{
   font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
   text-decoration: none;
   background: black;
-  border-radius: 5px 20px;
   padding: 10px;
+  text-align: left;
 }
 .custom-logo a, .custom-mob-logo a{
   color: rgb(255, 255, 255);
