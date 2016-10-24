@@ -15,8 +15,8 @@
     display: inline-block;
     margin: 0 10px;
     position: relative;
-   text-transform:uppercase;
-   font-size:13px;
+    /*text-transform:uppercase;
+    font-size:13px;*/
 }
 
 
@@ -162,4 +162,9 @@ code{
 
 .custom-logo a:hover, .custom-mob-logo a:hover{
   color: #b9c628 !important;
+}
+
+
+.project-categories .widget-title, .project-categories .widget_tag_cloud {
+  text-align: center;
 }

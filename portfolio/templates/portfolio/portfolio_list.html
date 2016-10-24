@@ -5,30 +5,30 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-        <!-- BLOG CATEGORIES-->
-        <div class="page-breadcrumb">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-12 ">
-                <div class="bndl-breadcrumb blog-categories">
-                  <div class="breadcrumb-title"><span>My Projects</span></div>
-                  <div class="widget tag_cloud widget_tag_cloud">
-                      <div id="category" class="tagcloud filter">
-                        <a data-filter="all" href="#" class="active">all</a>
-                        {% for category in categories %}
-                        {% if category.projects.all %}
-                        <a data-filter="{{category.name}}"  href="#">{{category.name}}</a>
-                        {% endif %}
-                        {% endfor %}
+        <div class="blog-loop masonry-col-3">
+          <!-- BLOG CATEGORIES-->
+          <div class="page-breadcrumb">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12 ">
+                  <div class="project-categories">
+                    <div class="widget-title"><span>My Projects</span></div>
+                    <div class="widget tag_cloud widget_tag_cloud">
+                        <div id="category" class="tagcloud filter">
+                          <a data-filter="all" href="#" class="active">all</a>
+                          {% for category in categories %}
+                          {% if category.projects.all %}
+                          <a data-filter="{{category.name}}"  href="#">{{category.name}}</a>
+                          {% endif %}
+                          {% endfor %}
+                        </div>
                       </div>
-                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <!-- END / BLOG CATEGORIES-->
-        <div class="blog-loop masonry-col-3">
+          <!-- END / BLOG CATEGORIES-->
           <!-- MASONRY LAYOUT-->
           <div class="loop horizontal-layout bndl-show">
             <!-- POST STANDARD-->
