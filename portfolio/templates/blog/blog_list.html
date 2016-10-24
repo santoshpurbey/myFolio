@@ -5,29 +5,29 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12 works">
-        <!-- BLOG CATEGORIES-->
-        <div class="page-breadcrumb">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="bndl-breadcrumb blog-categories">
-                  <div class="breadcrumb-title"><span>Hey! I wrote something for you</span></div>
-                    <div class="bndl-categories filter">
-                      <a data-filter="all" href="#" class="active custom-a">All</a>
-                      {% for category in categories %}
-                        {% if category.posts.all %}
-                          <a data-filter="{{category.name}}" href="#">{{ category.name }}</a>
-                        {% endif %}
-                      {% endfor %}
-                    </div>
-                  <div class="bndl-search"><i data-popup="popup-search" class="ei-search bndl-search"></i></div>
+        <div class="blog-loop masonry-col-3">
+          <!-- BLOG CATEGORIES-->
+          <div class="page-breadcrumb">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="myblog-categories">
+                    <div class="widget-title"><span>Hey! I wrote something for you</span></div>
+                      <div class="bndl-categories filter">
+                        <a data-filter="all" href="#" class="active custom-a">All</a>
+                        {% for category in categories %}
+                          {% if category.posts.all %}
+                            <a data-filter="{{category.name}}" href="#">{{ category.name }} / </a>
+                          {% endif %}
+                        {% endfor %}
+                      </div>
+                    <div class="bndl-search"><i data-popup="popup-search" class="ei-search bndl-search"></i></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <!-- END / BLOG CATEGORIES-->
-        <div class="blog-loop masonry-col-3">
+          <!-- END / BLOG CATEGORIES-->
           <!-- BLOG HORIZONTAL LAYOUT-->
           <div class="loop horizontal-layout">
             {% for post in posts %}

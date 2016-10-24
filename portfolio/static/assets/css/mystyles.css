@@ -165,6 +165,7 @@ code{
 }
 
 
-.project-categories .widget-title, .project-categories .widget_tag_cloud {
+.project-categories .widget-title, .project-categories .widget_tag_cloud,
+.myblog-categories .widget-title, .myblog-categories .bndl-categories {
   text-align: center;
 }
