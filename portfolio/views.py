@@ -5,8 +5,7 @@ from django.template.context import RequestContext
 from django.utils import timezone
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from .forms import CommentForm
-from .models import Project, Skill, Category, ProjectImage, Post, Comment, PostLayout
+from .models import Project, Skill, Category, ProjectImage, Post, PostLayout
 
 def about(request):
     return render(request, 'about.html', {})
@@ -107,23 +106,6 @@ def post_detail(request, pk):
 
     # grub Skills
     skills = Skill.objects.all()
-    # Comments
-
-    # List of active comments for this post
-    comments = post.comments.filter(active=True)
-
-    if request.method == 'POST':
-        # A comment was posted
-        comment_form = CommentForm(data=request.POST)
-        if comment_form.is_valid():
-            # Create comment object but dont save it to db yet
-            new_comment = comment_form.save(commit=False)
-            # Assign the current post to this comment
-            new_comment.post = post
-            # save the comment to the database
-            new_comment.save()
-    else:
-        comment_form = CommentForm()
 
     return render(
         request, 'blog/post_detail.html',
@@ -131,8 +113,6 @@ def post_detail(request, pk):
             'post': post,
             'categories': categories,
             'skills': skills,
-            'comments': comments,
-            'comment_form': comment_form,
         }
     )
 
