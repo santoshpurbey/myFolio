@@ -17,7 +17,7 @@
                         <a data-filter="all" href="#" class="active custom-a">All</a>
                         {% for category in categories %}
                           {% if category.posts.all %}
-                            <a data-filter="{{category.name}}" href="#">{{ category.name }} / </a>
+                            <a data-filter="{{category.name}}" href="#">{{ category.name }}</a>
                           {% endif %}
                         {% endfor %}
                       </div>

@@ -15,8 +15,7 @@
     display: inline-block;
     margin: 0 10px;
     position: relative;
-    /*text-transform:uppercase;
-    font-size:13px;*/
+    font-weight: bold;
 }
 
 
@@ -166,6 +165,65 @@ code{
 
 
 .project-categories .widget-title, .project-categories .widget_tag_cloud,
-.myblog-categories .widget-title, .myblog-categories .bndl-categories {
+.myblog-categories .widget-title{
   text-align: center;
 }
+
+
+/* Override  Blog Loop Categories */
+
+.myblog-categories {
+  text-align: center;
+  padding: 25px 0;
+  text-transform: uppercase;
+}
+
+.myblog-categories > div:first-child {
+  margin-left: 0;
+}
+
+.myblog-categories > div:last-child {
+  margin-right: 0;
+}
+
+.myblog-categories .breadcrumb-title span {
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 900;
+  vertical-align: middle;
+}
+
+.myblog-categories .link a {
+  color: #8e8e8e;
+  font-size: 15px;
+}
+.myblog-categories .link a:hover {
+  color: #ff8a01;
+}
+.myblog-categories .myblog-categories a {
+  color: #8e8e8e;
+  font-size: 15px;
+  vertical-align: middle;
+}
+.myblog-categories .myblog-categories a:hover {
+  color: #ff8a01;
+}
+.myblog-categories .myblog-categories a.active {
+  color: #ff8a01;
+  overflow: hidden;
+  display: inline-block;
+  text-overflow: ellipsis;
+  max-width: 600px;
+  font-weight: 700;
+}
+.myblog-categories .myblog-categories a:last-child:after {
+  display: none;
+}
+.myblog-categories .bndl-categories a:after {
+  content: "/";
+  margin: 0 15px;
+  color: #e7e7e7;
+  font-size: 17px;
+}
+
+ /* End overriding blog loop categories */
