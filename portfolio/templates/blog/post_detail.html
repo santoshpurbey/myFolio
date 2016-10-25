@@ -70,6 +70,41 @@
           <!-- END HANDPICKED POST-->
         </div>
         <!-- END RELATED POST-->
+
+        <!-- Discus -->
+        <div id="disqus_thread"></div>
+
+        <script>
+            /**
+             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+             */
+
+            var disqus_config = function () {
+                this.page.url = "http://kkabardi.me";  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = "kkabardi-me"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+
+            (function() {  // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+
+                s.src = '//kkabardi-me.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+        <!-- extra desqus code for recent comments >
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h4>Recent Comments</h4>
+          </div><br/>
+          <div id="RecentComments" class="dsq-widget panel-body">
+          <script type="text/javascript" src="http://djangozone.disqus.com/recent_comments_widget.js?num_items=5&hide_mods=0&hide_avatars=0&avatar_size=32&excerpt_length=100"></script>
+          </div>
+        </div>
+        < end extra desqus code for recent comments -->
       </div>
     </div>
   </div>
