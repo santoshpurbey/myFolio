@@ -147,7 +147,8 @@ code{
   font-size: 14px;
   font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
   text-decoration: none;
-  background: black;
+  color: black;
+  border: 1px solid;
   padding: 10px;
   text-align: left;
 }
