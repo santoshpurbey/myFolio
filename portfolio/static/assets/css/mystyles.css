@@ -224,3 +224,14 @@ code{
 }
 
  /* End overriding blog loop categories */
+
+.project-categories .widget-title, .project-categories .widget_tag_cloud {
+   text-align: center;
+ }
+
+.project-categories .breadcrumb-title{
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 900;
+  text-align: center;
+}

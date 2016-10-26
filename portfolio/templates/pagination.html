@@ -1,7 +1,7 @@
 <nav class="pagination">
   {% if page.has_previous %}
   <span class="page-numbers Previus">
-    <a href="?page={{ page.previous_page_number }}">Previous</a>
+    <a href="?page={{ page.previous_page_number }}" class="page-numbers previous">Previous</a>
   </span>
   {% endif %}
   {% for i in page.paginator.page_range %}
@@ -12,6 +12,6 @@
     {% endifequal %}
   {% endfor %}
   {% if page.has_next %}
-  <a href="#" class="page-numbers next">Next</a>
+  <a href="?page={{ page.next_page_number }}" class="page-numbers next">Next</a>
   {% endif %}
 </nav>
