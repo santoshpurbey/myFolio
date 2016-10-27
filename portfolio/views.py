@@ -41,10 +41,15 @@ def portfolio_list(request):
 
 
 def portfolio_detail(request, pk):
-    project = Project.objects.get(pk=pk)
-    skills = Skill.objects.filter(projects__pk=pk)
-    # categories = Category.objects.filter(project__pk=pk)
+    project = get_object_or_404(Project, pk=pk)
+    
     project_images = ProjectImage.objects.filter(project__pk=pk)
+
+    # grub Categories
+    categories = Category.objects.all()
+
+    # grub Skills
+    skills = Skill.objects.all()
 
     return render(
         request,
@@ -52,8 +57,8 @@ def portfolio_detail(request, pk):
         {
             'project': project,
             'skills': skills,
-            #'categories': categories,
-            'project_images': project_images
+            'categories': categories,
+            'project_images': project_images,
         }
     )
 
