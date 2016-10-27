@@ -44,11 +44,11 @@
           </div>
           <div class="share-post"><span class="title">Share Post:</span>
             <!-- SOCIAL ICONS-->
+            {{ request.get_full_path }}
             <div class="bndl-social-icons">
-              <a href="#"><i class="ei-sc-facebook"></i></a>
+              <a href="https://facebook.com/sharer.php?u=http://kkabardi.me{{ request.get_full_path }}title={{ post.title }}" target="_blank"><i class="ei-sc-facebook fb-share-button"></i></a>
               <a href="#"><i class="ei-sc-twitter"></i></a>
               <a href="#"><i class="ei-sc-google-plus"></i></a>
-              <a href="#"><i class="ei-sc-youtube"></i></a>
             </div>
             <!-- END SOCIAL ICONS-->
           </div>
