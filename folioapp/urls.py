@@ -29,9 +29,9 @@ urlpatterns = [
         # TODO: remove login urls it is just for testing
         url(r'^accounts/login/$', auth_views.login, name='login'),
         # url(r'', include('portfolio.urls')),
-        url(r'^blog/$', views.blog_list, name='blog_list'),
+        url(r'^$', views.blog_list, name='blog_list'),
         url(r'^post/(?P<pk>\d+)/$', views.post_detail, name='post_detail'),
-        url(r'^$', views.portfolio_list, name='portfolio_list'),
+        # url(r'^$', views.portfolio_list, name='portfolio_list'),
         url(r'^project/(?P<pk>[0-9]+)/$', views.portfolio_detail, name='portfolio_detail'),
         # url(r'^$', TemplateView.as_view(template_name='about.html'), name='about'),
         url(r'^contact/$', TemplateView.as_view(template_name='contact.html'),

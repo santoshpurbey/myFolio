@@ -4,16 +4,14 @@
 <!doctype html>
 <html class="no-js">
 <head>
-  <title>Katerina Kabardi | Full Stack Developer</title>
+  <title>Katerina Kabardi | Full Stack Developer | {{ site.title}}</title>
   <!-- METATAGS-->
   <meta charset="utf-8">
   <meta name="description" content="Beautiful HTML template for bloggers, all you will need for blogging now.">
   <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
   <!-- OPENGRAPHS-->
-  <meta property="og:title" content="| Pycat - Python Developer ">
-  <meta property="og:site_name" content="Portfolio & Blog">
-  <meta property="og:description" content="Thoughts about programming with Python, Django Freamework Tips">
-  <meta property="og:image" content="{% static 'assets/images/og-image.jpg' %}">
+
+
   <!-- STYLESHEETS-->
   <link href="{% static 'assets/css/vendor/bootstrap.css' %}" rel="stylesheet" type="text/css">
   <link href="{% static 'assets/css/light-template/lime.css' %}" rel="stylesheet" type="text/css">
@@ -31,7 +29,7 @@
   <link href="{% static 'assets/images/apple-touch-icon.png' %}" rel="apple-touch-icon">
 </head>
 <body>
-<!-- SPINNER-->z
+<!-- SPINNER-->
 <div class="spinner"><i class="ei-spinner-3 spinner-icon"></i></div>
 <!-- END / SPINNER-->
 
@@ -48,8 +46,8 @@
     <!-- MENU VERTICAL-->
     <div class="widget">
       <ul class="bndl-menu vertical">
-        {% url 'portfolio_list' as url %}
-        <li><a href="{{ url }}">Portfolio</a></li>
+        <!--{% url 'portfolio_list' as url %}
+        <li><a href="{{ url }}">Portfolio</a></li>-->
         {% url 'about' as url %}
         <li><a href="{{ url }}">About</a></li>
         {% url 'blog_list' as url %}
