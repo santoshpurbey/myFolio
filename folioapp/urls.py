@@ -43,11 +43,7 @@ urlpatterns = [
         url(r'^$', views.comming_soon, name='comming_soon'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-# wagtail URL resolvers
 
-urlpatterns += [
-        url(r'', include(wagtail_urls)),
-]
 
 ##code bellow added to fix server error when debug mode disabled
 ## this solution includes that portfolio/urls.py is not used anymore
