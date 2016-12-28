@@ -42,7 +42,7 @@ def portfolio_list(request):
 
 def portfolio_detail(request, pk):
     project = get_object_or_404(Project, pk=pk)
-    
+
     project_images = ProjectImage.objects.filter(project__pk=pk)
 
     # grub Categories
@@ -103,8 +103,8 @@ def blog_list(request):
         })
 
 
-def post_detail(request, pk):
-    post = get_object_or_404(Post, pk=pk)
+def post_detail(request, slug):
+    post = get_object_or_404(Post, slug=slug)
 
     # grub Categories
     categories = Category.objects.all()

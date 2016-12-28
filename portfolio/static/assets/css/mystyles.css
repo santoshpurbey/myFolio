@@ -118,18 +118,17 @@
 
 pre {
     background: black;
-    -webkit-border-radius: 0.4em;
-    -moz-border-radius: 0.4em;
-    -ms-border-radius: 0.4em;
-    -o-border-radius: 0.4em;
-    border-radius: 0.4em;
-    border: 1px solid #05232b;
-    line-height: 1.45em;
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
     font-size: 13px;
-    margin-bottom: 2.1em;
-    padding: .8em 1em;
-    color: #93a1a1;
-    overflow: auto;
+    line-height: 1.42857143;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #c5c8c6;
 }
 code{
   font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load social_share %}
 {% block content %}
 
 <div class="site-content">
@@ -22,6 +23,7 @@
             <blockquote>
               <p>“{{ post.short_description }}”</p>
             </blockquote>
+            <img class="img-responsive" src="/media/{{post.image}}"/>
             <p>{{ post.body | safe }}</p>
           </div>
         </article>
@@ -44,9 +46,14 @@
           </div>
           <div class="share-post"><span class="title">Share Post:</span>
             <!-- SOCIAL ICONS-->
-            {{ request.get_full_path }}
+            <div class="fb-share-button" data-href="http://kkabardi.me/post/&#123;&#123;post.slug&#125;&#125;/" data-layout="button" data-size="small" data-mobile-iframe="true">
+              <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fkkabardi.me%2Fpost%2F%257B%257Bpost.slug%257D%257D%2F&amp;src=sdkpreparse">Share</a>
+          </div>
             <div class="bndl-social-icons">
-              <a href="https://facebook.com/sharer.php?u=http://kkabardi.me{{ request.get_full_path }}title={{ post.title }}" target="_blank"><i class="ei-sc-facebook fb-share-button"></i></a>
+              <a href="#">
+
+                <i class="ei-sc-facebook"></i>
+              </a>
               <a href="#"><i class="ei-sc-twitter"></i></a>
               <a href="#"><i class="ei-sc-google-plus"></i></a>
             </div>
@@ -109,4 +116,12 @@
     </div>
   </div>
 </div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=121841908290521";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 {% endblock %}

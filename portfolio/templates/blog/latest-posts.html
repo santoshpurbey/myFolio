@@ -5,7 +5,7 @@
     <li>
       {% for latest in latest_posts %}
       <div class="content">
-        <a href="{% url 'post_detail' pk=latest.pk %}">{{ latest.title }}</a>
+        <a href="{% url 'post_detail' slug=latest.slug %}">{{ latest.title }}</a>
       </div>
       <hr>
       {% endfor %}

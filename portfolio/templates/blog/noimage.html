@@ -3,7 +3,7 @@
     <div class="post-body">
       <div class="post-category"><i class="ei-pencil"></i><a href="#">{{ post.category }}</a></div>
       <div class="post-title">
-        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h2>
+        <h2><a href="{% url 'post_detail' slug=post.slug %}">{{post.title}}</a></h2>
       </div>
       <div class="post-entry">
         <p>{{ post.short_description | truncatechars:60 }}</p>

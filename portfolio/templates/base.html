@@ -27,6 +27,14 @@
   <link href="{% static 'assets/images/favicon.ico' %}" rel="shortcut icon" type="image/x-icon">
   <!-- APPLE TOUCH ICON-->
   <link href="{% static 'assets/images/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  <!-- Facebook Meta -->
+ <meta property="fb:app_id"             content="239526073137347" />
+ <meta property="og:url"                content="http://kkabardi.me/post/{{post.slug}}" />
+ <meta property="og:type"               content="article" />
+ <meta property="og:title"              content="{{post.title}}" />
+ <meta property="og:description"        content="{{post.short_description}}" />
+ <meta property="og:image"              content="http://kkabardi.me/media/{{post.image}}" />
+ <meta property="og:author"             content="{{post.author}}" />
 </head>
 <body>
 <!-- SPINNER-->

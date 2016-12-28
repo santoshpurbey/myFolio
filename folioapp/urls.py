@@ -23,6 +23,10 @@ from django.views.generic import TemplateView, RedirectView
 from django.contrib.staticfiles.urls import *
 from django.contrib.auth import views as auth_views
 
+from wagtail.wagtailadmin import urls as wagtailadmin_urls
+from wagtail.wagtaildocs import urls as wagtaildocs_urls
+from wagtail.wagtailcore import urls as wagtail_urls
+
 urlpatterns = [
         url(r'^admin/', include(admin.site.urls)),
         url(r'^accounts/logout/$', auth_views.logout, name='logout'),
@@ -30,7 +34,7 @@ urlpatterns = [
         url(r'^accounts/login/$', auth_views.login, name='login'),
         # url(r'', include('portfolio.urls')),
         url(r'^$', views.blog_list, name='blog_list'),
-        url(r'^post/(?P<pk>\d+)/$', views.post_detail, name='post_detail'),
+        url(r'^post/(?P<slug>[\w-]+)/$', views.post_detail, name='post_detail'),
         # url(r'^$', views.portfolio_list, name='portfolio_list'),
         url(r'^project/(?P<pk>[0-9]+)/$', views.portfolio_detail, name='portfolio_detail'),
         # url(r'^$', TemplateView.as_view(template_name='about.html'), name='about'),
@@ -40,6 +44,12 @@ urlpatterns = [
             name='about'),
         # comming soon
         url(r'^$', views.comming_soon, name='comming_soon'),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# wagtail URL resolvers
+
+urlpatterns += [
+        url(r'', include(wagtail_urls)),
 ]
 
 ##code bellow added to fix server error when debug mode disabled
