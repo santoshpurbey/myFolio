@@ -45,13 +45,16 @@
           </div>
           <div class="share-post"><span class="title">Share Post:</span>
             <!-- SOCIAL ICONS-->
-            <div class="fb-share-button" data-href="http://kkabardi.me/post/{{post.slug}}" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fkkabardi.me%2Fpost%2F{{post.slug}}&amp;src=sdkpreparse">Share</a></div>
             <div class="bndl-social-icons">
-              <a href="#">
-                <i class="ei-sc-facebook"></i>
+              <a class="" data-href="http://kkabardi.me/post/{{post.slug}}"  data-mobile-iframe="true">
+                  <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fkkabardi.me%2Fpost%2F{{post.slug}}&amp;src=sdkpreparse">
+                  <i class="ei-sc-facebook"></i>
+                </a>
               </a>
-              <a href="#"><i class="ei-sc-twitter"></i></a>
-              <a href="#"><i class="ei-sc-google-plus"></i></a>
+              <a href="https://twitter.com/intent/tweet?url=http://kkabardi.me{{request.path}}&text={{post.title}}" target="_blank"><i class="ei-sc-twitter"></i></a>
+              <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://kkabardi.me/post/{{post.slug}}/" data-text="{{post.title}}" data-via="pycat" data-related="kkabardi">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
             </div>
             <!-- END SOCIAL ICONS-->
           </div>
