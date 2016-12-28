@@ -23,9 +23,6 @@ from django.views.generic import TemplateView, RedirectView
 from django.contrib.staticfiles.urls import *
 from django.contrib.auth import views as auth_views
 
-from wagtail.wagtailadmin import urls as wagtailadmin_urls
-from wagtail.wagtaildocs import urls as wagtaildocs_urls
-from wagtail.wagtailcore import urls as wagtail_urls
 
 urlpatterns = [
         url(r'^admin/', include(admin.site.urls)),
